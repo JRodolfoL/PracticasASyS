@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Headline title</title>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  tex2jax: { inlineMath: [['$','$'], ['\\(','\\)']] },
+  TeX: { equationNumbers: { autoNumber: 'all' } }
+});
+</script>
+<script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+
+<style>
+body > * {
+  max-width: 42em;
+}
+body {
+  font-family: "Roboto Condensed", sans-serif;
+  padding-left: 7.5em;
+  padding-right: 7.5em;
+}
+pre, code {
+  max-width: 50em;
+  font-family: monospace;
+}
+pre.oct-code {
+  border: 1px solid Grey;
+  padding: 5px;
+}
+pre.oct-code-output {
+  margin-left: 2em;
+}
+span.comment {
+  color: ForestGreen;
+}
+span.keyword {
+  color: Blue;
+}
+span.string {
+  color: DarkOrchid;
+}
+footer {
+  margin-top: 2em;
+  font-size: 80%;
+}
+a, a:visited {
+  color: Blue;
+}
+h2 {
+  font-family: "Roboto Condensed", serif;
+  margin-top: 1.5em;
+}
+h2 a, h2 a:visited {
+  color: Black;
+}
+</style>
+
+</head>
+<body>
+<h1>Headline title</h1>
+
+<p>Some <b>bold</b>, <i>italic</i>, or <code>monospaced</code> Text with
+a <a href="https://www.octave.org">link to <b>GNU Octave</b></a>.</p>
+
+<h2>Contents</h2>
+<ul>
+<li><a href="#node1">MATLAB comment style ('%') is supported as well</a></li>
+<li><a href="#node2">Tìtulo de la práctica</a></li>
+</ul>
+
+<pre class="oct-code"><span class="comment"># "Real" Octave commands to be evaluated</span>
+sombrero ()</pre>
+<img src="prueba-1.png" alt="prueba-1.png"><h2><a id="node1">MATLAB comment style ('%') is supported as well</a></h2>
+<ul>
+<li>Bulleted list item 1</li>
+<li>Bulleted list item 2</li>
+</ul>
+
+<ol>
+<li>Numbered list item 1</li>
+<li>Numbered list item 2</li>
+</ol>
+<h2><a id="node2">Tìtulo de la práctica</a></h2>
+<pre class="oct-code"><span class="comment"># Desarrollo</span>
+
+<span class="comment"># *Bullet list Actividad 1</span>
+<span class="comment"># * Bullet list Actividad 2</span>
+
+solucion = 2 + 3
+matriz = 1:10</pre>
+
+<pre class="oct-code-output">solucion =  5
+matriz =
+ 
+    1    2    3    4    5    6    7    8    9   10
+ 
+</pre>
+
+<footer>
+<hr>
+<a href="https://www.octave.org">Published with GNU Octave 5.2.0</a>
+</footer>
+<!--
+##### SOURCE BEGIN #####
+## Headline title
+#
+# Some *bold*, _italic_, or |monospaced| Text with
+# a <https://www.octave.org link to *GNU Octave*>.
+##
+
+# "Real" Octave commands to be evaluated
+sombrero ()
+
+%% MATLAB comment style ('%') is supported as well
+%
+% * Bulleted list item 1
+% * Bulleted list item 2
+%
+% # Numbered list item 1
+% # Numbered list item 2
+
+
+
+%% Tìtulo de la práctica
+
+# Desarrollo
+
+# *Bullet list Actividad 1
+# * Bullet list Actividad 2
+
+solucion = 2 + 3
+matriz = 1:10
+##### SOURCE END #####
+-->
+</body>
+</html>
