@@ -85,7 +85,7 @@ h2 a, h2 a:visited {
 <h2><a id="node2"> 1.11 Working with functions.</a></h2>
 <p>Working with functions is fundamental to signals and systems applications. MATLAB provides several methods of defining and evaluating functions. An understanding and proficient use of these methods are therefore necessary and beneficial.</p>
 
-<p><b>Anonymous functions.</b></p>
+<p><b>11.1-1 Anonymous functions.</b></p>
 
 <p>Many simple functions are most conveniently represented by using MATLAB anonymous functions. An anonymous function provides a symbolic representation of a function defined in terms of MATLAB operators, functions, or other anonymous functions. For example, consider defining the exponentially damped sinusoid $f (t) = e −t cos(2π t)$.</p>
 
@@ -118,7 +118,7 @@ h2 a, h2 a:visited {
  
 </pre>
 
-<p>The plot command graphs the result</p>
+<p>The plot command graphs the result, which is shown in Fig. 1.46</p>
 
 <pre class="pre-text">&gt;&gt; plot(t,f(t));
 &gt;&gt; xlabel(’t’); ylabel(’f(t)’); grid;</pre>
@@ -136,6 +136,53 @@ xlabel(<span class="string">'t'</span>);
 ylabel(<span class="string">'f(t)'</span>);
 grid;</pre>
 <img src="prueba-1.png" alt="prueba-1.png">
+<p><b>Figure 1.46</b> $f(t) = e^{-t}cos(2\pi t)$ for $t = (-2::2)$.</p>
+
+<pre class="oct-code">t1 = (-2:0.01:2);
+plot(t1, f(t1));
+xlabel(<span class="string">'t'</span>);
+ylabel(<span class="string">'f(t)'</span>);
+grid;</pre>
+<img src="prueba-2.png" alt="prueba-2.png">
+<p><b>Figure 1.47</b> $f(t) = e^{-t}cos(2\pi t)$ for $t = (-2:0.01:2)$.</p>
+
+<p><b>1.11-2 Relational Operators and the Unit Step Function.</b></p>
+
+<p>The unit step function $u(t)$ arises naturally in many practical situations. For example, a unit step can
+model the act of turning on a system. With the help of relational operators, anonymous functions
+can represent the unit step function.
+In MATLAB, a relational operator compares two items. If the comparison is true, a logical true
+(1) is returned. If the comparison is false, a logical false (0) is returned. Sometimes called indicator
+functions, relational operators indicates whether a condition is true. Six relational operators are
+available: &lt;, &gt;, &lt;=, &gt;=, ==, and ~=.
+  The unit step function is readily defined using the &gt;= relational operator.</p>
+
+<pre class="oct-code">u = @(t) 1.0.*(t&gt;=0);</pre>
+
+<p>Any function with a jump discontinuity, such as the unit step, is difficult to plot. Consider plotting
+$u(t)$ by using $t = (-2:2)$.</p>
+
+<pre class="oct-code">t = (-2:2);
+plot(t, u(t));
+xlabel (<span class="string">'t'</span>);
+ylabel(<span class="string">'u(t)'</span>);</pre>
+<img src="prueba-3.png" alt="prueba-3.png">
+<p><b>Figure 1.48</b> $u(t)$ for $t = (-2:2)$.</p>
+
+<p>Two significant problems are apparent in the resulting plot, shown in Fig. 1.48. First,
+MATLAB automatically scales plot axes to tightly bound the data. In this case, this normally
+desirable feature obscures most of the plot. Second, MATLAB connects plot data with lines,
+making a true jump discontinuity difficult to achieve. The coarse resolution of vector t emphasizes
+the effect by showing an erroneous sloping line between t = −1 and t = 0.
+The first problem is corrected by vertically enlarging the bounding box with the axis
+command. The second problem is reduced, but not eliminated, by adding points to vector t.</p>
+
+<pre class="oct-code">t = (-2:0.01:2);
+plot(t, u(t));
+xlabel(<span class="string">'t'</span>);
+ylabel(<span class="string">'u(t)'</span>);
+axis([-2 2 -0.1 1.1]);</pre>
+<img src="prueba-4.png" alt="prueba-4.png">
 <footer>
 <hr>
 <a href="https://www.octave.org">Published with GNU Octave 5.2.0</a>
@@ -165,7 +212,7 @@ grid;</pre>
 % Working with functions is fundamental to signals and systems applications. MATLAB provides several methods of defining and evaluating functions. An understanding and proficient use of these methods are therefore necessary and beneficial.
 
 %%
-% *Anonymous functions.*
+% *11.1-1 Anonymous functions.*
 %
 % Many simple functions are most conveniently represented by using MATLAB anonymous functions. An anonymous function provides a symbolic representation of a function defined in terms of MATLAB operators, functions, or other anonymous functions. For example, consider defining the exponentially damped sinusoid $f (t) = e −t cos(2π t)$.
 
@@ -194,8 +241,7 @@ t = (-2:2);
 f(t)
 
 %%
-% The plot command graphs the result
-
+% The plot command graphs the result, which is shown in Fig. 1.46
 
 %%
 %
@@ -216,6 +262,59 @@ plot(t, f(t));
 xlabel('t');
 ylabel('f(t)');
 grid;
+
+%%
+% *Figure 1.46* $f(t) = e^{-t}cos(2\pi t)$ for $t = (-2::2)$.
+
+t1 = (-2:0.01:2);
+plot(t1, f(t1));
+xlabel('t');
+ylabel('f(t)');
+grid;
+
+%%
+% *Figure 1.47* $f(t) = e^{-t}cos(2\pi t)$ for $t = (-2:0.01:2)$.
+
+%%
+% *1.11-2 Relational Operators and the Unit Step Function.*
+%
+% The unit step function $u(t)$ arises naturally in many practical situations. For example, a unit step can
+% model the act of turning on a system. With the help of relational operators, anonymous functions
+% can represent the unit step function.
+% In MATLAB, a relational operator compares two items. If the comparison is true, a logical true
+% (1) is returned. If the comparison is false, a logical false (0) is returned. Sometimes called indicator
+% functions, relational operators indicates whether a condition is true. Six relational operators are
+% available: <, >, <=, >=, ==, and ~=.
+%   The unit step function is readily defined using the >= relational operator.
+
+u = @(t) 1.0.*(t>=0);
+
+%%
+% Any function with a jump discontinuity, such as the unit step, is difficult to plot. Consider plotting
+% $u(t)$ by using $t = (-2:2)$.
+
+t = (-2:2);
+plot(t, u(t));
+xlabel ('t');
+ylabel('u(t)');
+
+%%
+% *Figure 1.48* $u(t)$ for $t = (-2:2)$.
+
+%%
+% Two significant problems are apparent in the resulting plot, shown in Fig. 1.48. First,
+% MATLAB automatically scales plot axes to tightly bound the data. In this case, this normally
+% desirable feature obscures most of the plot. Second, MATLAB connects plot data with lines,
+% making a true jump discontinuity difficult to achieve. The coarse resolution of vector t emphasizes
+% the effect by showing an erroneous sloping line between t = −1 and t = 0.
+% The first problem is corrected by vertically enlarging the bounding box with the axis
+% command. The second problem is reduced, but not eliminated, by adding points to vector t.
+
+t = (-2:0.01:2);
+plot(t, u(t));
+xlabel('t');
+ylabel('u(t)');
+axis([-2 2 -0.1 1.1]);
 ##### SOURCE END #####
 -->
 </body>
