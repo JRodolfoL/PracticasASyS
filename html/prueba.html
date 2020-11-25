@@ -118,6 +118,16 @@ h2 a, h2 a:visited {
  
 </pre>
 
+<p>The plot command graphs the result, which is shown</p>
+
+<pre class="pre-text">&gt;&gt; plot(t,f(t));
+&gt;&gt; xlabel(’t’); ylabel(’f(t)’); grid;</pre>
+
+<pre class="oct-code">plot(t, f(t));
+xlabel(<span class="string">'t'</span>);
+ylabel(<span class="string">'f(t)'</span>);
+grid;</pre>
+<img src="prueba-1.png" alt="prueba-1.png">
 <footer>
 <hr>
 <a href="https://www.octave.org">Published with GNU Octave 5.2.0</a>
@@ -174,6 +184,20 @@ t = (-2:2);
 % This vector input is evaluated from a vector output.
 
 f(t)
+
+%%
+% The plot command graphs the result, which is shown
+
+%%
+%
+%  >> plot(t,f(t));
+%  >> xlabel(’t’); ylabel(’f(t)’); grid;
+%
+
+plot(t, f(t));
+xlabel('t');
+ylabel('f(t)');
+grid;
 ##### SOURCE END #####
 -->
 </body>

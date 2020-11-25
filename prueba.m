@@ -48,3 +48,17 @@ t = (-2:2);
 % This vector input is evaluated from a vector output.
 
 f(t)
+
+%%
+% The plot command graphs the result, which is shown
+
+%%
+%
+%  >> plot(t,f(t));
+%  >> xlabel(’t’); ylabel(’f(t)’); grid;
+%
+
+plot(t, f(t));
+xlabel('t');
+ylabel('f(t)');
+grid;
