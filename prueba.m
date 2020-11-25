@@ -50,13 +50,23 @@ t = (-2:2);
 f(t)
 
 %%
-% The plot command graphs the result, which is shown
+% The plot command graphs the result
+
 
 %%
 %
 %  >> plot(t,f(t));
 %  >> xlabel(’t’); ylabel(’f(t)’); grid;
 %
+
+%%
+% Grid lines, added by using the grid command, aid feature identification. Unfortunately, the
+% plot does not illustrate the expected oscillatory behavior. More points are required to adequately
+% represent f (t).
+% The question, then, is how many points is enough? † If too few points are chosen, information
+% is lost. If too many points are chosen, memory and time are wasted. A balance is needed. For
+% oscillatory functions, plotting 20 to 200 points per oscillation is normally adequate. For the present
+% case, t is chosen to give 100 points per oscillation.
 
 plot(t, f(t));
 xlabel('t');
