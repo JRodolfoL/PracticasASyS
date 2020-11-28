@@ -202,6 +202,76 @@ title('Figure 1.52 g(−t + 1) over (−2 ≤ t ≤ 2)');
 plot(t,g(2*t+1)+g(-t+1)); xlabel('t'); ylabel('h(t)'); grid;
 title('Figure 1.53 h(t) = g(2t + 1) + g(−t + 1) over (−2 ≤ t ≤ 2).');
 
+%%
+% *1.11-4 Numerical Integration and Estimating Signal Energy*
+%%
+% Interesting signals often have nontrivial mathematical representations. Computing signal energy,
+% which involves integrating the square of these expressions, can be a daunting task. Fortunately,
+% many difficult integrals can be accurately estimated by means of numerical integration techniques.
+% Even if the integration appears simple, numerical integration provides a good way to verify
+% analytical results.
+
+%%
+% To start, consider the simple signal $x(t) = e^{-t}(u(t) − u(t − 1))$. The energy of $x(t)$ is expressed
+% as $E_{x} = \int_{-\infty}^{\infty} |x(t)|^{2} dt = \int_{0}^{1} e^{-2t}$. Integrating yields $E_{x} = 0.5(1 − e^{−2})$ ≈ 0.4323. The energy
+% integral can also be evaluated numerically. Figure 1.27 helps illustrate the simple method of
+% rectangular approximation: evaluate the integrand at points uniformly separated by $\Delta t$, multiply
+% each by $ \Delta t$ to compute rectangle areas, and then sum over all rectangles. First, we create function
+% $x(t)$.
+
+x = @(t) exp(-t).*((t>=0)&(t<1));
+
+%%
+% With $\Delta t = 0.01$, a suitable time vector is created.
+
+t = (0:0.01:1);
+
+%%
+% The final result is computed by using the sum command.
+
+E_x = sum(x(t).*x(t)*0.01)
+
+%%
+% The result is not perfect, but at 1% relative error it is close. By reducing $ \Delta t$, the approximation is
+% improved. For example,$ \Delta t = 0.001$ yields E_x = 0.4328, or 0.1% relative error.
+% Although simple to visualize, rectangular approximation is not the best numerical integration
+% technique. The MATLAB function quad implements a better numerical integration technique
+% called recursive adaptive Simpson quadrature. To operate, quad requires a function describing
+% the integrand, the lower limit of integration, and the upper limit of integration. Notice that no $\Delta t$
+% needs to be specified.
+
+%%
+% To use quad to estimate E x , the integrand must first be described.
+
+x_squared = @(t) x(t).*x(t);
+
+%%
+% Estimating $E_{x}$ immediately follows.
+
+E_x = quad(x_squared,0,1)
+
+%%
+% In this case, the relative error is −0.0026%.
+%%
+% The same techniques can be used to estimate the energy of more complex signals. Consider
+% $g(t)$, defined previously. Energy is expressed as $E_{g}=\int_{0}^{\infty}e^{-2t}cos^{2}(2\pi t)dt$. A closed-form solution
+% exists, but it takes some effort. MATLAB provides an answer more quickly.
+
+g_squared = @(t) g(t).*g(t);
+
+%%
+% Although the upper limit of integration is infinity, the exponentially decaying envelope ensures
+% $g(t)$ is effectively zero well before $t$ = 100. Thus, an upper limit of t = 100 is used along with
+% $\Delta t$ = 0.001.
+
+t = (0:0.001:100);
+E_g = sum(g_squared(t)*0.001)
+
+%%
+% A slightly better approximation is obtained with the quad function.
+
+E_g = quad(g_squared,0,100)
+
 %% 2) Resolución del problema 1.2-2
 
 %%
