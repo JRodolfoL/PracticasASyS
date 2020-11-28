@@ -184,22 +184,27 @@ t = (-2:0.01:2);
 plot(t,g(2*t+1)); xlabel('t'); ylabel('g(2t+1)'); grid;
 title('*Figure 1.51* $g(2t + 1) over (−2 ≤ t ≤ 2)$.');
 
-%%
-%
-
-plot(t,g(-t+1)); xlabel('t'); ylabel('g(-t+1)'); grid;
-title('*Figure 1.52* $g(−t + 1)$ over $(−2 ≤ t ≤ 2)$');
-
-%%
-%
-
-plot(t,g(2*t+1)+g(-t+1)); xlabel('t'); ylabel('h(t)'); grid;
-title('*Figure 1.53* $h(t) = g(2t + 1) + g(−t + 1)$ over $(−2 ≤ t ≤ 2)$.');
 
 %%
 % Figure 1.51 confirms the expected waveform compression and left shift. As a final check, realize
 % that function $g(·)$ turns on when the input argument is zero. Therefore, $g(2t + 1)$ should turn on
 % when 2t + 1 = 0 or at t = −0.5, a fact again confirmed by Fig. 1.51.
+
+%%
+% Next, consider plotting $g(−t + 1)$ over $(−2 ≤ t ≤ 2)$. Since a < 0, the waveform will be
+% reflected. Adding the condition b > 0 shifts the final waveform to the right.
+
+plot(t,g(-t+1)); xlabel('t'); ylabel('g(-t+1)'); grid;
+title('*Figure 1.52* $g(−t + 1)$ over $(−2 ≤ t ≤ 2)$');
+
+%%
+% Figure 1.52 confirms both the reflection and the right shift.
+% Up to this point, Figs. 1.51 and 1.52 could be reasonably sketched by hand. Consider plotting
+% the more complicated function $h(t) = g(2t + 1) + g(−t + 1)$ over $(−2 ≤ t ≤ 2)$ (Fig. 1.53); an
+% accurate hand sketch would be quite difficult. With MATLAB, the work is much less burdensome.
+
+plot(t,g(2*t+1)+g(-t+1)); xlabel('t'); ylabel('h(t)'); grid;
+title('*Figure 1.53* $h(t) = g(2t + 1) + g(−t + 1)$ over $(−2 ≤ t ≤ 2)$.');
 
 %% 2) Resolución del problema 1.2-2
 
