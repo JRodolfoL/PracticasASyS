@@ -151,10 +151,15 @@ axis([-1 2 -0.1 1.1]);
 
 %%
 % For the signal x(t) illustrated in Fig. P1.2-2, sketch
+%%
 % A) $x(t-4)$
+%%
 % B) $x(t/1.5)$
+%%
 % C) $x(-t)$
+%%
 % D) $x(2t-4)$
+%%
 % E) $x(2-t)$
 
 
@@ -182,7 +187,7 @@ ylabel('x(t)');
 % *A)* $x(t-4)$
 
 
-figure (2);
+
 x1=@(t) f(t-4);
 
 plot(t,x1(t));
@@ -198,7 +203,7 @@ ylabel('x(t-4)');
 %%
 % *B)* $x(t/1.5)$
 
-figure (3);
+
 
 x2=@(t) f(t/1.5);
 
@@ -216,7 +221,7 @@ ylabel('x(t/1.5)');
 % *C)* $x(-t)$
 
 
-figure (4);
+
 
 x3=@(t) f(-t);
 
@@ -234,7 +239,7 @@ ylabel('x(-t)');
 % *D)* $x(2t-4)$
 
 
-figure (5);
+
 
 x4=@(t) f(2.*t - 4);
 
@@ -252,7 +257,7 @@ ylabel('x(2t-4)');
 % *E)* $x(2t-4)$
 
 
-figure (6);
+
 
 x5=@(t) f(2 - t);
 
@@ -269,9 +274,11 @@ ylabel('x(2-t)');
 
 t=(-3*pi:0.001:3*pi);
 
+%%
 % X(t)=2^t*cos(2pit);
 % Ximpar(t)=1/2(x(t)-x(-t));
 % Ximpar(t)=(2^(-t-1))*cos(2pit)-(2^(t-1))*cos(-2pit);
+
 
 %% Resoluciòn del problema 1.11-1
 %
@@ -304,7 +311,7 @@ grid on;
 %
 % *Primer rango*
 
-subplot(2,2,1)
+subplot(2,2,1);
 y=0;
 t=linspace(-4*pi,-2*pi,1000);
 for k=1:10
@@ -312,18 +319,18 @@ for k=1:10
 x=cos(2*pi*k*t);
 y=y+x;
 end
-plot(t,y)
-grid on
+plot(t,y);
+grid on;
 ax = gca;
-xlabel('Dominio t')
-ylabel('x(t)')
-title('Gráfica rango -4pi<=t<=-2pi ')
+xlabel('Dominio t');
+ylabel('x(t)');
+title('Gráfica rango -4pi<=t<=-2pi ');
 
 %% 
 % *Segundo rango*
 
 
-subplot(2,2,2)
+subplot(2,2,2);
 y=0;
 t=linspace(-2*pi,0,1000);
 for k=1:10
@@ -331,19 +338,19 @@ for k=1:10
 x=cos(2*pi*k*t);
 y=y+x;
 end
-plot(t,y)
-grid on
+plot(t,y);
+grid on;
 ax = gca;
-xlabel('Dominio t')
-ylabel('x(t)')
+xlabel('Dominio t');
+ylabel('x(t)');
 
-title('Gráfica rango -2pi<=t<=0 ')
+title('Gráfica rango -2pi<=t<=0 ');
 
 %%
 % *Tercer rango*
 
 
-subplot(2,2,3)
+subplot(2,2,3);
 y=0;
 t=linspace(0,2*pi,1000);
 for k=1:10
@@ -351,17 +358,17 @@ for k=1:10
 x=cos(2*pi*k*t);
 y=y+x;
 end
-plot(t,y)
-grid on
+plot(t,y);
+grid on;
 ax = gca;
-xlabel('Dominio t')
-ylabel('x(t)')
-title('Gráfica rango 0<=t<=2pi ')
+xlabel('Dominio t');
+ylabel('x(t)');
+title('Gráfica rango 0<=t<=2pi ');
 
 %%
 % *Cuarto rango*
 
-subplot(2,2,4)
+subplot(2,2,4);
 y=0;
 t=linspace(2*pi,4*pi,1000);
 for k=1:10
@@ -369,9 +376,9 @@ for k=1:10
 x=cos(2*pi*k*t);
 y=y+x;
 end
-plot(t,y)
-grid on
+plot(t,y);
+grid on;
 ax = gca;
-xlabel('Dominio t')
-ylabel('x(t)')
-title('Gráfica rango 2pi<=t<42pi ')
+xlabel('Dominio t');
+ylabel('x(t)');
+title('Gráfica rango 2pi<=t<42pi ');

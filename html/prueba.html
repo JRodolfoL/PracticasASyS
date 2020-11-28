@@ -203,12 +203,17 @@ xlabel(<span class="string">'t'</span>);
 ylabel(<span class="string">'p(t) = u(t) - u(t-1)'</span>);
 axis([-1 2 -0.1 1.1]);</pre>
 <img src="prueba-5.png" alt="prueba-5.png"><h2><a id="node2">Resolución del problema 1.2-2</a></h2>
-<p>For the signal x(t) illustrated in Fig. P1.2-2, sketch
-A) $x(t-4)$
-B) $x(t/1.5)$
-C) $x(-t)$
-D) $x(2t-4)$
-E) $x(2-t)$</p>
+<p>For the signal x(t) illustrated in Fig. P1.2-2, sketch</p>
+
+<p>A) $x(t-4)$</p>
+
+<p>B) $x(t/1.5)$</p>
+
+<p>C) $x(-t)$</p>
+
+<p>D) $x(2t-4)$</p>
+
+<p>E) $x(2-t)$</p>
 
 <pre class="oct-code">u = @(t) 1.0.*(t&gt;=0);
 
@@ -232,8 +237,7 @@ ylabel(<span class="string">'x(t)'</span>);</pre>
 <img src="prueba-6.png" alt="prueba-6.png">
 <p><b>A)</b> $x(t-4)$</p>
 
-<pre class="oct-code">figure (2);
-x1=@(t) f(t-4);
+<pre class="oct-code">x1=@(t) f(t-4);
 
 plot(t,x1(t));
 
@@ -244,12 +248,10 @@ title(<span class="string">'Inciso a'</span>);
 xlabel(<span class="string">'t'</span>);
 
 ylabel(<span class="string">'x(t-4)'</span>);</pre>
-
+<img src="prueba-7.png" alt="prueba-7.png">
 <p><b>B)</b> $x(t/1.5)$</p>
 
-<pre class="oct-code">figure (3);
-
-x2=@(t) f(t/1.5);
+<pre class="oct-code">x2=@(t) f(t/1.5);
 
 plot(t,x2(t));
 
@@ -260,12 +262,10 @@ title(<span class="string">'Inciso b'</span>);
 xlabel(<span class="string">'t'</span>);
 
 ylabel(<span class="string">'x(t/1.5)'</span>);</pre>
-
+<img src="prueba-8.png" alt="prueba-8.png">
 <p><b>C)</b> $x(-t)$</p>
 
-<pre class="oct-code">figure (4);
-
-x3=@(t) f(-t);
+<pre class="oct-code">x3=@(t) f(-t);
 
 plot(t,x3(t));
 
@@ -276,12 +276,10 @@ title(<span class="string">'Inciso c'</span>);
 xlabel(<span class="string">'t'</span>);
 
 ylabel(<span class="string">'x(-t)'</span>);</pre>
-
+<img src="prueba-9.png" alt="prueba-9.png">
 <p><b>D)</b> $x(2t-4)$</p>
 
-<pre class="oct-code">figure (5);
-
-x4=@(t) f(2.*t - 4);
+<pre class="oct-code">x4=@(t) f(2.*t - 4);
 
 plot(t,x4(t));
 
@@ -292,12 +290,10 @@ title(<span class="string">'Inciso d'</span>);
 xlabel(<span class="string">'t'</span>);
 
 ylabel(<span class="string">'x(2t-4)'</span>);</pre>
-
+<img src="prueba-10.png" alt="prueba-10.png">
 <p><b>E)</b> $x(2t-4)$</p>
 
-<pre class="oct-code">figure (6);
-
-x5=@(t) f(2 - t);
+<pre class="oct-code">x5=@(t) f(2 - t);
 
 plot(t,x5(t));
 
@@ -310,12 +306,11 @@ xlabel(<span class="string">'t'</span>);
 ylabel(<span class="string">'x(2-t)'</span>);
 
 
-t=(-3*pi:0.001:3*pi);
-
-<span class="comment">% X(t)=2^t*cos(2pit);</span>
-<span class="comment">% Ximpar(t)=1/2(x(t)-x(-t));</span>
-<span class="comment">% Ximpar(t)=(2^(-t-1))*cos(2pit)-(2^(t-1))*cos(-2pit);</span>
-</pre>
+t=(-3*pi:0.001:3*pi);</pre>
+<img src="prueba-11.png" alt="prueba-11.png">
+<p>X(t)=2^t*cos(2pit);
+Ximpar(t)=1/2(x(t)-x(-t));
+Ximpar(t)=(2^(-t-1))*cos(2pit)-(2^(t-1))*cos(-2pit);</p>
 <h2><a id="node3">Resoluciòn del problema 1.11-1</a></h2>
 <pre class="oct-code"><span class="keyword">for</span> i=1:length(t)
 <span class="keyword">if</span> t(i)&lt;=-pi
@@ -332,7 +327,7 @@ ylabel(<span class="string">'Ximpar(t)'</span>);
 xlabel(<span class="string">'t'</span>);
 title(<span class="string">'Ejercicio 1.11-1'</span>);
 grid on;</pre>
-<h2><a id="node4">Ejercicio 4:</a></h2>
+<img src="prueba-12.png" alt="prueba-12.png"><h2><a id="node4">Ejercicio 4:</a></h2>
 <p>Construye la grafica de</p>
 
 <p>$$x(t) = \sum_{k=1}^{10} cos(2\pi k t)$$</p>
@@ -342,7 +337,7 @@ Procedimiento:</p>
 
 <p><b>Primer rango</b></p>
 
-<pre class="oct-code">subplot(2,2,1)
+<pre class="oct-code">subplot(2,2,1);
 y=0;
 t=linspace(-4*pi,-2*pi,1000);
 <span class="keyword">for</span> k=1:10
@@ -350,16 +345,16 @@ t=linspace(-4*pi,-2*pi,1000);
 x=cos(2*pi*k*t);
 y=y+x;
 <span class="keyword">end</span>
-plot(t,y)
-grid on
+plot(t,y);
+grid on;
 ax = gca;
-xlabel(<span class="string">'Dominio t'</span>)
-ylabel(<span class="string">'x(t)'</span>)
-title(<span class="string">'Gráfica rango -4pi&lt;=t&lt;=-2pi '</span>)</pre>
-
+xlabel(<span class="string">'Dominio t'</span>);
+ylabel(<span class="string">'x(t)'</span>);
+title(<span class="string">'Gráfica rango -4pi&lt;=t&lt;=-2pi '</span>);</pre>
+<img src="prueba-13.png" alt="prueba-13.png">
 <p><b>Segundo rango</b></p>
 
-<pre class="oct-code">subplot(2,2,2)
+<pre class="oct-code">subplot(2,2,2);
 y=0;
 t=linspace(-2*pi,0,1000);
 <span class="keyword">for</span> k=1:10
@@ -367,17 +362,17 @@ t=linspace(-2*pi,0,1000);
 x=cos(2*pi*k*t);
 y=y+x;
 <span class="keyword">end</span>
-plot(t,y)
-grid on
+plot(t,y);
+grid on;
 ax = gca;
-xlabel(<span class="string">'Dominio t'</span>)
-ylabel(<span class="string">'x(t)'</span>)
+xlabel(<span class="string">'Dominio t'</span>);
+ylabel(<span class="string">'x(t)'</span>);
 
-title(<span class="string">'Gráfica rango -2pi&lt;=t&lt;=0 '</span>)</pre>
-
+title(<span class="string">'Gráfica rango -2pi&lt;=t&lt;=0 '</span>);</pre>
+<img src="prueba-14.png" alt="prueba-14.png">
 <p><b>Tercer rango</b></p>
 
-<pre class="oct-code">subplot(2,2,3)
+<pre class="oct-code">subplot(2,2,3);
 y=0;
 t=linspace(0,2*pi,1000);
 <span class="keyword">for</span> k=1:10
@@ -385,16 +380,16 @@ t=linspace(0,2*pi,1000);
 x=cos(2*pi*k*t);
 y=y+x;
 <span class="keyword">end</span>
-plot(t,y)
-grid on
+plot(t,y);
+grid on;
 ax = gca;
-xlabel(<span class="string">'Dominio t'</span>)
-ylabel(<span class="string">'x(t)'</span>)
-title(<span class="string">'Gráfica rango 0&lt;=t&lt;=2pi '</span>)</pre>
-
+xlabel(<span class="string">'Dominio t'</span>);
+ylabel(<span class="string">'x(t)'</span>);
+title(<span class="string">'Gráfica rango 0&lt;=t&lt;=2pi '</span>);</pre>
+<img src="prueba-15.png" alt="prueba-15.png">
 <p><b>Cuarto rango</b></p>
 
-<pre class="oct-code">subplot(2,2,4)
+<pre class="oct-code">subplot(2,2,4);
 y=0;
 t=linspace(2*pi,4*pi,1000);
 <span class="keyword">for</span> k=1:10
@@ -402,13 +397,13 @@ t=linspace(2*pi,4*pi,1000);
 x=cos(2*pi*k*t);
 y=y+x;
 <span class="keyword">end</span>
-plot(t,y)
-grid on
+plot(t,y);
+grid on;
 ax = gca;
-xlabel(<span class="string">'Dominio t'</span>)
-ylabel(<span class="string">'x(t)'</span>)
-title(<span class="string">'Gráfica rango 2pi&lt;=t&lt;42pi '</span>)</pre>
-
+xlabel(<span class="string">'Dominio t'</span>);
+ylabel(<span class="string">'x(t)'</span>);
+title(<span class="string">'Gráfica rango 2pi&lt;=t&lt;42pi '</span>);</pre>
+<img src="prueba-16.png" alt="prueba-16.png">
 <footer>
 <hr>
 <a href="https://www.octave.org">Published with GNU Octave 5.2.0</a>
@@ -568,10 +563,15 @@ axis([-1 2 -0.1 1.1]);
 
 %%
 % For the signal x(t) illustrated in Fig. P1.2-2, sketch
+%%
 % A) $x(t-4)$
+%%
 % B) $x(t/1.5)$
+%%
 % C) $x(-t)$
+%%
 % D) $x(2t-4)$
+%%
 % E) $x(2-t)$
 
 
@@ -599,7 +599,7 @@ ylabel('x(t)');
 % *A)* $x(t-4)$
 
 
-figure (2);
+
 x1=@(t) f(t-4);
 
 plot(t,x1(t));
@@ -615,7 +615,7 @@ ylabel('x(t-4)');
 %%
 % *B)* $x(t/1.5)$
 
-figure (3);
+
 
 x2=@(t) f(t/1.5);
 
@@ -633,7 +633,7 @@ ylabel('x(t/1.5)');
 % *C)* $x(-t)$
 
 
-figure (4);
+
 
 x3=@(t) f(-t);
 
@@ -651,7 +651,7 @@ ylabel('x(-t)');
 % *D)* $x(2t-4)$
 
 
-figure (5);
+
 
 x4=@(t) f(2.*t - 4);
 
@@ -669,7 +669,7 @@ ylabel('x(2t-4)');
 % *E)* $x(2t-4)$
 
 
-figure (6);
+
 
 x5=@(t) f(2 - t);
 
@@ -686,9 +686,11 @@ ylabel('x(2-t)');
 
 t=(-3*pi:0.001:3*pi);
 
+%%
 % X(t)=2^t*cos(2pit);
 % Ximpar(t)=1/2(x(t)-x(-t));
 % Ximpar(t)=(2^(-t-1))*cos(2pit)-(2^(t-1))*cos(-2pit);
+
 
 %% Resoluciòn del problema 1.11-1
 %
@@ -721,7 +723,7 @@ grid on;
 %
 % *Primer rango*
 
-subplot(2,2,1)
+subplot(2,2,1);
 y=0;
 t=linspace(-4*pi,-2*pi,1000);
 for k=1:10
@@ -729,18 +731,18 @@ for k=1:10
 x=cos(2*pi*k*t);
 y=y+x;
 end
-plot(t,y)
-grid on
+plot(t,y);
+grid on;
 ax = gca;
-xlabel('Dominio t')
-ylabel('x(t)')
-title('Gráfica rango -4pi<=t<=-2pi ')
+xlabel('Dominio t');
+ylabel('x(t)');
+title('Gráfica rango -4pi<=t<=-2pi ');
 
 %%
 % *Segundo rango*
 
 
-subplot(2,2,2)
+subplot(2,2,2);
 y=0;
 t=linspace(-2*pi,0,1000);
 for k=1:10
@@ -748,19 +750,19 @@ for k=1:10
 x=cos(2*pi*k*t);
 y=y+x;
 end
-plot(t,y)
-grid on
+plot(t,y);
+grid on;
 ax = gca;
-xlabel('Dominio t')
-ylabel('x(t)')
+xlabel('Dominio t');
+ylabel('x(t)');
 
-title('Gráfica rango -2pi<=t<=0 ')
+title('Gráfica rango -2pi<=t<=0 ');
 
 %%
 % *Tercer rango*
 
 
-subplot(2,2,3)
+subplot(2,2,3);
 y=0;
 t=linspace(0,2*pi,1000);
 for k=1:10
@@ -768,17 +770,17 @@ for k=1:10
 x=cos(2*pi*k*t);
 y=y+x;
 end
-plot(t,y)
-grid on
+plot(t,y);
+grid on;
 ax = gca;
-xlabel('Dominio t')
-ylabel('x(t)')
-title('Gráfica rango 0<=t<=2pi ')
+xlabel('Dominio t');
+ylabel('x(t)');
+title('Gráfica rango 0<=t<=2pi ');
 
 %%
 % *Cuarto rango*
 
-subplot(2,2,4)
+subplot(2,2,4);
 y=0;
 t=linspace(2*pi,4*pi,1000);
 for k=1:10
@@ -786,12 +788,12 @@ for k=1:10
 x=cos(2*pi*k*t);
 y=y+x;
 end
-plot(t,y)
-grid on
+plot(t,y);
+grid on;
 ax = gca;
-xlabel('Dominio t')
-ylabel('x(t)')
-title('Gráfica rango 2pi<=t<42pi ')
+xlabel('Dominio t');
+ylabel('x(t)');
+title('Gráfica rango 2pi<=t<42pi ');
 ##### SOURCE END #####
 -->
 </body>
