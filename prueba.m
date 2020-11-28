@@ -1,4 +1,4 @@
-## Práctica 1: Señales en tiempo continuo.
+%% Práctica 1: Señales en tiempo continuo.
 %
 % *Integrantes:*
 %
@@ -8,13 +8,16 @@
 % * García Arteaga Alejandro
 % * López Galván José Rodolfo
 %
-##
-
-%% Objetivos 
+% *Objetivos:* 
+%
 % * Manipulación básica de MATLAB
 % * Gráficas de señales reales y complejas continuas
 % * Transformación de señales continuas (escalamientos y traslaciones)
 % * Calculo de energía y potencia de señales continuas
+
+%%
+
+
 
 %%  1.11 Working with functions.
 %
@@ -124,3 +127,141 @@ plot(t, u(t));
 xlabel('t');
 ylabel('u(t)');
 axis([-2 2 -0.1 1.1]);
+
+%%
+% *Figure 1.48* $u(t)$ for $t = (-2:0.01:2)$.
+
+%%
+% The four-element vector argument of axis specifies x axis minimum, x axis maximum, y axis
+% minimum, and y axis maximum, respectively. The improved results are shown in Fig. 1.49.
+% Relational operators can be combined using logical AND, logical OR, and logical negation: &,
+% |, and ~, respectively. For example, (t>0) & (t<1) and ~((t<=0) $|$ (t>=1)) both test if 0 < t < 1.
+% To demonstrate, consider defining and plotting the unit pulse p(t) = u(t) − u(t − 1), as shown in
+% Fig. 1.50:
+
+p =@(t) 1.0.*((t>=0)&(t<1));
+t = (-1:0.01:2);
+plot(t, p(t));
+xlabel('t');
+ylabel('p(t) = u(t) - u(t-1)');
+axis([-1 2 -0.1 1.1]);
+
+
+%% Resolución del problema 1.2-2
+
+%%
+% For the signal x(t) illustrated in Fig. P1.2-2, sketch
+% A) $x(t-4)$
+% B) $x(t/1.5)$
+% C) $x(-t)$
+% D) $x(2t-4)$
+% E) $x(2-t)$
+
+
+u = @(t) 1.0.*(t>=0);
+
+u1= @(t) 1.0.*((t>=-4)&(t<0));
+
+u2=@(t) 1.0.*((t>=0)&(t<=2));
+
+f=@(t) (-t.*u1(t)) + (t.*u2(t));
+
+t = (-20:0.01:20);
+
+plot(t,f(t))
+
+axis([-5 5 -1 5]);
+
+title('Fig. P1.2-2');
+
+xlabel('t');
+
+ylabel('x(t)');
+
+%%
+% *A)* $x(t-4)$
+
+
+figure (2);
+x1=@(t) f(t-4);
+
+plot(t,x1(t));
+
+axis([-1 9 -1 5]);
+
+title('Inciso a');
+
+xlabel('t');
+
+ylabel('x(t-4)');
+
+%%
+% *B)* $x(t/1.5)$
+
+figure (3);
+
+x2=@(t) f(t/1.5);
+
+plot(t,x2(t));
+
+axis([-8 5 -1 5]);
+
+title('Inciso b');
+
+xlabel('t');
+
+ylabel('x(t/1.5)');
+
+%%
+% *C)* $x(-t)$
+
+
+figure (4);
+
+x3=@(t) f(-t);
+
+plot(t,x3(t));
+
+axis([-5 5 -1 5]);
+
+title('Inciso c');
+
+xlabel('t');
+
+ylabel('x(-t)');
+
+%%
+% *D)* $x(2t-4)$
+
+
+figure (5);
+
+x4=@(t) f(2.*t - 4);
+
+plot(t,x4(t));
+
+axis([-5 5 -1 5]);
+
+title('Inciso d');
+
+xlabel('t');
+
+ylabel('x(2t-4)');
+
+%%
+% *E)* $x(2t-4)$
+
+
+figure (6);
+
+x5=@(t) f(2 - t);
+
+plot(t,x5(t));
+
+axis([-1 8 -1 5]);
+
+title('Inciso e');
+
+xlabel('t');
+
+ylabel('x(2-t)');
