@@ -74,7 +74,6 @@ plot(t, f(t));
 xlabel('t');
 ylabel('f(t)');
 grid;
-
 %%
 % *Figure 1.46* $f(t) = e^{-t}cos(2\pi t)$ for $t = (-2::2)$.
 
@@ -83,7 +82,6 @@ plot(t1, f(t1));
 xlabel('t');
 ylabel('f(t)');
 grid;
-
 %%
 % *Figure 1.47* $f(t) = e^{-t}cos(2\pi t)$ for $t = (-2:0.01:2)$.
 
@@ -128,9 +126,7 @@ plot(t, u(t));
 xlabel('t');
 ylabel('u(t)');
 axis([-2 2 -0.1 1.1]);
-
-%%
-% *Figure 1.48* $u(t)$ for $t = (-2:0.01:2)$.
+title('Figure 1.48 u(t) for t = (-2:0.01:2)');
 
 %%
 % The four-element vector argument of axis specifies x axis minimum, x axis maximum, y axis
@@ -146,7 +142,7 @@ plot(t, p(t));
 xlabel('t');
 ylabel('p(t) = u(t) - u(t-1)');
 axis([-1 2 -0.1 1.1]);
-title('*Figure 1.50* $p(t) = u(t) − u(t − 1) over (−1 ≤ t ≤ 2)$.');
+title('Figure 1.50 p(t) = u(t) − u(t − 1) over (−1 ≤ t ≤ 2).');
 %%
 % Since anonymous functions can be constructed using other anonymous functions, we could
 % have used our previously defined unit step anonymous function to define p(t) as p = @(t)
@@ -182,7 +178,7 @@ g = @(t) f(t).*u(t);
 
 t = (-2:0.01:2);
 plot(t,g(2*t+1)); xlabel('t'); ylabel('g(2t+1)'); grid;
-title('*Figure 1.51* $g(2t + 1) over (−2 ≤ t ≤ 2)$.');
+title('Figure 1.51 g(2t + 1) over (−2 ≤ t ≤ 2).');
 
 
 %%
@@ -195,7 +191,7 @@ title('*Figure 1.51* $g(2t + 1) over (−2 ≤ t ≤ 2)$.');
 % reflected. Adding the condition b > 0 shifts the final waveform to the right.
 
 plot(t,g(-t+1)); xlabel('t'); ylabel('g(-t+1)'); grid;
-title('*Figure 1.52* $g(−t + 1)$ over $(−2 ≤ t ≤ 2)$');
+title('Figure 1.52 g(−t + 1) over (−2 ≤ t ≤ 2)');
 
 %%
 % Figure 1.52 confirms both the reflection and the right shift.
@@ -204,7 +200,7 @@ title('*Figure 1.52* $g(−t + 1)$ over $(−2 ≤ t ≤ 2)$');
 % accurate hand sketch would be quite difficult. With MATLAB, the work is much less burdensome.
 
 plot(t,g(2*t+1)+g(-t+1)); xlabel('t'); ylabel('h(t)'); grid;
-title('*Figure 1.53* $h(t) = g(2t + 1) + g(−t + 1)$ over $(−2 ≤ t ≤ 2)$.');
+title('Figure 1.53 h(t) = g(2t + 1) + g(−t + 1) over (−2 ≤ t ≤ 2).');
 
 %% 2) Resolución del problema 1.2-2
 
