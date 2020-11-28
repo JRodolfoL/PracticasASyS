@@ -19,7 +19,7 @@
 
 
 
-%%  1.11 Working with functions.
+%%  1) Working with functions.
 %
 % Working with functions is fundamental to signals and systems applications. MATLAB provides several methods of defining and evaluating functions. An understanding and proficient use of these methods are therefore necessary and beneficial.
 
@@ -111,7 +111,8 @@ xlabel ('t');
 ylabel('u(t)');
 
 %%
-% *Figure 1.48* $u(t)$ for $t = (-2:2)$.
+% *Figure 1.48* $u(t)$ for $t = (-2:2)$.ous functions, we could
+% have used our previously defined unit step anonymous function to define p(t) as p = @(t)
 
 %%
 % Two significant problems are apparent in the resulting plot, shown in Fig. 1.48. First,
@@ -145,9 +146,62 @@ plot(t, p(t));
 xlabel('t');
 ylabel('p(t) = u(t) - u(t-1)');
 axis([-1 2 -0.1 1.1]);
+title('*Figure 1.50* $p(t) = u(t) − u(t − 1) over (−1 ≤ t ≤ 2)$.');
+%%
+% Since anonymous functions can be constructed using other anonymous functions, we could
+% have used our previously defined unit step anonymous function to define p(t) as p = @(t)
+% u(t)-u(t-1);.
 
+%%
+% For scalar operands, MATLAB also supports two short-circuit logical constructs. A
+% short-circuit logical AND is performed by using &&, and a short-circuit logical OR is performed by
+% using ||. Short-circuit logical operators are often more efficient than traditional logical operators
+% because they test the second portion of the expression only when necessary. That is, when scalar
+% expression A is found false in (A&&B), scalar expression B is not evaluated, since a false result
+% is already guaranteed. Similarly, scalar expression B is not evaluated when scalar expression A is
+% found true in (A||B), since a true result is already guaranteed.
 
-%% Resolución del problema 1.2-2
+%%
+% *1.11-3 Visualizing Operations on the Independent Variable*
+
+%%
+% Two operations on a function’s independent variable are commonly encountered: shifting and
+% scaling. Anonymous functions are well suited to investigate both operations.
+% Consider $g(t) = f (t)u(t) = e −t cos (2π t)u(t)$, a causal version of $f(t)$. MATLAB easily
+% multiplies anonymous functions. Thus, we create $g(t)$ by multiplying our anonymous functions
+% for $f(t)$ and $u(t)$.
+
+g = @(t) f(t).*u(t);
+
+%%
+% A combined shifting and scaling operation is represented by $g(at + b)$, where a and b are
+% arbitrary real constants. As an example, consider plotting $g(2t + 1)$ over $(−2 ≤ t ≤ 2)$. With a = 2,
+% the function is compressed by a factor of 2, resulting in twice the oscillations per unit t. Adding
+% the condition b > 0 shifts the waveform to the left. Given anonymous function g, an accurate plot
+% is nearly trivial to obtain.
+
+t = (-2:0.01:2);
+plot(t,g(2*t+1)); xlabel('t'); ylabel('g(2t+1)'); grid;
+title('*Figure 1.51* $g(2t + 1) over (−2 ≤ t ≤ 2)$.');
+
+%%
+%
+
+plot(t,g(-t+1)); xlabel('t'); ylabel('g(-t+1)'); grid;
+title('*Figure 1.52* $g(−t + 1)$ over $(−2 ≤ t ≤ 2)$');
+
+%%
+%
+
+plot(t,g(2*t+1)+g(-t+1)); xlabel('t'); ylabel('h(t)'); grid;
+title('*Figure 1.53* $h(t) = g(2t + 1) + g(−t + 1)$ over $(−2 ≤ t ≤ 2)$.');
+
+%%
+% Figure 1.51 confirms the expected waveform compression and left shift. As a final check, realize
+% that function $g(·)$ turns on when the input argument is zero. Therefore, $g(2t + 1)$ should turn on
+% when 2t + 1 = 0 or at t = −0.5, a fact again confirmed by Fig. 1.51.
+
+%% 2) Resolución del problema 1.2-2
 
 %%
 % For the signal x(t) illustrated in Fig. P1.2-2, sketch
@@ -275,12 +329,14 @@ ylabel('x(2-t)');
 t=(-3*pi:0.001:3*pi);
 
 %%
-% X(t)=2^t*cos(2pit);
-% Ximpar(t)=1/2(x(t)-x(-t));
-% Ximpar(t)=(2^(-t-1))*cos(2pit)-(2^(t-1))*cos(-2pit);
+% $X(t)=2^t*cos(2pit)$
+%%
+% $X_{impar(t)}=1/2(x(t)-x(-t))$
+%%
+% $X_{impar(t)}=(2^(-t-1))*cos(2pit)-(2^(t-1))*cos(-2pit)$
 
 
-%% Resoluciòn del problema 1.11-1
+%% 3) Resolución del problema 1.11-1
 %
 
 for i=1:length(t)
@@ -299,7 +355,7 @@ xlabel('t');
 title('Ejercicio 1.11-1');
 grid on;
 
-%% Ejercicio 4: 
+%% 4) Contruscciòn de la gráfica. 
 %
 % Construye la grafica de
 
