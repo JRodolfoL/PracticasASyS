@@ -309,8 +309,8 @@ grid on;
 % para cuatro rangos (figura 2x2). Los ejes deben mostrarse en el origen además de la edición de su preferencia.
 % Procedimiento:
 %
-% *Primer rango*
 
+clf;
 subplot(2,2,1);
 y=0;
 t=linspace(-4*pi,-2*pi,1000);
@@ -326,8 +326,6 @@ xlabel('Dominio t');
 ylabel('x(t)');
 title('Gráfica rango -4pi<=t<=-2pi ');
 
-%% 
-% *Segundo rango*
 
 
 subplot(2,2,2);
@@ -346,8 +344,6 @@ ylabel('x(t)');
 
 title('Gráfica rango -2pi<=t<=0 ');
 
-%%
-% *Tercer rango*
 
 
 subplot(2,2,3);
@@ -365,8 +361,7 @@ xlabel('Dominio t');
 ylabel('x(t)');
 title('Gráfica rango 0<=t<=2pi ');
 
-%%
-% *Cuarto rango*
+
 
 subplot(2,2,4);
 y=0;
@@ -382,31 +377,3 @@ ax = gca;
 xlabel('Dominio t');
 ylabel('x(t)');
 title('Gráfica rango 2pi<=t<42pi ');
-
-
-%% TEST
-
-clf;
- x = 0:10;
- ax(1) = subplot (221);
- set (ax(1), "tag", "1");
- plot (x, rand (3, 11));
- title ("x & y labels & ticklabels");
- xlabel xlabel;
- ylabel ylabel;
- ax(2) = subplot (222);
- set (ax(2), "tag", "2");
- plot (x, rand (3, 11));
- title ("no labels");
- axis ("nolabel","tic");
- ax(3) = subplot (223);
- set (ax(3), "tag", "3");
- plot (x, rand (3, 11));
- title ("no labels");
- axis ("nolabel","tic");
- ax(4) = subplot (224);
- set (ax(4), "tag", "4");
- plot (x, rand (3, 11));
- title ("x & y labels & ticklabels");
- xlabel xlabel;
- ylabel ylabel;

@@ -85,7 +85,6 @@ h2 a, h2 a:visited {
 <li><a href="#node2">Resolución del problema 1.2-2</a></li>
 <li><a href="#node3">Resoluciòn del problema 1.11-1</a></li>
 <li><a href="#node4">Ejercicio 4:</a></li>
-<li><a href="#node5">TEST</a></li>
 </ul>
 <h2><a id="node1"> 1.11 Working with functions.</a></h2>
 <p>Working with functions is fundamental to signals and systems applications. MATLAB provides several methods of defining and evaluating functions. An understanding and proficient use of these methods are therefore necessary and beneficial.</p>
@@ -336,9 +335,8 @@ grid on;</pre>
 <p>para cuatro rangos (figura 2x2). Los ejes deben mostrarse en el origen además de la edición de su preferencia.
 Procedimiento:</p>
 
-<p><b>Primer rango</b></p>
-
-<pre class="oct-code">subplot(2,2,1);
+<pre class="oct-code">clf;
+subplot(2,2,1);
 y=0;
 t=linspace(-4*pi,-2*pi,1000);
 <span class="keyword">for</span> k=1:10
@@ -351,11 +349,11 @@ grid on;
 ax = gca;
 xlabel(<span class="string">'Dominio t'</span>);
 ylabel(<span class="string">'x(t)'</span>);
-title(<span class="string">'Gráfica rango -4pi&lt;=t&lt;=-2pi '</span>);</pre>
-<img src="prueba-13.png" alt="prueba-13.png">
-<p><b>Segundo rango</b></p>
+title(<span class="string">'Gráfica rango -4pi&lt;=t&lt;=-2pi '</span>);
 
-<pre class="oct-code">subplot(2,2,2);
+
+
+subplot(2,2,2);
 y=0;
 t=linspace(-2*pi,0,1000);
 <span class="keyword">for</span> k=1:10
@@ -369,11 +367,11 @@ ax = gca;
 xlabel(<span class="string">'Dominio t'</span>);
 ylabel(<span class="string">'x(t)'</span>);
 
-title(<span class="string">'Gráfica rango -2pi&lt;=t&lt;=0 '</span>);</pre>
-<img src="prueba-14.png" alt="prueba-14.png">
-<p><b>Tercer rango</b></p>
+title(<span class="string">'Gráfica rango -2pi&lt;=t&lt;=0 '</span>);
 
-<pre class="oct-code">subplot(2,2,3);
+
+
+subplot(2,2,3);
 y=0;
 t=linspace(0,2*pi,1000);
 <span class="keyword">for</span> k=1:10
@@ -386,11 +384,11 @@ grid on;
 ax = gca;
 xlabel(<span class="string">'Dominio t'</span>);
 ylabel(<span class="string">'x(t)'</span>);
-title(<span class="string">'Gráfica rango 0&lt;=t&lt;=2pi '</span>);</pre>
-<img src="prueba-15.png" alt="prueba-15.png">
-<p><b>Cuarto rango</b></p>
+title(<span class="string">'Gráfica rango 0&lt;=t&lt;=2pi '</span>);
 
-<pre class="oct-code">subplot(2,2,4);
+
+
+subplot(2,2,4);
 y=0;
 t=linspace(2*pi,4*pi,1000);
 <span class="keyword">for</span> k=1:10
@@ -404,32 +402,7 @@ ax = gca;
 xlabel(<span class="string">'Dominio t'</span>);
 ylabel(<span class="string">'x(t)'</span>);
 title(<span class="string">'Gráfica rango 2pi&lt;=t&lt;42pi '</span>);</pre>
-<img src="prueba-16.png" alt="prueba-16.png"><h2><a id="node5">TEST</a></h2>
-<pre class="oct-code">clf;
- x = 0:10;
- ax(1) = subplot (221);
- set (ax(1), <span class="string">"tag"</span>, <span class="string">"1"</span>);
- plot (x, rand (3, 11));
- title (<span class="string">"x &amp; y labels &amp; ticklabels"</span>);
- xlabel xlabel;
- ylabel ylabel;
- ax(2) = subplot (222);
- set (ax(2), <span class="string">"tag"</span>, <span class="string">"2"</span>);
- plot (x, rand (3, 11));
- title (<span class="string">"no labels"</span>);
- axis (<span class="string">"nolabel"</span>,<span class="string">"tic"</span>);
- ax(3) = subplot (223);
- set (ax(3), <span class="string">"tag"</span>, <span class="string">"3"</span>);
- plot (x, rand (3, 11));
- title (<span class="string">"no labels"</span>);
- axis (<span class="string">"nolabel"</span>,<span class="string">"tic"</span>);
- ax(4) = subplot (224);
- set (ax(4), <span class="string">"tag"</span>, <span class="string">"4"</span>);
- plot (x, rand (3, 11));
- title (<span class="string">"x &amp; y labels &amp; ticklabels"</span>);
- xlabel xlabel;
- ylabel ylabel;</pre>
-<img src="prueba-17.png" alt="prueba-17.png">
+<img src="prueba-13.png" alt="prueba-13.png">
 <footer>
 <hr>
 <a href="https://www.octave.org">Published with GNU Octave 5.2.0</a>
@@ -747,8 +720,8 @@ grid on;
 % para cuatro rangos (figura 2x2). Los ejes deben mostrarse en el origen además de la edición de su preferencia.
 % Procedimiento:
 %
-% *Primer rango*
 
+clf;
 subplot(2,2,1);
 y=0;
 t=linspace(-4*pi,-2*pi,1000);
@@ -764,8 +737,6 @@ xlabel('Dominio t');
 ylabel('x(t)');
 title('Gráfica rango -4pi<=t<=-2pi ');
 
-%%
-% *Segundo rango*
 
 
 subplot(2,2,2);
@@ -784,8 +755,6 @@ ylabel('x(t)');
 
 title('Gráfica rango -2pi<=t<=0 ');
 
-%%
-% *Tercer rango*
 
 
 subplot(2,2,3);
@@ -803,8 +772,7 @@ xlabel('Dominio t');
 ylabel('x(t)');
 title('Gráfica rango 0<=t<=2pi ');
 
-%%
-% *Cuarto rango*
+
 
 subplot(2,2,4);
 y=0;
@@ -820,34 +788,6 @@ ax = gca;
 xlabel('Dominio t');
 ylabel('x(t)');
 title('Gráfica rango 2pi<=t<42pi ');
-
-
-%% TEST
-
-clf;
- x = 0:10;
- ax(1) = subplot (221);
- set (ax(1), "tag", "1");
- plot (x, rand (3, 11));
- title ("x & y labels & ticklabels");
- xlabel xlabel;
- ylabel ylabel;
- ax(2) = subplot (222);
- set (ax(2), "tag", "2");
- plot (x, rand (3, 11));
- title ("no labels");
- axis ("nolabel","tic");
- ax(3) = subplot (223);
- set (ax(3), "tag", "3");
- plot (x, rand (3, 11));
- title ("no labels");
- axis ("nolabel","tic");
- ax(4) = subplot (224);
- set (ax(4), "tag", "4");
- plot (x, rand (3, 11));
- title ("x & y labels & ticklabels");
- xlabel xlabel;
- ylabel ylabel;
 ##### SOURCE END #####
 -->
 </body>
