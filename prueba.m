@@ -265,3 +265,113 @@ title('Inciso e');
 xlabel('t');
 
 ylabel('x(2-t)');
+
+
+t=(-3*pi:0.001:3*pi);
+
+% X(t)=2^t*cos(2pit);
+% Ximpar(t)=1/2(x(t)-x(-t));
+% Ximpar(t)=(2^(-t-1))*cos(2pit)-(2^(t-1))*cos(-2pit);
+
+%% Resoluciòn del problema 1.11-1
+%
+
+for i=1:length(t)
+if t(i)<=-pi
+R(i)=-(2.^(t(i)-1)).*cos(-2*pi*t(i));
+elseif t(i)>=pi
+R(i)=(2.^(-t(i)-1)).*cos(2*pi*t(i));
+else
+R(i)=0;
+end
+end
+
+plot(t,R);
+ylabel('Ximpar(t)');
+xlabel('t');
+title('Ejercicio 1.11-1');
+grid on;
+
+%% Ejercicio 4: 
+%
+% Construye la grafica de
+
+%% 
+% $$x(t) = \sum_{k=1}^{10} cos(2\pi k t)$$
+%
+% para cuatro rangos (figura 2x2). Los ejes deben mostrarse en el origen además de la edición de su preferencia.
+% Procedimiento:
+%
+% *Primer rango*
+
+subplot(2,2,1)
+y=0;
+t=linspace(-4*pi,-2*pi,1000);
+for k=1:10
+    
+x=cos(2*pi*k*t);
+y=y+x;
+end
+plot(t,y)
+grid on
+ax = gca;
+xlabel('Dominio t')
+ylabel('x(t)')
+title('Gráfica rango -4pi<=t<=-2pi ')
+
+%% 
+% *Segundo rango*
+
+
+subplot(2,2,2)
+y=0;
+t=linspace(-2*pi,0,1000);
+for k=1:10
+    
+x=cos(2*pi*k*t);
+y=y+x;
+end
+plot(t,y)
+grid on
+ax = gca;
+xlabel('Dominio t')
+ylabel('x(t)')
+
+title('Gráfica rango -2pi<=t<=0 ')
+
+%%
+% *Tercer rango*
+
+
+subplot(2,2,3)
+y=0;
+t=linspace(0,2*pi,1000);
+for k=1:10
+    
+x=cos(2*pi*k*t);
+y=y+x;
+end
+plot(t,y)
+grid on
+ax = gca;
+xlabel('Dominio t')
+ylabel('x(t)')
+title('Gráfica rango 0<=t<=2pi ')
+
+%%
+% *Cuarto rango*
+
+subplot(2,2,4)
+y=0;
+t=linspace(2*pi,4*pi,1000);
+for k=1:10
+    
+x=cos(2*pi*k*t);
+y=y+x;
+end
+plot(t,y)
+grid on
+ax = gca;
+xlabel('Dominio t')
+ylabel('x(t)')
+title('Gráfica rango 2pi<=t<42pi ')
