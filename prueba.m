@@ -512,3 +512,111 @@ ax = gca;
 xlabel('Dominio t');
 ylabel('x(t)');
 title('Gr√°fica rango 2pi<=t<42pi ');
+
+
+%% ResoluciÛn del problema 1.1-3
+
+%%
+% Define x(t) = (e^t(1+j2p))u(-t) and y(t) = Re[2x((-5-t)/2)].
+%
+% (a) Use MATLAB to plot Re{x(t)} versus
+% Im{x(at)} for a = 0.5, 1, and 2 and -10 =t = 10.
+% How important is the scale factor a
+% on the shape of the resulting figure?
+% 
+% (b) Use MATLAB to plot y(t) over -10 = t =
+% 10. Analytically determine the time t0 where
+% y(t) has a jump discontinuity. Verify yourcalculation 
+% of t0 using the plot of y(t).
+% 
+% (c) Use MATLAB and numerical integration to
+% compute the energy Ex of signal x(t).
+% 
+% (d) Use MATLAB and numerical integration to
+% compute the energy Ey of signal y(t).
+%
+%
+
+t = (-10:0.01:10);
+
+u = @(t) 1.0.*(t>=0);
+
+x = @(t) exp(t.*(1+j*2*pi)).*u(-t);
+
+y = @(t) real(2.*x((-5.-t)/2));
+
+
+%%
+% (a) Use MATLAB to plot Re{x(t)} versus
+% Im{x(at)} for a = 0.5, 1, and 2 and -10 =t = 10.
+% How important is the scale factor a
+% on the shape of the resulting figure?
+
+subplot(2,2,1)
+a=0.5;
+
+plot(real(x(t)),imag(x(a.*t)));
+
+axis([-2 2 -1 1]);
+
+title('a=0.5');
+
+xlabel('Re{x(t)}');
+
+ylabel('im{x(0.5t)}');
+
+
+
+subplot(2,2,2)
+a=1;
+
+plot(real(x(t)),imag(x(a.*t)));
+
+axis([-2 2 -1 1]);
+
+title('a=1');
+
+xlabel('Re{x(t)}');
+
+ylabel('im{x(t)}');
+
+
+
+subplot(2,2,3)
+a=2;
+
+plot(real(x(t)),imag(x(a.*t)));
+
+axis([-2 2 -1 1]);
+
+title('a=2');
+
+xlabel('Re{x(t)}');
+
+ylabel('im{x(2t)}');
+
+
+%%
+% (b) Use MATLAB to plot y(t) over -10 = t =
+% 10. Analytically determine the time t0 where
+% y(t) has a jump discontinuity. Verify your calculation 
+% of t0 using the plot of y(t).
+
+plot(t,y(t));
+
+axis([-2 2 -1 1]);
+
+title('inciso b');
+
+xlabel('t');
+
+ylabel('y(t)');
+
+
+%%
+% (c) Use MATLAB and numerical integration to
+% compute the energy Ex of signal x(t).
+
+%%
+% (d) Use MATLAB and numerical integration to
+% compute the energy Ey of signal y(t).
