@@ -654,4 +654,5 @@ q2 = integral (h2,-6,10)
 plot3(real(x(t)), imag(x(t)), t);
 xlabel ('Re(x(t))');
 ylabel ('Im(x(t))');
-title ('t');
+zlabel ('t');
+title ('Inciso e');
