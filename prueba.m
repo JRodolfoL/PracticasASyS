@@ -517,23 +517,23 @@ title('Gráfica rango 2pi<=t<42pi ');
 %% Resolucón del problema 1.1-3
 
 %%
-% Define x(t) = (e^t(1+j2p))u(-t) and y(t) = Re[2x((-5-t)/2)].
+% Define $x(t) = e^{t(1+j2\pi)}u(-t)$ and $y(t) = Re[2x(\frac{-5-t}{2})]$.
 %
-% (a) Use MATLAB to plot Re{x(t)} versus
-% Im{x(at)} for a = 0.5, 1, and 2 and -10 =t = 10.
+% *A)* Use MATLAB to plot $Re{x(t)}$ versus
+% $Im{x(at)}$ for a = 0.5, 1, and 2 and $-10\leq t\leq 10$.
 % How important is the scale factor a
 % on the shape of the resulting figure?
 % 
-% (b) Use MATLAB to plot y(t) over -10 = t =
-% 10. Analytically determine the time t0 where
+% *B)* Use MATLAB to plot $y(t)$ over -10\leq t\leq
+% 10. Analytically determine the time $t_0$ where
 % y(t) has a jump discontinuity. Verify yourcalculation 
-% of t0 using the plot of y(t).
+% of $t_0$ using the plot of $y(t)$.
 % 
-% (c) Use MATLAB and numerical integration to
-% compute the energy Ex of signal x(t).
+% *C)* Use MATLAB and numerical integration to
+% compute the energy $E_x$ of signal x(t).
 % 
-% (d) Use MATLAB and numerical integration to
-% compute the energy Ey of signal y(t).
+% *D)* Use MATLAB and numerical integration to
+% compute the energy $E_y$ of signal $y(t)$.
 %
 %
 
@@ -547,8 +547,8 @@ y = @(t) real(2.*x((-5.-t)/2));
 
 
 %%
-% (a) Use MATLAB to plot Re{x(t)} versus
-% Im{x(at)} for a = 0.5, 1, and 2 and -10 =t = 10.
+% *A)* Use MATLAB to plot $Re{x(t)}$ versus
+% $Im{x(at)}$ for a = 0.5, 1, and 2 and $-10\leq t\leq 10$.
 % How important is the scale factor a
 % on the shape of the resulting figure?
 
@@ -597,10 +597,10 @@ ylabel('im{x(2t)}');
 
 
 %%
-% (b) Use MATLAB to plot y(t) over -10 = t =
-% 10. Analytically determine the time t0 where
-% y(t) has a jump discontinuity. Verify your calculation 
-% of t0 using the plot of y(t).
+% *B)* Use MATLAB to plot $y(t)$ over -10\leq t\leq
+% 10. Analytically determine the time $t_0$ where
+% y(t) has a jump discontinuity. Verify yourcalculation 
+% of $t_0$ using the plot of $y(t)$.
 
 plot(t,y(t));
 
@@ -614,9 +614,10 @@ ylabel('y(t)');
 
 
 %%
-% (c) Use MATLAB and numerical integration to
-% compute the energy Ex of signal x(t).
+% *C)* Use MATLAB and numerical integration to
+% compute the energy $E_x$ of signal x(t).
+% 
 
 %%
-% (d) Use MATLAB and numerical integration to
-% compute the energy Ey of signal y(t).
+% *D)* Use MATLAB and numerical integration to
+% compute the energy $E_y$ of signal $y(t)$.

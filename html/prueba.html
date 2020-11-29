@@ -535,23 +535,23 @@ xlabel(<span class="string">'Dominio t'</span>);
 ylabel(<span class="string">'x(t)'</span>);
 title(<span class="string">'Gráfica rango 2pi&lt;=t&lt;42pi '</span>);</pre>
 <img src="prueba-16.png" alt="prueba-16.png"><h2><a id="node6">Resolucón del problema 1.1-3</a></h2>
-<p>Define x(t) = (e^t(1+j2p))u(-t) and y(t) = Re[2x((-5-t)/2)].</p>
+<p>Define $x(t) = e^{t(1+j2\pi)}u(-t)$ and $y(t) = Re[2x(\frac{-5-t}{2})]$.</p>
 
-<p>(a) Use MATLAB to plot Re{x(t)} versus
-Im{x(at)} for a = 0.5, 1, and 2 and -10 =t = 10.
+<p><b>A)</b> Use MATLAB to plot $Re{x(t)}$ versus
+$Im{x(at)}$ for a = 0.5, 1, and 2 and $-10\leq t\leq 10$.
 How important is the scale factor a
 on the shape of the resulting figure?</p>
 
-<p>(b) Use MATLAB to plot y(t) over -10 = t =
-10. Analytically determine the time t0 where
+<p><b>B)</b> Use MATLAB to plot $y(t)$ over -10\leq t\leq
+10. Analytically determine the time $t_0$ where
 y(t) has a jump discontinuity. Verify yourcalculation
-of t0 using the plot of y(t).</p>
+of $t_0$ using the plot of $y(t)$.</p>
 
-<p>(c) Use MATLAB and numerical integration to
-compute the energy Ex of signal x(t).</p>
+<p><b>C)</b> Use MATLAB and numerical integration to
+compute the energy $E_x$ of signal x(t).</p>
 
-<p>(d) Use MATLAB and numerical integration to
-compute the energy Ey of signal y(t).</p>
+<p><b>D)</b> Use MATLAB and numerical integration to
+compute the energy $E_y$ of signal $y(t)$.</p>
 
 <pre class="oct-code">t = (-10:0.01:10);
 
@@ -561,8 +561,8 @@ x = @(t) exp(t.*(1+j*2*pi)).*u(-t);
 
 y = @(t) real(2.*x((-5.-t)/2));</pre>
 
-<p>(a) Use MATLAB to plot Re{x(t)} versus
-Im{x(at)} for a = 0.5, 1, and 2 and -10 =t = 10.
+<p><b>A)</b> Use MATLAB to plot $Re{x(t)}$ versus
+$Im{x(at)}$ for a = 0.5, 1, and 2 and $-10\leq t\leq 10$.
 How important is the scale factor a
 on the shape of the resulting figure?</p>
 
@@ -609,10 +609,10 @@ xlabel(<span class="string">'Re{x(t)}'</span>);
 
 ylabel(<span class="string">'im{x(2t)}'</span>);</pre>
 <img src="prueba-17.png" alt="prueba-17.png">
-<p>(b) Use MATLAB to plot y(t) over -10 = t =
-10. Analytically determine the time t0 where
-y(t) has a jump discontinuity. Verify your calculation
-of t0 using the plot of y(t).</p>
+<p><b>B)</b> Use MATLAB to plot $y(t)$ over -10\leq t\leq
+10. Analytically determine the time $t_0$ where
+y(t) has a jump discontinuity. Verify yourcalculation
+of $t_0$ using the plot of $y(t)$.</p>
 
 <pre class="oct-code">plot(t,y(t));
 
@@ -624,11 +624,11 @@ xlabel(<span class="string">'t'</span>);
 
 ylabel(<span class="string">'y(t)'</span>);</pre>
 <img src="prueba-18.png" alt="prueba-18.png">
-<p>(c) Use MATLAB and numerical integration to
-compute the energy Ex of signal x(t).</p>
+<p><b>C)</b> Use MATLAB and numerical integration to
+compute the energy $E_x$ of signal x(t).</p>
 
-<p>(d) Use MATLAB and numerical integration to
-compute the energy Ey of signal y(t).</p>
+<p><b>D)</b> Use MATLAB and numerical integration to
+compute the energy $E_y$ of signal $y(t)$.</p>
 
 <footer>
 <hr>
@@ -1155,23 +1155,23 @@ title('Gráfica rango 2pi<=t<42pi ');
 %% Resolucón del problema 1.1-3
 
 %%
-% Define x(t) = (e^t(1+j2p))u(-t) and y(t) = Re[2x((-5-t)/2)].
+% Define $x(t) = e^{t(1+j2\pi)}u(-t)$ and $y(t) = Re[2x(\frac{-5-t}{2})]$.
 %
-% (a) Use MATLAB to plot Re{x(t)} versus
-% Im{x(at)} for a = 0.5, 1, and 2 and -10 =t = 10.
+% *A)* Use MATLAB to plot $Re{x(t)}$ versus
+% $Im{x(at)}$ for a = 0.5, 1, and 2 and $-10\leq t\leq 10$.
 % How important is the scale factor a
 % on the shape of the resulting figure?
 %
-% (b) Use MATLAB to plot y(t) over -10 = t =
-% 10. Analytically determine the time t0 where
+% *B)* Use MATLAB to plot $y(t)$ over -10\leq t\leq
+% 10. Analytically determine the time $t_0$ where
 % y(t) has a jump discontinuity. Verify yourcalculation
-% of t0 using the plot of y(t).
+% of $t_0$ using the plot of $y(t)$.
 %
-% (c) Use MATLAB and numerical integration to
-% compute the energy Ex of signal x(t).
+% *C)* Use MATLAB and numerical integration to
+% compute the energy $E_x$ of signal x(t).
 %
-% (d) Use MATLAB and numerical integration to
-% compute the energy Ey of signal y(t).
+% *D)* Use MATLAB and numerical integration to
+% compute the energy $E_y$ of signal $y(t)$.
 %
 %
 
@@ -1185,8 +1185,8 @@ y = @(t) real(2.*x((-5.-t)/2));
 
 
 %%
-% (a) Use MATLAB to plot Re{x(t)} versus
-% Im{x(at)} for a = 0.5, 1, and 2 and -10 =t = 10.
+% *A)* Use MATLAB to plot $Re{x(t)}$ versus
+% $Im{x(at)}$ for a = 0.5, 1, and 2 and $-10\leq t\leq 10$.
 % How important is the scale factor a
 % on the shape of the resulting figure?
 
@@ -1235,10 +1235,10 @@ ylabel('im{x(2t)}');
 
 
 %%
-% (b) Use MATLAB to plot y(t) over -10 = t =
-% 10. Analytically determine the time t0 where
-% y(t) has a jump discontinuity. Verify your calculation
-% of t0 using the plot of y(t).
+% *B)* Use MATLAB to plot $y(t)$ over -10\leq t\leq
+% 10. Analytically determine the time $t_0$ where
+% y(t) has a jump discontinuity. Verify yourcalculation
+% of $t_0$ using the plot of $y(t)$.
 
 plot(t,y(t));
 
@@ -1252,12 +1252,13 @@ ylabel('y(t)');
 
 
 %%
-% (c) Use MATLAB and numerical integration to
-% compute the energy Ex of signal x(t).
+% *C)* Use MATLAB and numerical integration to
+% compute the energy $E_x$ of signal x(t).
+%
 
 %%
-% (d) Use MATLAB and numerical integration to
-% compute the energy Ey of signal y(t).
+% *D)* Use MATLAB and numerical integration to
+% compute the energy $E_y$ of signal $y(t)$.
 ##### SOURCE END #####
 -->
 </body>
