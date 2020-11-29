@@ -18,6 +18,9 @@
 %%
 
 
+%% Introducción
+% El inciso 4 resuelto con Python puede ser consultado en el siguiente <https://colab.research.google.com/drive/11nxr8kWdsPiXhoxsBBT6P-TnolIQIWv1?usp=sharing *enlace*>.
+
 
 %%  1) Working with functions.
 %
@@ -109,8 +112,7 @@ xlabel ('t');
 ylabel('u(t)');
 
 %%
-% *Figure 1.48* $u(t)$ for $t = (-2:2)$.ous functions, we could
-% have used our previously defined unit step anonymous function to define p(t) as p = @(t)
+% *Figure 1.48* $u(t)$ for $t = (-2:2)$.
 
 %%
 % Two significant problems are apparent in the resulting plot, shown in Fig. 1.48. First,
@@ -399,16 +401,22 @@ ylabel('x(2-t)');
 
 t=(-3*pi:0.001:3*pi);
 
-%%
-% $X(t)=2^t*cos(2pit)$
-%%
-% $X_{impar(t)}=1/2(x(t)-x(-t))$
-%%
-% $X_{impar(t)}=(2^(-t-1))*cos(2pit)-(2^(t-1))*cos(-2pit)$
 
 
 %% 3) Resolución del problema 1.11-1
 %
+%%
+% Provide MATLAB code and output that plots
+% the odd portion $x_{o}(t)$ of the function $x(t) =
+% 2^{-t}cos(2\pi t)u(t?\pi )$ over a suitable-length interval using a suitable number of points.
+%
+%%
+% $X(t)=2^tcos(2\pi t)$
+%%
+% $X_{impar(t)}=\frac{x(t)-x(-t)}{2}$
+%%
+% $X_{impar(t)}=2^{-t-1}cos(2\pi t)u(t-\pi )-2^{t-1}cos(-2\pi t)u(-t-\pi )$
+
 
 for i=1:length(t)
 if t(i)<=-pi
@@ -426,7 +434,7 @@ xlabel('t');
 title('Ejercicio 1.11-1');
 grid on;
 
-%% 4) Contruscciòn de la gráfica. 
+%% 4) Construcción de la gráfica. 
 %
 % Construye la grafica de
 
