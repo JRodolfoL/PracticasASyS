@@ -628,7 +628,7 @@ title ('Norma al cuadrado de x(t)');
 q1 = integral(h1,-10,1)
 
 %% 
-% $\therefore E_{x} = 0.5
+% $\therefore E_{x} = 0.5$
 
 %%
 % *D)* Use MATLAB and numerical integration to
@@ -644,3 +644,6 @@ title ('Norma al cuadrado de y(t)');
 % De la gráfica de la norma al cuadrado podemos obtener los lḿites para realizar la integral numèrica.
 
 q2 = integral (h2,-6,10)
+
+%% 
+% $\therefore E_{y} = 2.0494$
