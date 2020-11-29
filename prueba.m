@@ -514,7 +514,7 @@ ylabel('x(t)');
 title('Gráfica rango 2pi<=t<42pi ');
 
 
-%% Resoluci�n del problema 1.1-3
+%% Resolucón del problema 1.1-3
 
 %%
 % Define x(t) = (e^t(1+j2p))u(-t) and y(t) = Re[2x((-5-t)/2)].
