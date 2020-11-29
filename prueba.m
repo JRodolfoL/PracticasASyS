@@ -555,7 +555,7 @@ y = @(t) real(2.*x((-5.-t)/2));
 subplot(2,2,1)
 a=0.5;
 
-plot(real(x(t)),imag(x(a.*t)));
+plot(real(x(t)),imag(x(a*t)));
 
 axis([-2 2 -1 1]);
 
@@ -570,7 +570,7 @@ ylabel('im{x(0.5t)}');
 subplot(2,2,2)
 a=1;
 
-plot(real(x(t)),imag(x(a.*t)));
+plot(real(x(t)),imag(x(a*t)));
 
 axis([-2 2 -1 1]);
 
@@ -585,7 +585,7 @@ ylabel('im{x(t)}');
 subplot(2,2,3)
 a=2;
 
-plot(real(x(t)),imag(x(a.*t)));
+plot(real(x(t)),imag(x(a*t)));
 
 axis([-2 2 -1 1]);
 
@@ -617,7 +617,30 @@ ylabel('y(t)');
 % *C)* Use MATLAB and numerical integration to
 % compute the energy $E_x$ of signal x(t).
 % 
+h1 =@(t) power(real(x(t)),2) + power(imag(x(t)),2);
+plot(t, h1(t));
+xlabel ('t');
+ylabel ('|x(t)|^2');
+title ('Norma al cuadrado de x(t)');
+
+%%
+% De la gràfica de la norma al cuadrado podemos obtener los lìmites para realizar la integral numérica.
+q1 = integral(h1,-10,1)
+
+%% 
+% $\therefore E_{x} = 0.5
 
 %%
 % *D)* Use MATLAB and numerical integration to
 % compute the energy $E_y$ of signal $y(t)$.
+
+h2 = @(t) power(real(y(t)), 2) + power(imag(y(t)), 2);
+plot(t,h2(t));
+xlabel ('t');
+ylabel ('|y(t)|^2');
+title ('Norma al cuadrado de y(t)');
+
+%%
+% De la gráfica de la norma al cuadrado podemos obtener los lḿites para realizar la integral numèrica.
+
+q2 = integral (h2,-6,10)
