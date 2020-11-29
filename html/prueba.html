@@ -90,7 +90,10 @@ h2 a, h2 a:visited {
 </ul>
 <h2><a id="node1">Introducción</a></h2>
 <p>El inciso 4 resuelto con Python puede ser consultado en el siguiente <a href="https://colab.research.google.com/drive/11nxr8kWdsPiXhoxsBBT6P-TnolIQIWv1?usp=sharing"><b>enlace</b></a>.</p>
-<h2><a id="node2"> 1) Working with functions.</a></h2>
+
+<pre class="oct-code">imgpython=imread(<span class="string">'/home/rodolfo/PracticasASyS/PracticasASyS/html/python.png'</span>);
+imshow(imgpython);</pre>
+<img src="prueba-1.png" alt="prueba-1.png"><h2><a id="node2"> 1) Working with functions.</a></h2>
 <p>Working with functions is fundamental to signals and systems applications. MATLAB provides several methods of defining and evaluating functions. An understanding and proficient use of these methods are therefore necessary and beneficial.</p>
 
 <p><b>11.1-1 Anonymous functions.</b></p>
@@ -143,7 +146,7 @@ case, t is chosen to give 100 points per oscillation.</p>
 xlabel(<span class="string">'t'</span>);
 ylabel(<span class="string">'f(t)'</span>);
 grid;</pre>
-<img src="prueba-1.png" alt="prueba-1.png">
+<img src="prueba-2.png" alt="prueba-2.png">
 <p><b>Figure 1.46</b> $f(t) = e^{-t}cos(2\pi t)$ for $t = (-2::2)$.</p>
 
 <pre class="oct-code">t1 = (-2:0.01:2);
@@ -151,7 +154,7 @@ plot(t1, f(t1));
 xlabel(<span class="string">'t'</span>);
 ylabel(<span class="string">'f(t)'</span>);
 grid;</pre>
-<img src="prueba-2.png" alt="prueba-2.png">
+<img src="prueba-3.png" alt="prueba-3.png">
 <p><b>Figure 1.47</b> $f(t) = e^{-t}cos(2\pi t)$ for $t = (-2:0.01:2)$.</p>
 
 <p><b>1.11-2 Relational Operators and the Unit Step Function.</b></p>
@@ -174,7 +177,7 @@ $u(t)$ by using $t = (-2:2)$.</p>
 plot(t, u(t));
 xlabel (<span class="string">'t'</span>);
 ylabel(<span class="string">'u(t)'</span>);</pre>
-<img src="prueba-3.png" alt="prueba-3.png">
+<img src="prueba-4.png" alt="prueba-4.png">
 <p><b>Figure 1.48</b> $u(t)$ for $t = (-2:2)$.</p>
 
 <p>Two significant problems are apparent in the resulting plot, shown in Fig. 1.48. First,
@@ -191,7 +194,7 @@ xlabel(<span class="string">'t'</span>);
 ylabel(<span class="string">'u(t)'</span>);
 axis([-2 2 -0.1 1.1]);
 title(<span class="string">'Figure 1.48 u(t) for t = (-2:0.01:2)'</span>);</pre>
-<img src="prueba-4.png" alt="prueba-4.png">
+<img src="prueba-5.png" alt="prueba-5.png">
 <p>The four-element vector argument of axis specifies x axis minimum, x axis maximum, y axis
 minimum, and y axis maximum, respectively. The improved results are shown in Fig. 1.49.
 Relational operators can be combined using logical AND, logical OR, and logical negation: &amp;,
@@ -206,7 +209,7 @@ xlabel(<span class="string">'t'</span>);
 ylabel(<span class="string">'p(t) = u(t) - u(t-1)'</span>);
 axis([-1 2 -0.1 1.1]);
 title(<span class="string">'Figure 1.50 p(t) = u(t) − u(t − 1) over (−1 ≤ t ≤ 2).'</span>);</pre>
-<img src="prueba-5.png" alt="prueba-5.png">
+<img src="prueba-6.png" alt="prueba-6.png">
 <p>Since anonymous functions can be constructed using other anonymous functions, we could
 have used our previously defined unit step anonymous function to define p(t) as p = @(t)
 u(t)-u(t-1);.</p>
@@ -238,7 +241,7 @@ is nearly trivial to obtain.</p>
 <pre class="oct-code">t = (-2:0.01:2);
 plot(t,g(2*t+1)); xlabel(<span class="string">'t'</span>); ylabel(<span class="string">'g(2t+1)'</span>); grid;
 title(<span class="string">'Figure 1.51 g(2t + 1) over (−2 ≤ t ≤ 2).'</span>);</pre>
-<img src="prueba-6.png" alt="prueba-6.png">
+<img src="prueba-7.png" alt="prueba-7.png">
 <p>Figure 1.51 confirms the expected waveform compression and left shift. As a final check, realize
 that function $g(·)$ turns on when the input argument is zero. Therefore, $g(2t + 1)$ should turn on
 when 2t + 1 = 0 or at t = −0.5, a fact again confirmed by Fig. 1.51.</p>
@@ -248,7 +251,7 @@ reflected. Adding the condition b &gt; 0 shifts the final waveform to the right.
 
 <pre class="oct-code">plot(t,g(-t+1)); xlabel(<span class="string">'t'</span>); ylabel(<span class="string">'g(-t+1)'</span>); grid;
 title(<span class="string">'Figure 1.52 g(−t + 1) over (−2 ≤ t ≤ 2)'</span>);</pre>
-<img src="prueba-7.png" alt="prueba-7.png">
+<img src="prueba-8.png" alt="prueba-8.png">
 <p>Figure 1.52 confirms both the reflection and the right shift.
 Up to this point, Figs. 1.51 and 1.52 could be reasonably sketched by hand. Consider plotting
 the more complicated function $h(t) = g(2t + 1) + g(−t + 1)$ over $(−2 ≤ t ≤ 2)$ (Fig. 1.53); an
@@ -256,7 +259,7 @@ accurate hand sketch would be quite difficult. With MATLAB, the work is much les
 
 <pre class="oct-code">plot(t,g(2*t+1)+g(-t+1)); xlabel(<span class="string">'t'</span>); ylabel(<span class="string">'h(t)'</span>); grid;
 title(<span class="string">'Figure 1.53 h(t) = g(2t + 1) + g(−t + 1) over (−2 ≤ t ≤ 2).'</span>);</pre>
-<img src="prueba-8.png" alt="prueba-8.png">
+<img src="prueba-9.png" alt="prueba-9.png">
 <p><b>1.11-4 Numerical Integration and Estimating Signal Energy</b></p>
 
 <p>Interesting signals often have nontrivial mathematical representations. Computing signal energy,
@@ -360,7 +363,7 @@ title(<span class="string">'Fig. P1.2-2'</span>);
 xlabel(<span class="string">'t'</span>);
 
 ylabel(<span class="string">'x(t)'</span>);</pre>
-<img src="prueba-9.png" alt="prueba-9.png">
+<img src="prueba-10.png" alt="prueba-10.png">
 <p><b>A)</b> $x(t-4)$</p>
 
 <pre class="oct-code">x1=@(t) f(t-4);
@@ -374,7 +377,7 @@ title(<span class="string">'Inciso a'</span>);
 xlabel(<span class="string">'t'</span>);
 
 ylabel(<span class="string">'x(t-4)'</span>);</pre>
-<img src="prueba-10.png" alt="prueba-10.png">
+<img src="prueba-11.png" alt="prueba-11.png">
 <p><b>B)</b> $x(t/1.5)$</p>
 
 <pre class="oct-code">x2=@(t) f(t/1.5);
@@ -388,7 +391,7 @@ title(<span class="string">'Inciso b'</span>);
 xlabel(<span class="string">'t'</span>);
 
 ylabel(<span class="string">'x(t/1.5)'</span>);</pre>
-<img src="prueba-11.png" alt="prueba-11.png">
+<img src="prueba-12.png" alt="prueba-12.png">
 <p><b>C)</b> $x(-t)$</p>
 
 <pre class="oct-code">x3=@(t) f(-t);
@@ -402,7 +405,7 @@ title(<span class="string">'Inciso c'</span>);
 xlabel(<span class="string">'t'</span>);
 
 ylabel(<span class="string">'x(-t)'</span>);</pre>
-<img src="prueba-12.png" alt="prueba-12.png">
+<img src="prueba-13.png" alt="prueba-13.png">
 <p><b>D)</b> $x(2t-4)$</p>
 
 <pre class="oct-code">x4=@(t) f(2.*t - 4);
@@ -416,7 +419,7 @@ title(<span class="string">'Inciso d'</span>);
 xlabel(<span class="string">'t'</span>);
 
 ylabel(<span class="string">'x(2t-4)'</span>);</pre>
-<img src="prueba-13.png" alt="prueba-13.png">
+<img src="prueba-14.png" alt="prueba-14.png">
 <p><b>E)</b> $x(2t-4)$</p>
 
 <pre class="oct-code">x5=@(t) f(2 - t);
@@ -433,7 +436,7 @@ ylabel(<span class="string">'x(2-t)'</span>);
 
 
 t=(-3*pi:0.001:3*pi);</pre>
-<img src="prueba-14.png" alt="prueba-14.png"><h2><a id="node4">3) Resolución del problema 1.11-1</a></h2>
+<img src="prueba-15.png" alt="prueba-15.png"><h2><a id="node4">3) Resolución del problema 1.11-1</a></h2>
 <p>Provide MATLAB code and output that plots
 the odd portion $x_{o}(t)$ of the function $x(t) =
 2^{-t}cos(2\pi t)u(t?\pi )$ over a suitable-length interval using a suitable number of points.</p>
@@ -459,7 +462,7 @@ ylabel(<span class="string">'Ximpar(t)'</span>);
 xlabel(<span class="string">'t'</span>);
 title(<span class="string">'Ejercicio 1.11-1'</span>);
 grid on;</pre>
-<img src="prueba-15.png" alt="prueba-15.png"><h2><a id="node5">4) Construcción de la gráfica.</a></h2>
+<img src="prueba-16.png" alt="prueba-16.png"><h2><a id="node5">4) Construcción de la gráfica.</a></h2>
 <p>Construye la grafica de</p>
 
 <p>$$x(t) = \sum_{k=1}^{10} cos(2\pi k t)$$</p>
@@ -534,7 +537,7 @@ ax = gca;
 xlabel(<span class="string">'Dominio t'</span>);
 ylabel(<span class="string">'x(t)'</span>);
 title(<span class="string">'Gráfica rango 2pi&lt;=t&lt;42pi '</span>);</pre>
-<img src="prueba-16.png" alt="prueba-16.png"><h2><a id="node6">5) Resolucón del problema 1.11-3</a></h2>
+<img src="prueba-17.png" alt="prueba-17.png"><h2><a id="node6">5) Resolucón del problema 1.11-3</a></h2>
 <p>Define $x(t) = e^{t(1+j2\pi)}u(-t)$ and $y(t) = Re[2x(\frac{-5-t}{2})]$.</p>
 
 <p><b>A)</b> Use MATLAB to plot $Re{x(t)}$ versus
@@ -573,7 +576,7 @@ a=0.5;
 
 plot(real(x(t)),imag(x(a*t)));
 
-axis([-10 10 -2 2]);
+axis([-5 5 -1 1]);
 
 title(<span class="string">'a=0.5'</span>);
 
@@ -588,7 +591,7 @@ a=1;
 
 plot(real(x(t)),imag(x(a*t)));
 
-axis([-10 10 -2 2]);
+axis([-5 5 -1 1]);
 
 title(<span class="string">'a=1'</span>);
 
@@ -603,14 +606,14 @@ a=2;
 
 plot(real(x(t)),imag(x(a*t)));
 
-axis([-10 10 -2 2]);
+axis([-5 5 -1 1]);
 
 title(<span class="string">'a=2'</span>);
 
 xlabel(<span class="string">'Re{x(t)}'</span>);
 
 ylabel(<span class="string">'im{x(2t)}'</span>);</pre>
-<img src="prueba-17.png" alt="prueba-17.png">
+<img src="prueba-18.png" alt="prueba-18.png">
 <p><b>B)</b> Use MATLAB to plot $y(t)$ over $-10\leq t\leq 10$. Analytically determine the time $t_0$ where
 y(t) has a jump discontinuity. Verify yourcalculation
 of $t_0$ using the plot of $y(t)$.</p>
@@ -624,7 +627,7 @@ title(<span class="string">'inciso b'</span>);
 xlabel(<span class="string">'t'</span>);
 
 ylabel(<span class="string">'y(t)'</span>);</pre>
-<img src="prueba-18.png" alt="prueba-18.png">
+<img src="prueba-19.png" alt="prueba-19.png">
 <p>$ y(t) = Re(2x(\frac{-5-t}{2})) $</p>
 
 <p>$2x(\frac{-5-t}{2}) = 2e^{\frac{-5-t}{2}(1+j2\pi)}u(-\frac{-5-t}{2})$</p>
@@ -655,7 +658,7 @@ plot(t, h1(t));
 xlabel (<span class="string">'t'</span>);
 ylabel (<span class="string">'|x(t)|^2'</span>);
 title (<span class="string">'Norma al cuadrado de x(t)'</span>);</pre>
-<img src="prueba-19.png" alt="prueba-19.png">
+<img src="prueba-20.png" alt="prueba-20.png">
 <p>De la gràfica de la norma al cuadrado podemos obtener los lìmites para realizar la integral numérica.</p>
 
 <pre class="oct-code">q1 = integral(h1,-10,1)</pre>
@@ -673,7 +676,7 @@ plot(t,h2(t));
 xlabel (<span class="string">'t'</span>);
 ylabel (<span class="string">'|y(t)|^2'</span>);
 title (<span class="string">'Norma al cuadrado de y(t)'</span>);</pre>
-<img src="prueba-20.png" alt="prueba-20.png">
+<img src="prueba-21.png" alt="prueba-21.png">
 <p>De la gráfica de la norma al cuadrado podemos obtener los lḿites para realizar la integral numèrica.</p>
 
 <pre class="oct-code">q2 = integral (h2,-6,10)</pre>
@@ -686,12 +689,12 @@ title (<span class="string">'Norma al cuadrado de y(t)'</span>);</pre>
 <p><b>E)</b> Graficar a la función $x(t)$ en el intervalo $(-10 \leq t \leq 10)$.</p>
 
 <pre class="oct-code">plot3(real(x(t)), imag(x(t)), t);
-axis([-10 10 -2 2]);
+axis([-5 5 -1 1 -5 5]);
 xlabel (<span class="string">'Re(x(t))'</span>);
 ylabel (<span class="string">'Im(x(t))'</span>);
 zlabel (<span class="string">'t'</span>);
 title (<span class="string">'Inciso e'</span>);</pre>
-<img src="prueba-21.png" alt="prueba-21.png">
+<img src="prueba-22.png" alt="prueba-22.png">
 <footer>
 <hr>
 <a href="https://www.octave.org">Published with GNU Octave 5.2.0</a>
@@ -721,6 +724,8 @@ title (<span class="string">'Inciso e'</span>);</pre>
 %% Introducción
 % El inciso 4 resuelto con Python puede ser consultado en el siguiente <https://colab.research.google.com/drive/11nxr8kWdsPiXhoxsBBT6P-TnolIQIWv1?usp=sharing *enlace*>.
 
+imgpython=imread('/home/rodolfo/PracticasASyS/PracticasASyS/html/python.png');
+imshow(imgpython);
 
 %%  1) Working with functions.
 %
@@ -1257,7 +1262,7 @@ a=0.5;
 
 plot(real(x(t)),imag(x(a*t)));
 
-axis([-10 10 -2 2]);
+axis([-5 5 -1 1]);
 
 title('a=0.5');
 
@@ -1272,7 +1277,7 @@ a=1;
 
 plot(real(x(t)),imag(x(a*t)));
 
-axis([-10 10 -2 2]);
+axis([-5 5 -1 1]);
 
 title('a=1');
 
@@ -1287,7 +1292,7 @@ a=2;
 
 plot(real(x(t)),imag(x(a*t)));
 
-axis([-10 10 -2 2]);
+axis([-5 5 -1 1]);
 
 title('a=2');
 
@@ -1376,7 +1381,7 @@ q2 = integral (h2,-6,10)
 % *E)* Graficar a la función $x(t)$ en el intervalo $(-10 \leq t \leq 10)$.
 
 plot3(real(x(t)), imag(x(t)), t);
-axis([-10 10 -2 2]);
+axis([-5 5 -1 1 -5 5]);
 xlabel ('Re(x(t))');
 ylabel ('Im(x(t))');
 zlabel ('t');

@@ -21,6 +21,8 @@
 %% Introducción
 % El inciso 4 resuelto con Python puede ser consultado en el siguiente <https://colab.research.google.com/drive/11nxr8kWdsPiXhoxsBBT6P-TnolIQIWv1?usp=sharing *enlace*>.
 
+imgpython=imread('/home/rodolfo/PracticasASyS/PracticasASyS/html/python.png'); 
+imshow(imgpython);
 
 %%  1) Working with functions.
 %
@@ -557,7 +559,7 @@ a=0.5;
 
 plot(real(x(t)),imag(x(a*t)));
 
-axis([-10 10 -2 2]);
+axis([-5 5 -1 1]);
 
 title('a=0.5');
 
@@ -572,7 +574,7 @@ a=1;
 
 plot(real(x(t)),imag(x(a*t)));
 
-axis([-10 10 -2 2]);
+axis([-5 5 -1 1]);
 
 title('a=1');
 
@@ -587,7 +589,7 @@ a=2;
 
 plot(real(x(t)),imag(x(a*t)));
 
-axis([-10 10 -2 2]);
+axis([-5 5 -1 1]);
 
 title('a=2');
 
@@ -676,7 +678,7 @@ q2 = integral (h2,-6,10)
 % *E)* Graficar a la función $x(t)$ en el intervalo $(-10 \leq t \leq 10)$.
 
 plot3(real(x(t)), imag(x(t)), t);
-axis([-10 10 -2 2]);
+axis([-5 5 -1 1 -5 5]);
 xlabel ('Re(x(t))');
 ylabel ('Im(x(t))');
 zlabel ('t');
