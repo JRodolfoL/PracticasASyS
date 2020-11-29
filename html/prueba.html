@@ -86,7 +86,7 @@ h2 a, h2 a:visited {
 <li><a href="#node3">2) Resolución del problema 1.2-2</a></li>
 <li><a href="#node4">3) Resolución del problema 1.11-1</a></li>
 <li><a href="#node5">4) Construcción de la gráfica.</a></li>
-<li><a href="#node6">Resolucón del problema 1.1-3</a></li>
+<li><a href="#node6">5) Resolucón del problema 1.11-3</a></li>
 </ul>
 <h2><a id="node1">Introducción</a></h2>
 <p>El inciso 4 resuelto con Python puede ser consultado en el siguiente <a href="https://colab.research.google.com/drive/11nxr8kWdsPiXhoxsBBT6P-TnolIQIWv1?usp=sharing"><b>enlace</b></a>.</p>
@@ -534,7 +534,7 @@ ax = gca;
 xlabel(<span class="string">'Dominio t'</span>);
 ylabel(<span class="string">'x(t)'</span>);
 title(<span class="string">'Gráfica rango 2pi&lt;=t&lt;42pi '</span>);</pre>
-<img src="prueba-16.png" alt="prueba-16.png"><h2><a id="node6">Resolucón del problema 1.1-3</a></h2>
+<img src="prueba-16.png" alt="prueba-16.png"><h2><a id="node6">5) Resolucón del problema 1.11-3</a></h2>
 <p>Define $x(t) = e^{t(1+j2\pi)}u(-t)$ and $y(t) = Re[2x(\frac{-5-t}{2})]$.</p>
 
 <p><b>A)</b> Use MATLAB to plot $Re{x(t)}$ versus
@@ -552,6 +552,8 @@ compute the energy $E_x$ of signal x(t).</p>
 
 <p><b>D)</b> Use MATLAB and numerical integration to
 compute the energy $E_y$ of signal $y(t)$.</p>
+
+<p><b>E)</b> Graficar a la función $x(t)$ en el intervalo (-10 \leq t \leq 10).</p>
 
 <pre class="oct-code">t = (-10:0.01:10);
 
@@ -662,7 +664,7 @@ title (<span class="string">'Norma al cuadrado de y(t)'</span>);</pre>
 
 <p><b>E)</b> Graficar a la función $x(t)$ en el intervalo (-10 \leq t \leq 10).</p>
 
-<pre class="oct-code">plot(t,x(t));
+<pre class="oct-code">plot3(real(x(t)), imag(x(t)), t);
 xlabel (<span class="string">'t'</span>);
 ylabel (<span class="string">'x(t)'</span>);
 title (<span class="string">'Inciso e'</span>);</pre>
@@ -1189,7 +1191,7 @@ ylabel('x(t)');
 title('Gráfica rango 2pi<=t<42pi ');
 
 
-%% Resolucón del problema 1.1-3
+%% 5) Resolucón del problema 1.11-3
 
 %%
 % Define $x(t) = e^{t(1+j2\pi)}u(-t)$ and $y(t) = Re[2x(\frac{-5-t}{2})]$.
@@ -1210,7 +1212,7 @@ title('Gráfica rango 2pi<=t<42pi ');
 % *D)* Use MATLAB and numerical integration to
 % compute the energy $E_y$ of signal $y(t)$.
 %
-%
+% *E)* Graficar a la función $x(t)$ en el intervalo (-10 \leq t \leq 10).
 
 t = (-10:0.01:10);
 
@@ -1326,7 +1328,7 @@ q2 = integral (h2,-6,10)
 %%
 % *E)* Graficar a la función $x(t)$ en el intervalo (-10 \leq t \leq 10).
 
-plot(t,x(t));
+plot3(real(x(t)), imag(x(t)), t);
 xlabel ('t');
 ylabel ('x(t)');
 title ('Inciso e');

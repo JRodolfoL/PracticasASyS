@@ -514,7 +514,7 @@ ylabel('x(t)');
 title('Gráfica rango 2pi<=t<42pi ');
 
 
-%% Resolucón del problema 1.1-3
+%% 5) Resolucón del problema 1.11-3
 
 %%
 % Define $x(t) = e^{t(1+j2\pi)}u(-t)$ and $y(t) = Re[2x(\frac{-5-t}{2})]$.
@@ -535,7 +535,7 @@ title('Gráfica rango 2pi<=t<42pi ');
 % *D)* Use MATLAB and numerical integration to
 % compute the energy $E_y$ of signal $y(t)$.
 %
-%
+% *E)* Graficar a la función $x(t)$ en el intervalo (-10 \leq t \leq 10).
 
 t = (-10:0.01:10);
 
@@ -651,7 +651,7 @@ q2 = integral (h2,-6,10)
 %%
 % *E)* Graficar a la función $x(t)$ en el intervalo (-10 \leq t \leq 10).
 
-plot(t,x(t));
+plot3(real(x(t)), imag(x(t)), t);
 xlabel ('t');
 ylabel ('x(t)');
 title ('Inciso e');
