@@ -649,7 +649,7 @@ q2 = integral (h2,-6,10)
 % $\therefore E_{y} = 2.0494$
 
 %%
-% *E)* Graficar a la función $x(t)$ en el intervalo (-10 \leq t \leq 10).
+% *E)* Graficar a la función $x(t)$ en el intervalo $(-10 \leq t \leq 10)$.
 
 plot3(real(x(t)), imag(x(t)), t);
 xlabel ('Re(x(t))');
