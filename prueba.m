@@ -535,7 +535,7 @@ title('Gráfica rango 2pi<=t<42pi ');
 % *D)* Use MATLAB and numerical integration to
 % compute the energy $E_y$ of signal $y(t)$.
 %
-% *E)* Graficar a la función $x(t)$ en el intervalo (-10 \leq t \leq 10).
+% *E)* Graficar a la función $x(t)$ en el intervalo $(-10 \leq t \leq 10)$.
 
 t = (-10:0.01:10);
 
@@ -557,7 +557,7 @@ a=0.5;
 
 plot(real(x(t)),imag(x(a*t)));
 
-axis([-2 2 -1 1]);
+axis([-10 10 -2 2]);
 
 title('a=0.5');
 
@@ -572,7 +572,7 @@ a=1;
 
 plot(real(x(t)),imag(x(a*t)));
 
-axis([-2 2 -1 1]);
+axis([-10 10 -2 2]);
 
 title('a=1');
 
@@ -587,7 +587,7 @@ a=2;
 
 plot(real(x(t)),imag(x(a*t)));
 
-axis([-2 2 -1 1]);
+axis([-10 10 -2 2]);
 
 title('a=2');
 
@@ -597,14 +597,13 @@ ylabel('im{x(2t)}');
 
 
 %%
-% *B)* Use MATLAB to plot $y(t)$ over -10\leq t\leq
-% 10. Analytically determine the time $t_0$ where
+% *B)* Use MATLAB to plot $y(t)$ over $-10\leq t\leq 10$. Analytically determine the time $t_0$ where
 % y(t) has a jump discontinuity. Verify yourcalculation 
 % of $t_0$ using the plot of $y(t)$.
 
 plot(t,y(t));
 
-axis([-2 2 -1 1]);
+axis([-10 10 -2 2]);
 
 title('inciso b');
 
@@ -612,6 +611,31 @@ xlabel('t');
 
 ylabel('y(t)');
 
+%%
+% $ y(t) = Re(2x(\frac{-5-t}{2})) $
+%%
+% $2x(\frac{-5-t}{2}) = 2e^{\frac{-5-t}{2}(1+j2\pi)}u(-\frac{-5-t}{2})$
+%%
+% $ 2x(\frac{-5-t}{2}) = 2e^{\frac{-5-t}{2}}e^{j(-5-t)\pi}u(\frac{t+5}{2}) $
+
+%%
+% $ 2x(\frac{-5-t}{2}) = 2e^{\frac{-5-t}{2}}(cos(\pi (-5-t))+jsin(\pi(-5-t)))u(\frac{t+5}{2}) $
+
+%%
+% $ 2x(\frac{-5-t}{2}) = 2e^{\frac{-5-t}{2}}cos(\pi (-5-t))u(\frac{t+5}{2}) + 2je^{\frac{-5-t}{2}}sin(\pi (-5-t))u(\frac{t+5}{2}) $
+
+%%
+% $ \therefore y(t) = 2e^{\frac{-5-t}{2}}cos(\pi (-5-t))u(\frac{t+5}{2}) $
+%%
+% La discontinuidad de salto se presenta cuando cambia el valoe del escalón unitario, entonces:
+%%
+% $\frac{t+5}{2} \geq 0$
+%%
+% $t \geq -5$
+%%
+% $\therefore t_0 = -5$
+%%
+% La discontinuidad de salto se presenta cuando $t = t_0 =-5$.
 
 %%
 % *C)* Use MATLAB and numerical integration to
@@ -652,6 +676,7 @@ q2 = integral (h2,-6,10)
 % *E)* Graficar a la función $x(t)$ en el intervalo $(-10 \leq t \leq 10)$.
 
 plot3(real(x(t)), imag(x(t)), t);
+axis([-10 10 -2 2]);
 xlabel ('Re(x(t))');
 ylabel ('Im(x(t))');
 zlabel ('t');
