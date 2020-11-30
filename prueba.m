@@ -21,7 +21,7 @@
 %% Introducción
 % El inciso 4 resuelto con Python puede ser consultado en el siguiente <https://colab.research.google.com/drive/11nxr8kWdsPiXhoxsBBT6P-TnolIQIWv1?usp=sharing *enlace*>.
 
-imgpython=imread('/home/rodolfo/PracticasASyS/PracticasASyS/html/python.png'); 
+imgpython=imread('C:\Users\rodo655\Documents\PracticasASyS\html\python.png'); 
 imshow(imgpython);
 
 %%  1) Working with functions.
@@ -597,6 +597,8 @@ xlabel('Re{x(t)}');
 
 ylabel('im{x(2t)}');
 
+%%
+% Se puede observar que la constante A es determinante para la geometráa final de la gráfica Re(t) vs Im(t), pues con el factor de escalamiento cambia de manera considerable la forma de la misma.
 
 %%
 % *B)* Use MATLAB to plot $y(t)$ over $-10\leq t\leq 10$. Analytically determine the time $t_0$ where
@@ -689,5 +691,5 @@ title ('Inciso e');
 %%
 % Captura de pantalla de la app realizada:
 
-imgapp=imread('/home/rodolfo/PracticasASyS/PracticasASyS/html/app.jpg'); 
+imgapp=imread('C:\Users\rodo655\Documents\PracticasASyS\html\app.jpg'); 
 imshow(imgapp);
