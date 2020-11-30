@@ -516,7 +516,7 @@ ylabel('x(t)');
 title('Gráfica rango 2pi<=t<42pi ');
 
 
-%% 5) Resolucón del problema 1.11-3
+%% 5) Resolución del problema 1.11-3
 
 %%
 % Define $x(t) = e^{t(1+j2\pi)}u(-t)$ and $y(t) = Re[2x(\frac{-5-t}{2})]$.
