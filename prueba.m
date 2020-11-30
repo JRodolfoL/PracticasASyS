@@ -629,7 +629,7 @@ ylabel('y(t)');
 %%
 % $ \therefore y(t) = 2e^{\frac{-5-t}{2}}cos(\pi (-5-t))u(\frac{t+5}{2}) $
 %%
-% La discontinuidad de salto se presenta cuando cambia el valoe del escalón unitario, entonces:
+% La discontinuidad de salto se presenta cuando cambia el valor del escalón unitario, entonces:
 %%
 % $\frac{t+5}{2} \geq 0$
 %%
