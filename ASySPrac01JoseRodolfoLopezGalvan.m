@@ -430,11 +430,16 @@ R(i)=0;
 end
 end
 
+
 plot(t,R);
+
 ylabel('Ximpar(t)');
 xlabel('t');
 title('Ejercicio 1.11-1');
 grid on;
+ax = gca;
+ax.XAxisLocation = 'origin';
+ax.YAxisLocation = 'origin';
 
 %% 4) Construcción de la gráfica. 
 %

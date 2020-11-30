@@ -458,11 +458,43 @@ R(i)=0;
 <span class="keyword">end</span>
 <span class="keyword">end</span>
 
+
 plot(t,R);
+
 ylabel(<span class="string">'Ximpar(t)'</span>);
 xlabel(<span class="string">'t'</span>);
 title(<span class="string">'Ejercicio 1.11-1'</span>);
-grid on;</pre>
+grid on;
+ax = gca;
+ax.XAxisLocation = <span class="string">'origin'</span>;
+ax.YAxisLocation = <span class="string">'origin'</span>;</pre>
+
+<pre class="oct-code-output">error: scalar cannot be indexed with .
+	in:
+
+
+
+for i=1:length(t)
+if t(i)&lt;=-pi
+R(i)=-(2.^(t(i)-1)).*cos(-2*pi*t(i));
+elseif t(i)&gt;=pi
+R(i)=(2.^(-t(i)-1)).*cos(2*pi*t(i));
+else
+R(i)=0;
+end
+end
+
+
+plot(t,R);
+
+ylabel('Ximpar(t)');
+xlabel('t');
+title('Ejercicio 1.11-1');
+grid on;
+ax = gca;
+ax.XAxisLocation = 'origin';
+ax.YAxisLocation = 'origin';
+</pre>
 <img src="ASySPrac01JoseRodolfoLopezGalvan-16.png" alt="ASySPrac01JoseRodolfoLopezGalvan-16.png"><h2><a id="node5">4) Construcción de la gráfica.</a></h2>
 <p>Construye la grafica de</p>
 
@@ -1141,11 +1173,16 @@ R(i)=0;
 end
 end
 
+
 plot(t,R);
+
 ylabel('Ximpar(t)');
 xlabel('t');
 title('Ejercicio 1.11-1');
 grid on;
+ax = gca;
+ax.XAxisLocation = 'origin';
+ax.YAxisLocation = 'origin';
 
 %% 4) Construcción de la gráfica.
 %
