@@ -87,6 +87,7 @@ h2 a, h2 a:visited {
 <li><a href="#node4">3) Resolución del problema 1.11-1</a></li>
 <li><a href="#node5">4) Construcción de la gráfica.</a></li>
 <li><a href="#node6">5) Resolucón del problema 1.11-3</a></li>
+<li><a href="#node7">6) App para graficar en Matlab</a></li>
 </ul>
 <h2><a id="node1">Introducción</a></h2>
 <p>El inciso 4 resuelto con Python puede ser consultado en el siguiente <a href="https://colab.research.google.com/drive/11nxr8kWdsPiXhoxsBBT6P-TnolIQIWv1?usp=sharing"><b>enlace</b></a>.</p>
@@ -694,7 +695,12 @@ xlabel (<span class="string">'Re(x(t))'</span>);
 ylabel (<span class="string">'Im(x(t))'</span>);
 zlabel (<span class="string">'t'</span>);
 title (<span class="string">'Inciso e'</span>);</pre>
-<img src="prueba-22.png" alt="prueba-22.png">
+<img src="prueba-22.png" alt="prueba-22.png"><h2><a id="node7">6) App para graficar en Matlab</a></h2>
+<p>Captura de pantalla de la app realizada:</p>
+
+<pre class="oct-code">imgapp=imread(<span class="string">'/home/rodolfo/PracticasASyS/PracticasASyS/html/app.jpg'</span>);
+imshow(imgapp);</pre>
+<img src="prueba-23.png" alt="prueba-23.png">
 <footer>
 <hr>
 <a href="https://www.octave.org">Published with GNU Octave 5.2.0</a>
@@ -1386,6 +1392,14 @@ xlabel ('Re(x(t))');
 ylabel ('Im(x(t))');
 zlabel ('t');
 title ('Inciso e');
+
+%% 6) App para graficar en Matlab
+
+%%
+% Captura de pantalla de la app realizada:
+
+imgapp=imread('/home/rodolfo/PracticasASyS/PracticasASyS/html/app.jpg');
+imshow(imgapp);
 ##### SOURCE END #####
 -->
 </body>

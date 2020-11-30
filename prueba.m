@@ -683,3 +683,11 @@ xlabel ('Re(x(t))');
 ylabel ('Im(x(t))');
 zlabel ('t');
 title ('Inciso e');
+
+%% 6) App para graficar en Matlab
+
+%%
+% Captura de pantalla de la app realizada:
+
+imgapp=imread('/home/rodolfo/PracticasASyS/PracticasASyS/html/app.jpg'); 
+imshow(imgapp);
