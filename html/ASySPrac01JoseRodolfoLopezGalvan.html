@@ -441,13 +441,13 @@ t=(-3*pi:0.001:3*pi);</pre>
 <img src="ASySPrac01JoseRodolfoLopezGalvan-15.png" alt="ASySPrac01JoseRodolfoLopezGalvan-15.png"><h2><a id="node4">3) Resolución del problema 1.11-1</a></h2>
 <p>Provide MATLAB code and output that plots
 the odd portion $x_{o}(t)$ of the function $x(t) =
-2^{-t}cos(2\pi t)u(t?\pi )$ over a suitable-length interval using a suitable number of points.</p>
+2^{-t}cos(2\pi t)u(t-\pi )$ over a suitable-length interval using a suitable number of points.</p>
 
-<p>$X(t)=2^tcos(2\pi t)$</p>
+<p>$x(t)=2^tcos(2\pi t)$</p>
 
-<p>$X_{impar(t)}=\frac{x(t)-x(-t)}{2}$</p>
+<p>$x_{impar(t)}=\frac{x(t)-x(-t)}{2}$</p>
 
-<p>$X_{impar(t)}=2^{-t-1}cos(2\pi t)u(t-\pi )-2^{t-1}cos(-2\pi t)u(-t-\pi )$</p>
+<p>$x_{impar(t)}=2^{-t-1}cos(2\pi t)u(t-\pi )-2^{t-1}cos(-2\pi t)u(-t-\pi )$</p>
 
 <pre class="oct-code"><span class="keyword">for</span> i=1:length(t)
 <span class="keyword">if</span> t(i)&lt;=-pi
@@ -1141,14 +1141,14 @@ t=(-3*pi:0.001:3*pi);
 %%
 % Provide MATLAB code and output that plots
 % the odd portion $x_{o}(t)$ of the function $x(t) =
-% 2^{-t}cos(2\pi t)u(t?\pi )$ over a suitable-length interval using a suitable number of points.
+% 2^{-t}cos(2\pi t)u(t-\pi )$ over a suitable-length interval using a suitable number of points.
 %
 %%
-% $X(t)=2^tcos(2\pi t)$
+% $x(t)=2^tcos(2\pi t)$
 %%
-% $X_{impar(t)}=\frac{x(t)-x(-t)}{2}$
+% $x_{impar(t)}=\frac{x(t)-x(-t)}{2}$
 %%
-% $X_{impar(t)}=2^{-t-1}cos(2\pi t)u(t-\pi )-2^{t-1}cos(-2\pi t)u(-t-\pi )$
+% $x_{impar(t)}=2^{-t-1}cos(2\pi t)u(t-\pi )-2^{t-1}cos(-2\pi t)u(-t-\pi )$
 
 
 for i=1:length(t)
