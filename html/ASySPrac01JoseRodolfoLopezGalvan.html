@@ -88,6 +88,7 @@ h2 a, h2 a:visited {
 <li><a href="#node5">4) Construcción de la gráfica.</a></li>
 <li><a href="#node6">5) Resolución del problema 1.11-3</a></li>
 <li><a href="#node7">6) App para graficar en Matlab</a></li>
+<li><a href="#node8">Referencias:</a></li>
 </ul>
 <h2><a id="node1">Introducción</a></h2>
 <p>El inciso 4 resuelto con Python puede ser consultado en el siguiente <a href="https://colab.research.google.com/drive/11nxr8kWdsPiXhoxsBBT6P-TnolIQIWv1?usp=sharing"><b>enlace</b></a>.</p>
@@ -580,7 +581,7 @@ u = @(t) 1.0.*(t&gt;=0);
 
 x = @(t) exp(t.*(1+j*2*pi)).*u(-t);
 
-y = @(t) real(2.*x((-5.-t)/2));</pre>
+y = @(t) real(2*x((-5-t)/2));</pre>
 
 <p><b>A)</b> Use MATLAB to plot $Re{x(t)}$ versus
 $Im{x(at)}$ for a = 0.5, 1, and 2 and $-10\leq t\leq 10$.
@@ -717,7 +718,11 @@ title (<span class="string">'Inciso e'</span>);</pre>
 
 <pre class="oct-code">imgapp=imread(<span class="string">'/home/rodolfo/PracticasASyS/PracticasASyS/html/app.jpg'</span>);
 imshow(imgapp);</pre>
-<img src="ASySPrac01JoseRodolfoLopezGalvan-23.png" alt="ASySPrac01JoseRodolfoLopezGalvan-23.png">
+<img src="ASySPrac01JoseRodolfoLopezGalvan-23.png" alt="ASySPrac01JoseRodolfoLopezGalvan-23.png"><h2><a id="node8">Referencias:</a></h2>
+<p>Hwei, P. (2020). Signals and Systems. Estados Unidos. Mc Graw Hill.</p>
+
+<p>Lathi, B. &amp; Green, R. (2018). Linear systems and signals. Estados Unidos. Oxford University Press.</p>
+
 <footer>
 <hr>
 <a href="https://www.octave.org">Published with GNU Octave 5.2.0</a>
@@ -1287,7 +1292,7 @@ u = @(t) 1.0.*(t>=0);
 
 x = @(t) exp(t.*(1+j*2*pi)).*u(-t);
 
-y = @(t) real(2.*x((-5.-t)/2));
+y = @(t) real(2*x((-5-t)/2));
 
 
 %%
@@ -1435,6 +1440,13 @@ title ('Inciso e');
 
 imgapp=imread('/home/rodolfo/PracticasASyS/PracticasASyS/html/app.jpg');
 imshow(imgapp);
+
+%% Referencias:
+%
+%%
+% Hwei, P. (2020). Signals and Systems. Estados Unidos. Mc Graw Hill.
+%%
+% Lathi, B. & Green, R. (2018). Linear systems and signals. Estados Unidos. Oxford University Press.
 ##### SOURCE END #####
 -->
 </body>

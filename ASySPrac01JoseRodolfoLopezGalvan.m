@@ -561,7 +561,7 @@ u = @(t) 1.0.*(t>=0);
 
 x = @(t) exp(t.*(1+j*2*pi)).*u(-t);
 
-y = @(t) real(2.*x((-5.-t)/2));
+y = @(t) real(2*x((-5-t)/2));
 
 
 %%
@@ -709,3 +709,10 @@ title ('Inciso e');
 
 imgapp=imread('/home/rodolfo/PracticasASyS/PracticasASyS/html/app.jpg'); 
 imshow(imgapp);
+
+%% Referencias:
+%
+%%
+% Hwei, P. (2020). Signals and Systems. Estados Unidos. Mc Graw Hill.
+%%
+% Lathi, B. & Green, R. (2018). Linear systems and signals. Estados Unidos. Oxford University Press.
