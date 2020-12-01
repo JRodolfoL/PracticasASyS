@@ -21,7 +21,7 @@
 %% Introducción
 % El inciso 4 resuelto con Python puede ser consultado en el siguiente <https://colab.research.google.com/drive/11nxr8kWdsPiXhoxsBBT6P-TnolIQIWv1?usp=sharing *enlace*>.
 
-imgpython=imread('C:\Users\rodo655\Documents\PracticasASyS\html\python.png'); 
+imgpython=imread('/home/rodolfo/PracticasASyS/PracticasASyS/html/python.png'); 
 imshow(imgpython);
 
 %%  1) Working with functions.
@@ -437,9 +437,11 @@ ylabel('Ximpar(t)');
 xlabel('t');
 title('Ejercicio 1.11-1');
 grid on;
-ax = gca;
-ax.XAxisLocation = 'origin';
-ax.YAxisLocation = 'origin';
+
+set (gca, "xaxislocation", "origin")
+set (gca, "yaxislocation", "origin")
+set(gca, "box", "off")
+
 
 %% 4) Construcción de la gráfica. 
 %
@@ -467,7 +469,9 @@ ax = gca;
 xlabel('Dominio t');
 ylabel('x(t)');
 title('Gráfica rango -4pi<=t<=-2pi ');
-
+set (gca, "xaxislocation", "origin")
+set (gca, "yaxislocation", "origin")
+set(gca, "box", "off")
 
 
 subplot(2,2,2);
@@ -485,7 +489,9 @@ xlabel('Dominio t');
 ylabel('x(t)');
 
 title('Gráfica rango -2pi<=t<=0 ');
-
+set (gca, "xaxislocation", "origin")
+set (gca, "yaxislocation", "origin")
+set(gca, "box", "off")
 
 
 subplot(2,2,3);
@@ -502,7 +508,9 @@ ax = gca;
 xlabel('Dominio t');
 ylabel('x(t)');
 title('Gráfica rango 0<=t<=2pi ');
-
+set (gca, "xaxislocation", "origin")
+set (gca, "yaxislocation", "origin")
+set(gca, "box", "off")
 
 
 subplot(2,2,4);
@@ -519,6 +527,9 @@ ax = gca;
 xlabel('Dominio t');
 ylabel('x(t)');
 title('Gráfica rango 2pi<=t<42pi ');
+set (gca, "xaxislocation", "origin")
+set (gca, "yaxislocation", "origin")
+set(gca, "box", "off")
 
 
 %% 5) Resolución del problema 1.11-3
@@ -696,5 +707,5 @@ title ('Inciso e');
 %%
 % Captura de pantalla de la app realizada:
 
-imgapp=imread('C:\Users\rodo655\Documents\PracticasASyS\html\app.jpg'); 
+imgapp=imread('/home/rodolfo/PracticasASyS/PracticasASyS/html/app.jpg'); 
 imshow(imgapp);

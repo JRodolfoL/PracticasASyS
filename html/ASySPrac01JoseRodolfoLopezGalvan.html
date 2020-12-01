@@ -92,7 +92,7 @@ h2 a, h2 a:visited {
 <h2><a id="node1">Introducción</a></h2>
 <p>El inciso 4 resuelto con Python puede ser consultado en el siguiente <a href="https://colab.research.google.com/drive/11nxr8kWdsPiXhoxsBBT6P-TnolIQIWv1?usp=sharing"><b>enlace</b></a>.</p>
 
-<pre class="oct-code">imgpython=imread(<span class="string">'C:\Users\rodo655\Documents\PracticasASyS\html\python.png'</span>);
+<pre class="oct-code">imgpython=imread(<span class="string">'/home/rodolfo/PracticasASyS/PracticasASyS/html/python.png'</span>);
 imshow(imgpython);</pre>
 <img src="ASySPrac01JoseRodolfoLopezGalvan-1.png" alt="ASySPrac01JoseRodolfoLopezGalvan-1.png"><h2><a id="node2"> 1) Working with functions.</a></h2>
 <p>Working with functions is fundamental to signals and systems applications. MATLAB provides several methods of defining and evaluating functions. An understanding and proficient use of these methods are therefore necessary and beneficial.</p>
@@ -465,36 +465,10 @@ ylabel(<span class="string">'Ximpar(t)'</span>);
 xlabel(<span class="string">'t'</span>);
 title(<span class="string">'Ejercicio 1.11-1'</span>);
 grid on;
-ax = gca;
-ax.XAxisLocation = <span class="string">'origin'</span>;
-ax.YAxisLocation = <span class="string">'origin'</span>;</pre>
 
-<pre class="oct-code-output">error: scalar cannot be indexed with .
-	in:
-
-
-
-for i=1:length(t)
-if t(i)&lt;=-pi
-R(i)=-(2.^(t(i)-1)).*cos(-2*pi*t(i));
-elseif t(i)&gt;=pi
-R(i)=(2.^(-t(i)-1)).*cos(2*pi*t(i));
-else
-R(i)=0;
-end
-end
-
-
-plot(t,R);
-
-ylabel('Ximpar(t)');
-xlabel('t');
-title('Ejercicio 1.11-1');
-grid on;
-ax = gca;
-ax.XAxisLocation = 'origin';
-ax.YAxisLocation = 'origin';
-</pre>
+set (gca, <span class="string">"xaxislocation"</span>, <span class="string">"origin"</span>)
+set (gca, <span class="string">"yaxislocation"</span>, <span class="string">"origin"</span>)
+set(gca, <span class="string">"box"</span>, <span class="string">"off"</span>)</pre>
 <img src="ASySPrac01JoseRodolfoLopezGalvan-16.png" alt="ASySPrac01JoseRodolfoLopezGalvan-16.png"><h2><a id="node5">4) Construcción de la gráfica.</a></h2>
 <p>Construye la grafica de</p>
 
@@ -518,7 +492,9 @@ ax = gca;
 xlabel(<span class="string">'Dominio t'</span>);
 ylabel(<span class="string">'x(t)'</span>);
 title(<span class="string">'Gráfica rango -4pi&lt;=t&lt;=-2pi '</span>);
-
+set (gca, <span class="string">"xaxislocation"</span>, <span class="string">"origin"</span>)
+set (gca, <span class="string">"yaxislocation"</span>, <span class="string">"origin"</span>)
+set(gca, <span class="string">"box"</span>, <span class="string">"off"</span>)
 
 
 subplot(2,2,2);
@@ -536,7 +512,9 @@ xlabel(<span class="string">'Dominio t'</span>);
 ylabel(<span class="string">'x(t)'</span>);
 
 title(<span class="string">'Gráfica rango -2pi&lt;=t&lt;=0 '</span>);
-
+set (gca, <span class="string">"xaxislocation"</span>, <span class="string">"origin"</span>)
+set (gca, <span class="string">"yaxislocation"</span>, <span class="string">"origin"</span>)
+set(gca, <span class="string">"box"</span>, <span class="string">"off"</span>)
 
 
 subplot(2,2,3);
@@ -553,7 +531,9 @@ ax = gca;
 xlabel(<span class="string">'Dominio t'</span>);
 ylabel(<span class="string">'x(t)'</span>);
 title(<span class="string">'Gráfica rango 0&lt;=t&lt;=2pi '</span>);
-
+set (gca, <span class="string">"xaxislocation"</span>, <span class="string">"origin"</span>)
+set (gca, <span class="string">"yaxislocation"</span>, <span class="string">"origin"</span>)
+set(gca, <span class="string">"box"</span>, <span class="string">"off"</span>)
 
 
 subplot(2,2,4);
@@ -569,7 +549,10 @@ grid on;
 ax = gca;
 xlabel(<span class="string">'Dominio t'</span>);
 ylabel(<span class="string">'x(t)'</span>);
-title(<span class="string">'Gráfica rango 2pi&lt;=t&lt;42pi '</span>);</pre>
+title(<span class="string">'Gráfica rango 2pi&lt;=t&lt;42pi '</span>);
+set (gca, <span class="string">"xaxislocation"</span>, <span class="string">"origin"</span>)
+set (gca, <span class="string">"yaxislocation"</span>, <span class="string">"origin"</span>)
+set(gca, <span class="string">"box"</span>, <span class="string">"off"</span>)</pre>
 <img src="ASySPrac01JoseRodolfoLopezGalvan-17.png" alt="ASySPrac01JoseRodolfoLopezGalvan-17.png"><h2><a id="node6">5) Resolución del problema 1.11-3</a></h2>
 <p>Define $x(t) = e^{t(1+j2\pi)}u(-t)$ and $y(t) = Re[2x(\frac{-5-t}{2})]$.</p>
 
@@ -732,7 +715,7 @@ title (<span class="string">'Inciso e'</span>);</pre>
 <img src="ASySPrac01JoseRodolfoLopezGalvan-22.png" alt="ASySPrac01JoseRodolfoLopezGalvan-22.png"><h2><a id="node7">6) App para graficar en Matlab</a></h2>
 <p>Captura de pantalla de la app realizada:</p>
 
-<pre class="oct-code">imgapp=imread(<span class="string">'C:\Users\rodo655\Documents\PracticasASyS\html\app.jpg'</span>);
+<pre class="oct-code">imgapp=imread(<span class="string">'/home/rodolfo/PracticasASyS/PracticasASyS/html/app.jpg'</span>);
 imshow(imgapp);</pre>
 <img src="ASySPrac01JoseRodolfoLopezGalvan-23.png" alt="ASySPrac01JoseRodolfoLopezGalvan-23.png">
 <footer>
@@ -764,7 +747,7 @@ imshow(imgapp);</pre>
 %% Introducción
 % El inciso 4 resuelto con Python puede ser consultado en el siguiente <https://colab.research.google.com/drive/11nxr8kWdsPiXhoxsBBT6P-TnolIQIWv1?usp=sharing *enlace*>.
 
-imgpython=imread('C:\Users\rodo655\Documents\PracticasASyS\html\python.png');
+imgpython=imread('/home/rodolfo/PracticasASyS/PracticasASyS/html/python.png');
 imshow(imgpython);
 
 %%  1) Working with functions.
@@ -1180,9 +1163,11 @@ ylabel('Ximpar(t)');
 xlabel('t');
 title('Ejercicio 1.11-1');
 grid on;
-ax = gca;
-ax.XAxisLocation = 'origin';
-ax.YAxisLocation = 'origin';
+
+set (gca, "xaxislocation", "origin")
+set (gca, "yaxislocation", "origin")
+set(gca, "box", "off")
+
 
 %% 4) Construcción de la gráfica.
 %
@@ -1210,7 +1195,9 @@ ax = gca;
 xlabel('Dominio t');
 ylabel('x(t)');
 title('Gráfica rango -4pi<=t<=-2pi ');
-
+set (gca, "xaxislocation", "origin")
+set (gca, "yaxislocation", "origin")
+set(gca, "box", "off")
 
 
 subplot(2,2,2);
@@ -1228,7 +1215,9 @@ xlabel('Dominio t');
 ylabel('x(t)');
 
 title('Gráfica rango -2pi<=t<=0 ');
-
+set (gca, "xaxislocation", "origin")
+set (gca, "yaxislocation", "origin")
+set(gca, "box", "off")
 
 
 subplot(2,2,3);
@@ -1245,7 +1234,9 @@ ax = gca;
 xlabel('Dominio t');
 ylabel('x(t)');
 title('Gráfica rango 0<=t<=2pi ');
-
+set (gca, "xaxislocation", "origin")
+set (gca, "yaxislocation", "origin")
+set(gca, "box", "off")
 
 
 subplot(2,2,4);
@@ -1262,6 +1253,9 @@ ax = gca;
 xlabel('Dominio t');
 ylabel('x(t)');
 title('Gráfica rango 2pi<=t<42pi ');
+set (gca, "xaxislocation", "origin")
+set (gca, "yaxislocation", "origin")
+set(gca, "box", "off")
 
 
 %% 5) Resolución del problema 1.11-3
@@ -1439,7 +1433,7 @@ title ('Inciso e');
 %%
 % Captura de pantalla de la app realizada:
 
-imgapp=imread('C:\Users\rodo655\Documents\PracticasASyS\html\app.jpg');
+imgapp=imread('/home/rodolfo/PracticasASyS/PracticasASyS/html/app.jpg');
 imshow(imgapp);
 ##### SOURCE END #####
 -->
