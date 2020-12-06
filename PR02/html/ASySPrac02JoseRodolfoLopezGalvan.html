@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Práctica 2</title>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  tex2jax: { inlineMath: [['$','$'], ['\\(','\\)']] },
+  TeX: { equationNumbers: { autoNumber: 'all' } }
+});
+</script>
+<script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+
+<style>
+body > * {
+  max-width: 42em;
+}
+body {
+  font-family: "Roboto Condensed", sans-serif;
+  padding-left: 7.5em;
+  padding-right: 7.5em;
+}
+pre, code {
+  max-width: 50em;
+  font-family: monospace;
+}
+pre.oct-code {
+  border: 1px solid Grey;
+  padding: 5px;
+}
+pre.oct-code-output {
+  margin-left: 2em;
+}
+span.comment {
+  color: ForestGreen;
+}
+span.keyword {
+  color: Blue;
+}
+span.string {
+  color: DarkOrchid;
+}
+footer {
+  margin-top: 2em;
+  font-size: 80%;
+}
+a, a:visited {
+  color: Blue;
+}
+h2 {
+  font-family: "Roboto Condensed", serif;
+  margin-top: 1.5em;
+}
+h2 a, h2 a:visited {
+  color: Black;
+}
+</style>
+
+</head>
+<body>
+<h1>Práctica 2</h1>
+
+<h2>Contents</h2>
+<ul>
+<li><a href="#node1">Ejercicio 1</a></li>
+<li><a href="#node2">Procedimiento</a></li>
+</ul>
+<h2><a id="node1">Ejercicio 1</a></h2>
+<pre class="oct-code"><span class="comment">% 3.11-2 Consider the discrete-time function</span>
+
+<span class="comment">%</span>
+
+<span class="comment">% $$f[n] = e-n/5 cos(\pi*n/5)u[n]$$</span>
+
+<span class="comment">%</span>
+<span class="comment">% Section 3.11 uses anonymous</span>
+
+<span class="comment">% functions in describing DT signals.</span>
+
+<span class="comment">%</span>
+
+<span class="comment">% f = @(n) exp(-n/5).*cos(\pi*n/5).*(n&gt;=0);</span>
+
+<span class="comment">%</span>
+
+<span class="comment">% While this anonymous function operates correctly</span>
+
+<span class="comment">% for a downsampling operation such as</span>
+
+<span class="comment">% f[2n], it does not operate correctly for an</span>
+
+<span class="comment">% upsampling operation, such as f[n/2]. Modify</span>
+
+<span class="comment">% the anonymous function f so that it also</span>
+
+<span class="comment">% correctly accommodates upsampling operations.</span>
+
+<span class="comment">% Test your code by computing and plotting</span>
+
+<span class="comment">% f(n/2) over (?10 ? n ? 10).</span>
+</pre>
+<h2><a id="node2">Procedimiento</a></h2>
+<pre class="oct-code"><span class="comment">%</span>
+
+<span class="comment">%</span>
+
+<span class="comment">% Creamos la función y vector de n</span>
+
+<span class="comment">%</span>
+</pre>
+
+<pre class="oct-code">f = @(n) exp(-n/5).*cos(pi*n/5).*(n&gt;=0);
+
+n=-10:1:10;</pre>
+
+<pre class="oct-code"><span class="comment">% Modificamos la función</span>
+</pre>
+
+<pre class="oct-code">f1 = @(n) exp(-n/5).*cos(pi*n/5).*(n&gt;=0).*(1./(mod(n,1)==0));
+
+stem(n,f1(n));
+
+title(<span class="string">'Gráfica de la señal f[n]=e^(-n/5)*cos(pin/5)u[n]'</span>);
+
+xlabel(<span class="string">'n'</span>);
+
+ylabel(<span class="string">'f[n]'</span>);
+
+axis([-11 11 -0.5 1.2])
+;
+grid on;
+
+gca.XAxisLocation = <span class="string">'origin'</span>;
+gca.YAxisLocation = <span class="string">'origin'</span>;
+
+gca.Box = <span class="string">'off'</span>;</pre>
+<img src="ASySPrac02JoseRodolfoLopezGalvan-1.png" alt="ASySPrac02JoseRodolfoLopezGalvan-1.png">
+<pre class="oct-code"><span class="comment">% Escalando f[n] en 1/2</span>
+</pre>
+
+<pre class="oct-code">stem(n,f1(n/2));
+
+title(<span class="string">'Gráfica de la señal f[n/2]'</span>);
+
+xlabel(<span class="string">'n'</span>);
+ylabel(<span class="string">'f[n/2]'</span>);
+
+axis([-11 11 -0.5 1.2]);
+
+grid on;
+
+gca.XAxisLocation = <span class="string">'origin'</span>;
+
+gca.YAxisLocation = <span class="string">'origin'</span>;
+
+gca.Box = <span class="string">'off'</span>;</pre>
+<img src="ASySPrac02JoseRodolfoLopezGalvan-2.png" alt="ASySPrac02JoseRodolfoLopezGalvan-2.png">
+<footer>
+<hr>
+<a href="https://www.octave.org">Published with GNU Octave 6.1.0</a>
+</footer>
+<!--
+##### SOURCE BEGIN #####
+%% Práctica 2
+
+%% Ejercicio 1
+
+% 3.11-2 Consider the discrete-time function
+
+%
+
+% $$f[n] = e-n/5 cos(\pi*n/5)u[n]$$
+
+%
+% Section 3.11 uses anonymous
+
+% functions in describing DT signals.
+
+%
+
+% f = @(n) exp(-n/5).*cos(\pi*n/5).*(n>=0);
+
+%
+
+% While this anonymous function operates correctly
+
+% for a downsampling operation such as
+
+% f[2n], it does not operate correctly for an
+
+% upsampling operation, such as f[n/2]. Modify
+
+% the anonymous function f so that it also
+
+% correctly accommodates upsampling operations.
+
+% Test your code by computing and plotting
+
+% f(n/2) over (?10 ? n ? 10).
+
+%% Procedimiento
+
+%
+
+%
+
+% Creamos la función y vector de n
+
+%
+%%
+
+f = @(n) exp(-n/5).*cos(pi*n/5).*(n>=0);
+
+n=-10:1:10;
+
+%%
+
+% Modificamos la función
+
+%%
+
+f1 = @(n) exp(-n/5).*cos(pi*n/5).*(n>=0).*(1./(mod(n,1)==0));
+
+stem(n,f1(n));
+
+title('Gráfica de la señal f[n]=e^(-n/5)*cos(pin/5)u[n]');
+
+xlabel('n');
+
+ylabel('f[n]');
+
+axis([-11 11 -0.5 1.2])
+;
+grid on;
+
+gca.XAxisLocation = 'origin';
+gca.YAxisLocation = 'origin';
+
+gca.Box = 'off';
+
+%%
+
+% Escalando f[n] en 1/2
+
+%%
+
+stem(n,f1(n/2));
+
+title('Gráfica de la señal f[n/2]');
+
+xlabel('n');
+ylabel('f[n/2]');
+
+axis([-11 11 -0.5 1.2]);
+
+grid on;
+
+gca.XAxisLocation = 'origin';
+
+gca.YAxisLocation = 'origin';
+
+gca.Box = 'off';
+##### SOURCE END #####
+-->
+</body>
+</html>
