@@ -63,58 +63,35 @@ h2 a, h2 a:visited {
 <h2>Contents</h2>
 <ul>
 <li><a href="#node1">Ejercicio 1</a></li>
-<li><a href="#node2">Procedimiento</a></li>
+<li><a href="#node2">Ejercicio 4</a></li>
 </ul>
 <h2><a id="node1">Ejercicio 1</a></h2>
-<pre class="oct-code"><span class="comment">% 3.11-2 Consider the discrete-time function</span>
+<p>3.11-2 Consider the discrete-time function
+$$f[n] = e-n/5 cos(\pi*n/5)u[n]$$</p>
 
-<span class="comment">%</span>
+<p>Section 3.11 uses anonymous
+functions in describing DT signals.</p>
 
-<span class="comment">% $$f[n] = e-n/5 cos(\pi*n/5)u[n]$$</span>
+<p>f = @(n) exp(-n/5).*cos(\pi<b>n/5).</b>(n&gt;=0);</p>
 
-<span class="comment">%</span>
-<span class="comment">% Section 3.11 uses anonymous</span>
+<p>While this anonymous function operates correctly
+for a downsampling operation such as
+f[2n], it does not operate correctly for an
+upsampling operation, such as f[n/2]. Modify
+the anonymous function f so that it also
+correctly accommodates upsampling operations.
+Test your code by computing and plotting
+f(n/2) over (?10 ? n ? 10).</p>
 
-<span class="comment">% functions in describing DT signals.</span>
+<p><b>Procedimiento</b></p>
 
-<span class="comment">%</span>
-
-<span class="comment">% f = @(n) exp(-n/5).*cos(\pi*n/5).*(n&gt;=0);</span>
-
-<span class="comment">%</span>
-
-<span class="comment">% While this anonymous function operates correctly</span>
-
-<span class="comment">% for a downsampling operation such as</span>
-
-<span class="comment">% f[2n], it does not operate correctly for an</span>
-
-<span class="comment">% upsampling operation, such as f[n/2]. Modify</span>
-
-<span class="comment">% the anonymous function f so that it also</span>
-
-<span class="comment">% correctly accommodates upsampling operations.</span>
-
-<span class="comment">% Test your code by computing and plotting</span>
-
-<span class="comment">% f(n/2) over (?10 ? n ? 10).</span>
-</pre>
-<h2><a id="node2">Procedimiento</a></h2>
-<pre class="oct-code"><span class="comment">%</span>
-
-<span class="comment">%</span>
-
-<span class="comment">% Creamos la función y vector de n</span>
-
-<span class="comment">%</span>
-</pre>
+<p>Creamos la función y vector de n</p>
 
 <pre class="oct-code">f = @(n) exp(-n/5).*cos(pi*n/5).*(n&gt;=0);
 
 n=-10:1:10;</pre>
 
-<pre class="oct-code"><span class="comment">% Modificamos la función</span>
-</pre>
+<p>Modificamos la función</p>
 
 <pre class="oct-code">f1 = @(n) exp(-n/5).*cos(pi*n/5).*(n&gt;=0).*(1./(mod(n,1)==0));
 
@@ -126,8 +103,7 @@ xlabel(<span class="string">'n'</span>);
 
 ylabel(<span class="string">'f[n]'</span>);
 
-axis([-11 11 -0.5 1.2])
-;
+axis([-11 11 -0.5 1.2]);
 grid on;
 
 gca.XAxisLocation = <span class="string">'origin'</span>;
@@ -135,8 +111,7 @@ gca.YAxisLocation = <span class="string">'origin'</span>;
 
 gca.Box = <span class="string">'off'</span>;</pre>
 <img src="ASySPrac02JoseRodolfoLopezGalvan-1.png" alt="ASySPrac02JoseRodolfoLopezGalvan-1.png">
-<pre class="oct-code"><span class="comment">% Escalando f[n] en 1/2</span>
-</pre>
+<p>Escalando f[n] en 1/2</p>
 
 <pre class="oct-code">stem(n,f1(n/2));
 
@@ -154,7 +129,42 @@ gca.XAxisLocation = <span class="string">'origin'</span>;
 gca.YAxisLocation = <span class="string">'origin'</span>;
 
 gca.Box = <span class="string">'off'</span>;</pre>
-<img src="ASySPrac02JoseRodolfoLopezGalvan-2.png" alt="ASySPrac02JoseRodolfoLopezGalvan-2.png">
+<img src="ASySPrac02JoseRodolfoLopezGalvan-2.png" alt="ASySPrac02JoseRodolfoLopezGalvan-2.png"><h2><a id="node2">Ejercicio 4</a></h2>
+<p>3.11-6 Suppose a vector x exists in the MATLAB
+workspace, corresponding to a finite-duration
+DT signal x[n]
+(a) Write a MATLAB function that, when
+passed vector x, computes and returns Ex,
+the energy of x[n].
+(b) Write a MATLAB function that, when
+passed vector x, computes and returns Px,
+the power of x[n]. Assume that x[n] is
+periodic and that vector x contains data for
+an integer number of periods of x[n].</p>
+
+<p><b>Procedimiento</b>
+A) Energia</p>
+
+<pre class="pre-code">x=input(<span class="string">'Ingrese la función en sintaxis MATLAB:'</span>);
+n=input(<span class="string">'Ingrese el vector:'</span>);
+E=0;
+<span class="keyword">for</span> n=n
+    sum=x(n)^2;
+    E=E+sum;
+<span class="keyword">end</span>
+fprintf(<span class="string">'La energia es:%d'</span>,E);</pre>
+
+<p>B) Potencia</p>
+
+<pre class="pre-code">y=input(<span class="string">'Ingrese la función en sintaxis MATLAB:'</span>);
+N=input(<span class="string">'Ingrese el periodo:'</span>);
+P=0;
+<span class="keyword">for</span> n=0:N-1
+    sum=(1/N)*y(n)^2;
+    P=P+sum;
+<span class="keyword">end</span>
+fprintf(<span class="string">'La Potencia es:%d'</span>,P);</pre>
+
 <footer>
 <hr>
 <a href="https://www.octave.org">Published with GNU Octave 6.1.0</a>
@@ -164,48 +174,27 @@ gca.Box = <span class="string">'off'</span>;</pre>
 %% Práctica 2
 
 %% Ejercicio 1
-
 % 3.11-2 Consider the discrete-time function
-
-%
-
 % $$f[n] = e-n/5 cos(\pi*n/5)u[n]$$
-
 %
 % Section 3.11 uses anonymous
-
 % functions in describing DT signals.
-
 %
-
 % f = @(n) exp(-n/5).*cos(\pi*n/5).*(n>=0);
-
 %
-
 % While this anonymous function operates correctly
-
 % for a downsampling operation such as
-
 % f[2n], it does not operate correctly for an
-
 % upsampling operation, such as f[n/2]. Modify
-
 % the anonymous function f so that it also
-
 % correctly accommodates upsampling operations.
-
 % Test your code by computing and plotting
-
 % f(n/2) over (?10 ? n ? 10).
-
-%% Procedimiento
-
+%%
+% *Procedimiento*
 %
-
 %
-
 % Creamos la función y vector de n
-
 %
 %%
 
@@ -214,10 +203,8 @@ f = @(n) exp(-n/5).*cos(pi*n/5).*(n>=0);
 n=-10:1:10;
 
 %%
-
 % Modificamos la función
 
-%%
 
 f1 = @(n) exp(-n/5).*cos(pi*n/5).*(n>=0).*(1./(mod(n,1)==0));
 
@@ -229,8 +216,7 @@ xlabel('n');
 
 ylabel('f[n]');
 
-axis([-11 11 -0.5 1.2])
-;
+axis([-11 11 -0.5 1.2]);
 grid on;
 
 gca.XAxisLocation = 'origin';
@@ -239,10 +225,7 @@ gca.YAxisLocation = 'origin';
 gca.Box = 'off';
 
 %%
-
 % Escalando f[n] en 1/2
-
-%%
 
 stem(n,f1(n/2));
 
@@ -260,6 +243,48 @@ gca.XAxisLocation = 'origin';
 gca.YAxisLocation = 'origin';
 
 gca.Box = 'off';
+
+%% Ejercicio 4
+%
+% 3.11-6 Suppose a vector x exists in the MATLAB
+% workspace, corresponding to a finite-duration
+% DT signal x[n]
+% (a) Write a MATLAB function that, when
+% passed vector x, computes and returns Ex,
+% the energy of x[n].
+% (b) Write a MATLAB function that, when
+% passed vector x, computes and returns Px,
+% the power of x[n]. Assume that x[n] is
+% periodic and that vector x contains data for
+% an integer number of periods of x[n].
+%%
+% *Procedimiento*
+% A) Energia
+
+
+
+%%
+%   x=input('Ingrese la función en sintaxis MATLAB:');
+%   n=input('Ingrese el vector:');
+%   E=0;
+%   for n=n
+%       sum=x(n)^2;
+%       E=E+sum;
+%   end
+%   fprintf('La energia es:%d',E);
+%
+% B) Potencia
+
+%%
+%   y=input('Ingrese la función en sintaxis MATLAB:');
+%   N=input('Ingrese el periodo:');
+%   P=0;
+%   for n=0:N-1
+%       sum=(1/N)*y(n)^2;
+%       P=P+sum;
+%   end
+%   fprintf('La Potencia es:%d',P);
+%
 ##### SOURCE END #####
 -->
 </body>
