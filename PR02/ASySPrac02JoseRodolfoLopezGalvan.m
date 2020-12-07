@@ -64,10 +64,9 @@ ylabel('f[n]');
 axis([-11 11 -0.5 1.2]);
 grid on;
 
-gca.XAxisLocation = 'origin';
-gca.YAxisLocation = 'origin';
-
-gca.Box = 'off';
+set (gca, "xaxislocation", "origin")
+set (gca, "yaxislocation", "origin")
+set(gca, "box", "off")
 
 %%
 % Escalando f[n] en 1/2
@@ -83,11 +82,9 @@ axis([-11 11 -0.5 1.2]);
 
 grid on;
 
-gca.XAxisLocation = 'origin';
-
-gca.YAxisLocation = 'origin';
-
-gca.Box = 'off';
+set (gca, "xaxislocation", "origin")
+set (gca, "yaxislocation", "origin")
+set(gca, "box", "off")
 
 %% Ejercicio 2
 % For the signal shown in Fig. P3.1-1b, sketch the following signals:
@@ -119,7 +116,7 @@ gca.Box = 'off';
 % 
 % Generamos la grafica
 
-n=(-20:1:20)
+n=(-20:1:20);
 for i=1:length(n)
 if (0<=n(i))&&(n(i)<=3)
 R(i)=n(i);
@@ -134,10 +131,11 @@ stem(n,R);
 ylabel('x[n]')
 xlabel('n')
 title('Señal x[n] original')
-grid on
-gca.XAxisLocation = 'origin';
-gca.YAxisLocation = 'origin';
-gca.Box = 'off';
+grid on;
+
+set (gca, "xaxislocation", "origin")
+set (gca, "yaxislocation", "origin")
+set(gca, "box", "off")
 axis([-2 7, -1, 4])
 %% 
 % Ahora ya podemos realizar las operaciones
@@ -166,10 +164,11 @@ stem(n,R);
 ylabel('x[-n]')
 xlabel('n')
 title('Inciso a)')
-grid on
-gca.XAxisLocation = 'origin';
-gca.YAxisLocation = 'origin';
-gca.Box = 'off';
+grid on;
+
+set (gca, "xaxislocation", "origin")
+set (gca, "yaxislocation", "origin")
+set(gca, "box", "off")
 axis([-7 2, -1, 4])
 %% 
 % *b)* La operación es una traslación 6 unidades a la izquierda
@@ -196,10 +195,11 @@ stem(n,R);
 ylabel('x[n+6]')
 xlabel('n')
 title('Inciso b)')
-grid on
-gca.XAxisLocation = 'origin';
-gca.YAxisLocation = 'Origin';
-gca.Box = 'off';
+grid on;
+
+set (gca, "xaxislocation", "origin")
+set (gca, "yaxislocation", "origin")
+set(gca, "box", "off")
 axis([-7 1, -1 4])
 %% 
 % *c)* Trasladas horizontalmente 6 unidades a la derecha
@@ -227,9 +227,10 @@ ylabel('x[n-6]')
 xlabel('n')
 title('Iniciso c)')
 grid on;
-gca.XAxisLocation = 'origin';
-gca.YAxisLocation = 'origin';
-gca.Box = 'off';
+
+set (gca, "xaxislocation", "origin")
+set (gca, "yaxislocation", "origin")
+set(gca, "box", "off")
 axis([-1 13, -1 4])
 %% 
 % *d)* Compresión de un tercio en el eje horizontal
@@ -256,9 +257,10 @@ ylabel('x[3n]')
 xlabel('n')
 title('Inciso d)')
 grid on;
-gca.XAxisLocation = 'origin';
-gca.YAxisLocation = 'origin';
-gca.Box = 'off';
+
+set (gca, "xaxislocation", "origin")
+set (gca, "yaxislocation", "origin")
+set(gca, "box", "off")
 axis([-3 3, -1 4])
 %% 
 % *e)* Expansión vertical en una escala de 3
@@ -279,12 +281,12 @@ y=@(n) (heaviside(n)-heaviside(n-4)).*n+(heaviside(n-4)-heaviside(n-7)).*(-n+6);
 stem(n,y(n/3));
 ylabel('x[n/3]')
 xlabel('n')
-grid on;
 title('Inciso e)')
+grid on;
 
-gca.XAxisLocation = 'origin';
-gca.YAxisLocation = 'origin';
-gca.Box = 'off';
+set (gca, "xaxislocation", "origin")
+set (gca, "yaxislocation", "origin")
+set(gca, "box", "off")
 axis([-1 19, -1 4])
 %% 
 % *f)* Hacemos una traslaciò de 6 unidades a la izquierda y luego invertimos, 
@@ -312,9 +314,9 @@ xlabel('n')
 title('Inciso f)')
 grid on;
 
-gca.XAxisLocation = 'origin';
-gca.YAxisLocation = 'origin';
-gca.Box = 'off';
+set (gca, "xaxislocation", "origin")
+set (gca, "yaxislocation", "origin")
+set(gca, "box", "off")
 axis([-4 4, -1 4])
 
 %% Ejercicio 3
@@ -369,7 +371,11 @@ axis([-5 5 -5 5])
 title('A.1),A.2) (periodica,N=12)')
 xlabel('n')
 ylabel('x[n]')
+grid on;
 
+set (gca, "xaxislocation", "origin")
+set (gca, "yaxislocation", "origin")
+set(gca, "box", "off")
 %% 
 % *Procedimiento*
 % 3.1-1 Energia

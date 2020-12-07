@@ -129,10 +129,9 @@ ylabel(<span class="string">'f[n]'</span>);
 axis([-11 11 -0.5 1.2]);
 grid on;
 
-gca.XAxisLocation = <span class="string">'origin'</span>;
-gca.YAxisLocation = <span class="string">'origin'</span>;
-
-gca.Box = <span class="string">'off'</span>;</pre>
+set (gca, <span class="string">"xaxislocation"</span>, <span class="string">"origin"</span>)
+set (gca, <span class="string">"yaxislocation"</span>, <span class="string">"origin"</span>)
+set(gca, <span class="string">"box"</span>, <span class="string">"off"</span>)</pre>
 <img src="ASySPrac02JoseRodolfoLopezGalvan-1.png" alt="ASySPrac02JoseRodolfoLopezGalvan-1.png">
 <p>Escalando f[n] en 1/2</p>
 
@@ -147,11 +146,9 @@ axis([-11 11 -0.5 1.2]);
 
 grid on;
 
-gca.XAxisLocation = <span class="string">'origin'</span>;
-
-gca.YAxisLocation = <span class="string">'origin'</span>;
-
-gca.Box = <span class="string">'off'</span>;</pre>
+set (gca, <span class="string">"xaxislocation"</span>, <span class="string">"origin"</span>)
+set (gca, <span class="string">"yaxislocation"</span>, <span class="string">"origin"</span>)
+set(gca, <span class="string">"box"</span>, <span class="string">"off"</span>)</pre>
 <img src="ASySPrac02JoseRodolfoLopezGalvan-2.png" alt="ASySPrac02JoseRodolfoLopezGalvan-2.png"><h2><a id="node4">Ejercicio 2</a></h2>
 <p>For the signal shown in Fig. P3.1-1b, sketch the following signals:</p>
 
@@ -180,7 +177,7 @@ usando 3 secciones:</p>
 
 <p>Generamos la grafica</p>
 
-<pre class="oct-code">n=(-20:1:20)
+<pre class="oct-code">n=(-20:1:20);
 <span class="keyword">for</span> i=1:length(n)
 <span class="keyword">if</span> (0&lt;=n(i))&amp;&amp;(n(i)&lt;=3)
 R(i)=n(i);
@@ -195,27 +192,12 @@ stem(n,R);
 ylabel(<span class="string">'x[n]'</span>)
 xlabel(<span class="string">'n'</span>)
 title(<span class="string">'Señal x[n] original'</span>)
-grid on
-gca.XAxisLocation = <span class="string">'origin'</span>;
-gca.YAxisLocation = <span class="string">'origin'</span>;
-gca.Box = <span class="string">'off'</span>;
-axis([-2 7, -1, 4])</pre>
+grid on;
 
-<pre class="oct-code-output">n =
- 
- Columns 1 through 18:
- 
-  -20  -19  -18  -17  -16  -15  -14  -13  -12  -11  -10   -9   -8   -7   -6   -5   -4   -3
- 
- Columns 19 through 36:
- 
-   -2   -1    0    1    2    3    4    5    6    7    8    9   10   11   12   13   14   15
- 
- Columns 37 through 41:
- 
-   16   17   18   19   20
- 
-</pre>
+set (gca, <span class="string">"xaxislocation"</span>, <span class="string">"origin"</span>)
+set (gca, <span class="string">"yaxislocation"</span>, <span class="string">"origin"</span>)
+set(gca, <span class="string">"box"</span>, <span class="string">"off"</span>)
+axis([-2 7, -1, 4])</pre>
 <img src="ASySPrac02JoseRodolfoLopezGalvan-3.png" alt="ASySPrac02JoseRodolfoLopezGalvan-3.png">
 <p>Ahora ya podemos realizar las operaciones</p>
 
@@ -243,10 +225,11 @@ stem(n,R);
 ylabel(<span class="string">'x[-n]'</span>)
 xlabel(<span class="string">'n'</span>)
 title(<span class="string">'Inciso a)'</span>)
-grid on
-gca.XAxisLocation = <span class="string">'origin'</span>;
-gca.YAxisLocation = <span class="string">'origin'</span>;
-gca.Box = <span class="string">'off'</span>;
+grid on;
+
+set (gca, <span class="string">"xaxislocation"</span>, <span class="string">"origin"</span>)
+set (gca, <span class="string">"yaxislocation"</span>, <span class="string">"origin"</span>)
+set(gca, <span class="string">"box"</span>, <span class="string">"off"</span>)
 axis([-7 2, -1, 4])</pre>
 <img src="ASySPrac02JoseRodolfoLopezGalvan-4.png" alt="ASySPrac02JoseRodolfoLopezGalvan-4.png">
 <p><b>b)</b> La operación es una traslación 6 unidades a la izquierda</p>
@@ -273,10 +256,11 @@ stem(n,R);
 ylabel(<span class="string">'x[n+6]'</span>)
 xlabel(<span class="string">'n'</span>)
 title(<span class="string">'Inciso b)'</span>)
-grid on
-gca.XAxisLocation = <span class="string">'origin'</span>;
-gca.YAxisLocation = <span class="string">'Origin'</span>;
-gca.Box = <span class="string">'off'</span>;
+grid on;
+
+set (gca, <span class="string">"xaxislocation"</span>, <span class="string">"origin"</span>)
+set (gca, <span class="string">"yaxislocation"</span>, <span class="string">"origin"</span>)
+set(gca, <span class="string">"box"</span>, <span class="string">"off"</span>)
 axis([-7 1, -1 4])</pre>
 <img src="ASySPrac02JoseRodolfoLopezGalvan-5.png" alt="ASySPrac02JoseRodolfoLopezGalvan-5.png">
 <p><b>c)</b> Trasladas horizontalmente 6 unidades a la derecha</p>
@@ -304,9 +288,10 @@ ylabel(<span class="string">'x[n-6]'</span>)
 xlabel(<span class="string">'n'</span>)
 title(<span class="string">'Iniciso c)'</span>)
 grid on;
-gca.XAxisLocation = <span class="string">'origin'</span>;
-gca.YAxisLocation = <span class="string">'origin'</span>;
-gca.Box = <span class="string">'off'</span>;
+
+set (gca, <span class="string">"xaxislocation"</span>, <span class="string">"origin"</span>)
+set (gca, <span class="string">"yaxislocation"</span>, <span class="string">"origin"</span>)
+set(gca, <span class="string">"box"</span>, <span class="string">"off"</span>)
 axis([-1 13, -1 4])</pre>
 <img src="ASySPrac02JoseRodolfoLopezGalvan-6.png" alt="ASySPrac02JoseRodolfoLopezGalvan-6.png">
 <p><b>d)</b> Compresión de un tercio en el eje horizontal</p>
@@ -333,9 +318,10 @@ ylabel(<span class="string">'x[3n]'</span>)
 xlabel(<span class="string">'n'</span>)
 title(<span class="string">'Inciso d)'</span>)
 grid on;
-gca.XAxisLocation = <span class="string">'origin'</span>;
-gca.YAxisLocation = <span class="string">'origin'</span>;
-gca.Box = <span class="string">'off'</span>;
+
+set (gca, <span class="string">"xaxislocation"</span>, <span class="string">"origin"</span>)
+set (gca, <span class="string">"yaxislocation"</span>, <span class="string">"origin"</span>)
+set(gca, <span class="string">"box"</span>, <span class="string">"off"</span>)
 axis([-3 3, -1 4])</pre>
 <img src="ASySPrac02JoseRodolfoLopezGalvan-7.png" alt="ASySPrac02JoseRodolfoLopezGalvan-7.png">
 <p><b>e)</b> Expansión vertical en una escala de 3</p>
@@ -356,12 +342,12 @@ y=@(n) (heaviside(n)-heaviside(n-4)).*n+(heaviside(n-4)-heaviside(n-7)).*(-n+6);
 stem(n,y(n/3));
 ylabel(<span class="string">'x[n/3]'</span>)
 xlabel(<span class="string">'n'</span>)
-grid on;
 title(<span class="string">'Inciso e)'</span>)
+grid on;
 
-gca.XAxisLocation = <span class="string">'origin'</span>;
-gca.YAxisLocation = <span class="string">'origin'</span>;
-gca.Box = <span class="string">'off'</span>;
+set (gca, <span class="string">"xaxislocation"</span>, <span class="string">"origin"</span>)
+set (gca, <span class="string">"yaxislocation"</span>, <span class="string">"origin"</span>)
+set(gca, <span class="string">"box"</span>, <span class="string">"off"</span>)
 axis([-1 19, -1 4])</pre>
 <img src="ASySPrac02JoseRodolfoLopezGalvan-8.png" alt="ASySPrac02JoseRodolfoLopezGalvan-8.png">
 <p><b>f)</b> Hacemos una traslaciò de 6 unidades a la izquierda y luego invertimos,
@@ -389,9 +375,9 @@ xlabel(<span class="string">'n'</span>)
 title(<span class="string">'Inciso f)'</span>)
 grid on;
 
-gca.XAxisLocation = <span class="string">'origin'</span>;
-gca.YAxisLocation = <span class="string">'origin'</span>;
-gca.Box = <span class="string">'off'</span>;
+set (gca, <span class="string">"xaxislocation"</span>, <span class="string">"origin"</span>)
+set (gca, <span class="string">"yaxislocation"</span>, <span class="string">"origin"</span>)
+set(gca, <span class="string">"box"</span>, <span class="string">"off"</span>)
 axis([-4 4, -1 4])</pre>
 <img src="ASySPrac02JoseRodolfoLopezGalvan-9.png" alt="ASySPrac02JoseRodolfoLopezGalvan-9.png"><h2><a id="node5">Ejercicio 3</a></h2>
 <p>3.11-6 Suppose a vector x exists in the MATLAB
@@ -440,7 +426,12 @@ stem(n,x(n))
 axis([-5 5 -5 5])
 title(<span class="string">'A.1),A.2) (periodica,N=12)'</span>)
 xlabel(<span class="string">'n'</span>)
-ylabel(<span class="string">'x[n]'</span>)</pre>
+ylabel(<span class="string">'x[n]'</span>)
+grid on;
+
+set (gca, <span class="string">"xaxislocation"</span>, <span class="string">"origin"</span>)
+set (gca, <span class="string">"yaxislocation"</span>, <span class="string">"origin"</span>)
+set(gca, <span class="string">"box"</span>, <span class="string">"off"</span>)</pre>
 <img src="ASySPrac02JoseRodolfoLopezGalvan-10.png" alt="ASySPrac02JoseRodolfoLopezGalvan-10.png">
 <p><b>Procedimiento</b>
 3.1-1 Energia</p>
@@ -540,10 +531,9 @@ ylabel('f[n]');
 axis([-11 11 -0.5 1.2]);
 grid on;
 
-gca.XAxisLocation = 'origin';
-gca.YAxisLocation = 'origin';
-
-gca.Box = 'off';
+set (gca, "xaxislocation", "origin")
+set (gca, "yaxislocation", "origin")
+set(gca, "box", "off")
 
 %%
 % Escalando f[n] en 1/2
@@ -559,11 +549,9 @@ axis([-11 11 -0.5 1.2]);
 
 grid on;
 
-gca.XAxisLocation = 'origin';
-
-gca.YAxisLocation = 'origin';
-
-gca.Box = 'off';
+set (gca, "xaxislocation", "origin")
+set (gca, "yaxislocation", "origin")
+set(gca, "box", "off")
 
 %% Ejercicio 2
 % For the signal shown in Fig. P3.1-1b, sketch the following signals:
@@ -595,7 +583,7 @@ gca.Box = 'off';
 %
 % Generamos la grafica
 
-n=(-20:1:20)
+n=(-20:1:20);
 for i=1:length(n)
 if (0<=n(i))&&(n(i)<=3)
 R(i)=n(i);
@@ -610,10 +598,11 @@ stem(n,R);
 ylabel('x[n]')
 xlabel('n')
 title('Señal x[n] original')
-grid on
-gca.XAxisLocation = 'origin';
-gca.YAxisLocation = 'origin';
-gca.Box = 'off';
+grid on;
+
+set (gca, "xaxislocation", "origin")
+set (gca, "yaxislocation", "origin")
+set(gca, "box", "off")
 axis([-2 7, -1, 4])
 %%
 % Ahora ya podemos realizar las operaciones
@@ -642,10 +631,11 @@ stem(n,R);
 ylabel('x[-n]')
 xlabel('n')
 title('Inciso a)')
-grid on
-gca.XAxisLocation = 'origin';
-gca.YAxisLocation = 'origin';
-gca.Box = 'off';
+grid on;
+
+set (gca, "xaxislocation", "origin")
+set (gca, "yaxislocation", "origin")
+set(gca, "box", "off")
 axis([-7 2, -1, 4])
 %%
 % *b)* La operación es una traslación 6 unidades a la izquierda
@@ -672,10 +662,11 @@ stem(n,R);
 ylabel('x[n+6]')
 xlabel('n')
 title('Inciso b)')
-grid on
-gca.XAxisLocation = 'origin';
-gca.YAxisLocation = 'Origin';
-gca.Box = 'off';
+grid on;
+
+set (gca, "xaxislocation", "origin")
+set (gca, "yaxislocation", "origin")
+set(gca, "box", "off")
 axis([-7 1, -1 4])
 %%
 % *c)* Trasladas horizontalmente 6 unidades a la derecha
@@ -703,9 +694,10 @@ ylabel('x[n-6]')
 xlabel('n')
 title('Iniciso c)')
 grid on;
-gca.XAxisLocation = 'origin';
-gca.YAxisLocation = 'origin';
-gca.Box = 'off';
+
+set (gca, "xaxislocation", "origin")
+set (gca, "yaxislocation", "origin")
+set(gca, "box", "off")
 axis([-1 13, -1 4])
 %%
 % *d)* Compresión de un tercio en el eje horizontal
@@ -732,9 +724,10 @@ ylabel('x[3n]')
 xlabel('n')
 title('Inciso d)')
 grid on;
-gca.XAxisLocation = 'origin';
-gca.YAxisLocation = 'origin';
-gca.Box = 'off';
+
+set (gca, "xaxislocation", "origin")
+set (gca, "yaxislocation", "origin")
+set(gca, "box", "off")
 axis([-3 3, -1 4])
 %%
 % *e)* Expansión vertical en una escala de 3
@@ -755,12 +748,12 @@ y=@(n) (heaviside(n)-heaviside(n-4)).*n+(heaviside(n-4)-heaviside(n-7)).*(-n+6);
 stem(n,y(n/3));
 ylabel('x[n/3]')
 xlabel('n')
-grid on;
 title('Inciso e)')
+grid on;
 
-gca.XAxisLocation = 'origin';
-gca.YAxisLocation = 'origin';
-gca.Box = 'off';
+set (gca, "xaxislocation", "origin")
+set (gca, "yaxislocation", "origin")
+set(gca, "box", "off")
 axis([-1 19, -1 4])
 %%
 % *f)* Hacemos una traslaciò de 6 unidades a la izquierda y luego invertimos,
@@ -788,9 +781,9 @@ xlabel('n')
 title('Inciso f)')
 grid on;
 
-gca.XAxisLocation = 'origin';
-gca.YAxisLocation = 'origin';
-gca.Box = 'off';
+set (gca, "xaxislocation", "origin")
+set (gca, "yaxislocation", "origin")
+set(gca, "box", "off")
 axis([-4 4, -1 4])
 
 %% Ejercicio 3
@@ -845,7 +838,11 @@ axis([-5 5 -5 5])
 title('A.1),A.2) (periodica,N=12)')
 xlabel('n')
 ylabel('x[n]')
+grid on;
 
+set (gca, "xaxislocation", "origin")
+set (gca, "yaxislocation", "origin")
+set(gca, "box", "off")
 %%
 % *Procedimiento*
 % 3.1-1 Energia
