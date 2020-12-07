@@ -25,10 +25,6 @@ imshow(imgpy1)
 imgpy2=imread('html/py2.png');
 imshow(imgpy2)
 
-%%
-imgpy3=imread('html/py3.png');
-imshow(imgpy3)
-
 %% Ejercicio 1
 % 3.11-2 Consider the discrete-time function
 % $$f[n] = e-n/5 cos(\pi*n/5)u[n]$$
@@ -67,7 +63,7 @@ f1 = @(n) exp(-n/5).*cos(pi*n/5).*(n>=0).*(1./(mod(n,1)==0));
 
 stem(n,f1(n));
 
-title('Gráfica de la señal f[n]=e^ (-n/5)*cos(pin/5)u[n]');
+title('Gráfica de la señal f[n]=e^{(-n/5)}*cos(pi*n/5)u[n]');
 
 xlabel('n');
 
