@@ -17,6 +17,15 @@
 %
 % La solución del problema 1 usando Python puede ser consultada desde el siguiente <https://colab.research.google.com/drive/13KC50b29OvmNI86Jk5ALlBP_lCHp1jNU?usp=sharing *enlace*>.
 
+imgpy1=imread('html/py1.png');
+imshow(imgpy1);
+
+imgpy2=imread('html/py2.png');
+imshow(imgpy2);
+
+imgpy3=imread('html/py3.png');
+imshow(imgpy3);
+
 %% Ejercicio 1
 % 3.11-2 Consider the discrete-time function
 % $$f[n] = e-n/5 cos(\pi*n/5)u[n]$$
@@ -399,3 +408,4 @@ set(gca, "box", "off")
 %% App para graficar señales discretas
 %
 % A continuaciòn se muestra una captura de pantalla de la aplicaciòn diseñada.
+
