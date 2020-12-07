@@ -6,7 +6,7 @@
 % * Cardoso Arias Javier
 % * Gachuz Hernández Karla Denisse
 % * García Arteaga Alejandro
-% * Lápez Galván Jossé Rodolfo
+% * López Galván José Rodolfo
 %
 %% Objetivos
 % * Manipulación básica de MATLAB.
@@ -15,7 +15,7 @@
 
 %% Introducción
 %
-% La solución del problema 1 usando Python puede ser consultada desde el siguiente <https://colab.research.google.com/drive/13KC50b29OvmNI86Jk5ALlBP_lCHp1jNU?usp=sharing *enlace*>
+% La solución del problema 1 usando Python puede ser consultada desde el siguiente <https://colab.research.google.com/drive/13KC50b29OvmNI86Jk5ALlBP_lCHp1jNU?usp=sharing *enlace*>.
 
 %% Ejercicio 1
 % 3.11-2 Consider the discrete-time function
@@ -390,6 +390,6 @@ ylabel('x[n]')
   end
   fprintf('La Potencia es:%d',P);
  
-%% App para graficar señles discretas
+%% App para graficar señales discretas
 %
 % A continuaciòn se muestra una captura de pantalla de la aplicaciòn diseñada.
