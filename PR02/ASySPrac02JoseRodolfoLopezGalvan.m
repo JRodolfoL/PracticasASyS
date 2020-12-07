@@ -1,21 +1,21 @@
-%% Pr·ctica 2: SeÒales en tiempo discreto.
+%% Pr√°ctica 2: Se√±ales en tiempo discreto.
 %
 % *Integrantes:*
 %
 % * Arellano Paz Angel Ulises
 % * Cardoso Arias Javier
-% * Gachuz Hern·ndez Karla Denisse
-% * GarcÌa Arteaga Alejandro
-% * LÛpez Galv·n JosÈ Rodolfo
+% * Gachuz Hern√°ndez Karla Denisse
+% * Garc√≠a Arteaga Alejandro
+% * L√°pez Galv√°n Joss√© Rodolfo
 %
 %% Objetivos
-% * ManipulaciÛn b·sica de MATLAB.
-% * Gr·ficas de seÒales reales y complejas discretas.
-% * TransformaciÛn de seÒales discretas (escalamientos y traslaciones).
+% * Manipulaci√≥n b√°sica de MATLAB.
+% * Graficas de se√±ales reales y complejas discretas.
+% * Transformaci√≥n de se√±ales discretas (escalamientos y traslaciones).
 
-%% IntroducciÛn
+%% Introducci√≥n
 %
-% La soluciÛn del problema 1 usando Python puede ser consultada desde el siguiente <https://colab.research.google.com/drive/13KC50b29OvmNI86Jk5ALlBP_lCHp1jNU?usp=sharing *enlace*>
+% La soluci√≥n del problema 1 usando Python puede ser consultada desde el siguiente <https://colab.research.google.com/drive/13KC50b29OvmNI86Jk5ALlBP_lCHp1jNU?usp=sharing *enlace*>
 
 %% Ejercicio 1
 % 3.11-2 Consider the discrete-time function
@@ -39,7 +39,7 @@
 % *Procedimiento*
 %
 %
-% Creamos la funciÛn y vector de n
+% Creamos la funci√≥n y vector de n
 %
 %%
 
@@ -48,14 +48,14 @@ f = @(n) exp(-n/5).*cos(pi*n/5).*(n>=0);
 n=-10:1:10;
 
 %%
-% Modificamos la funciÛn 
+% Modificamos la funci√≥n 
 
 
 f1 = @(n) exp(-n/5).*cos(pi*n/5).*(n>=0).*(1./(mod(n,1)==0));
 
 stem(n,f1(n));
 
-title('Gr·fica de la seÒal f[n]=e^(-n/5)*cos(pin/5)u[n]');
+title('Gr√°fica de la se√±al f[n]=e^(-n/5)*cos(pin/5)u[n]');
 
 xlabel('n');
 
@@ -74,7 +74,7 @@ gca.Box = 'off';
 
 stem(n,f1(n/2));
 
-title('Gr·fica de la seÒal f[n/2]');
+title('Gr√°fica de la se√±al f[n/2]');
 
 xlabel('n');
 ylabel('f[n/2]');
@@ -106,9 +106,9 @@ gca.Box = 'off';
 % 
 % 
 % 
-% *SoluciÛn:*
+% *Soluci√≥n:*
 % 
-% Primero creamos e indicamos a la SeÒal x[n], para eso escribimos a la seÒal 
+% Primero creamos e indicamos a la Se√±al x[n], para eso escribimos a la se√±al 
 % usando 3 secciones:
 % 
 % x1[n] = n, 0<=n<=3;
@@ -133,7 +133,7 @@ end
 stem(n,R);
 ylabel('x[n]')
 xlabel('n')
-title('SeÒal x[n] original')
+title('Se√±al x[n] original')
 grid on
 gca.XAxisLocation = 'origin';
 gca.YAxisLocation = 'origin';
@@ -142,7 +142,7 @@ axis([-2 7, -1, 4])
 %% 
 % Ahora ya podemos realizar las operaciones
 % 
-% *a)* Se trata de una inversiÛn horizontal:
+% *a)* Se trata de una inversi√≥n horizontal:
 % 
 % x1a[n] = x1[-n] = -n, 0<=n<=-3
 % 
@@ -172,7 +172,7 @@ gca.YAxisLocation = 'origin';
 gca.Box = 'off';
 axis([-7 2, -1, 4])
 %% 
-% *b)* La operaciÛn es una traslaciÛn 6 unidades a la izquierda
+% *b)* La operaci√≥n es una traslaci√≥n 6 unidades a la izquierda
 % 
 % x1b[n] = x1[n+6] = n+6, -6<=n<=-3
 % 
@@ -232,7 +232,7 @@ gca.YAxisLocation = 'origin';
 gca.Box = 'off';
 axis([-1 13, -1 4])
 %% 
-% *d)* CompresiÛn de un tercio en el eje horizontal
+% *d)* Compresi√≥n de un tercio en el eje horizontal
 % 
 % x1d[n] = x1[3n] = 3n, 0<=n<=1
 % 
@@ -261,7 +261,7 @@ gca.YAxisLocation = 'origin';
 gca.Box = 'off';
 axis([-3 3, -1 4])
 %% 
-% *e)* ExpanciÛn vertical en una escala de 3
+% *e)* Expansi√≥n vertical en una escala de 3
 % 
 % x1e[n] = x1[n/3] = n/3, 0<=n/3<=3
 % 
@@ -269,8 +269,7 @@ axis([-3 3, -1 4])
 % 
 % x3e[n] = x3[n/3] = 0, otro caso
 % 
-% Debemos tomar en cuenta que solo vamos a evaluar a la funciÛn en valores enteros. 
-% Notese la renombraciÛn de la funcion heaviside(n). 
+% Debemos tomar en cuenta que solo vamos a evaluar a la funci√≤n en valores enteros.  
 % 
 % Graficamos. 
 
@@ -288,7 +287,7 @@ gca.YAxisLocation = 'origin';
 gca.Box = 'off';
 axis([-1 19, -1 4])
 %% 
-% *f)* Hacemos una traslaciÛn de 6 unidades a la izquierda y luego invertimos, 
+% *f)* Hacemos una traslaci√≤ de 6 unidades a la izquierda y luego invertimos, 
 % ambas operaciones respecto al eje horizontal
 % 
 % x1e[n] = x1[3-n] = 3-n, 3>=n>=0
@@ -391,6 +390,6 @@ ylabel('x[n]')
   end
   fprintf('La Potencia es:%d',P);
  
-%% App para graficar seÒales discretas
+%% App para graficar se√±les discretas
 %
-% A continuaciÛn se muestra una captura de pantalla de la aplicaciÛn diseÒada.
+% A continuaci√≤n se muestra una captura de pantalla de la aplicaci√≤n dise√±ada.
