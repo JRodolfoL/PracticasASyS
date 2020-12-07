@@ -350,8 +350,8 @@ axis([-4 4, -1 4])
 %   fprintf('La energia es:%d',E);
 % 
 % *B)* Potencia
+%
 %   function [ P ] = Potencia(y,N)
-% 
 %   P=0;
 %   for n=0:N-1
 %   sum=(1/N)*y(n)^2;

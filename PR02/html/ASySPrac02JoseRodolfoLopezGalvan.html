@@ -420,10 +420,10 @@ E=E+sum;
 <span class="keyword">end</span>
 fprintf(<span class="string">'La energia es:%d'</span>,E);</pre>
 
-<p><b>B)</b> Potencia
-  function [ P ] = Potencia(y,N)</p>
+<p><b>B)</b> Potencia</p>
 
-<pre class="pre-code">P=0;
+<pre class="pre-code"><span class="keyword">function</span> [ P ] = Potencia(y,N)
+P=0;
 <span class="keyword">for</span> n=0:N-1
 sum=(1/N)*y(n)^2;
 P=P+sum;
@@ -828,8 +828,8 @@ axis([-4 4, -1 4])
 %   fprintf('La energia es:%d',E);
 %
 % *B)* Potencia
-%   function [ P ] = Potencia(y,N)
 %
+%   function [ P ] = Potencia(y,N)
 %   P=0;
 %   for n=0:N-1
 %   sum=(1/N)*y(n)^2;
