@@ -2,7 +2,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Práctica 2</title>
+<title>Práctica 2: Señales en tiempo discreto.</title>
 <script type="text/x-mathjax-config">
 MathJax.Hub.Config({
   tex2jax: { inlineMath: [['$','$'], ['\\(','\\)']] },
@@ -58,16 +58,37 @@ h2 a, h2 a:visited {
 
 </head>
 <body>
-<h1>Práctica 2</h1>
+<h1>Práctica 2: Señales en tiempo discreto.</h1>
+
+<p><b>Integrantes:</b></p>
+
+<ul>
+<li>Arellano Paz Angel Ulises</li>
+<li>Cardoso Arias Javier</li>
+<li>Gachuz Hernández Karla Denisse</li>
+<li>García Arteaga Alejandro</li>
+<li>López Galván José Rodolfo</li>
+</ul>
 
 <h2>Contents</h2>
 <ul>
-<li><a href="#node1">Ejercicio 1</a></li>
-<li><a href="#node2">Ejercicio 2</a></li>
-<li><a href="#node3">Ejercicio 3</a></li>
-<li><a href="#node4">Ejercicio 4</a></li>
+<li><a href="#node1">Objetivos</a></li>
+<li><a href="#node2">Introducción</a></li>
+<li><a href="#node3">Ejercicio 1</a></li>
+<li><a href="#node4">Ejercicio 2</a></li>
+<li><a href="#node5">Ejercicio 3</a></li>
+<li><a href="#node6">Ejercicio 4</a></li>
+<li><a href="#node7">App para graficar señales discretas</a></li>
 </ul>
-<h2><a id="node1">Ejercicio 1</a></h2>
+<h2><a id="node1">Objetivos</a></h2>
+<ul>
+<li>Manipulación básica de MATLAB.</li>
+<li>Gráficas de señales reales y complejas discretas.</li>
+<li>Transformación de señales discretas (escalamientos y traslaciones).</li>
+</ul>
+<h2><a id="node2">Introducción</a></h2>
+<p>La solución del problema 1 usando Python puede ser consultada desde el siguiente <a href="https://colab.research.google.com/drive/13KC50b29OvmNI86Jk5ALlBP_lCHp1jNU?usp=sharing"><b>enlace</b></a></p>
+<h2><a id="node3">Ejercicio 1</a></h2>
 <p>3.11-2 Consider the discrete-time function
 $$f[n] = e-n/5 cos(\pi*n/5)u[n]$$</p>
 
@@ -131,7 +152,7 @@ gca.XAxisLocation = <span class="string">'origin'</span>;
 gca.YAxisLocation = <span class="string">'origin'</span>;
 
 gca.Box = <span class="string">'off'</span>;</pre>
-<img src="ASySPrac02JoseRodolfoLopezGalvan-2.png" alt="ASySPrac02JoseRodolfoLopezGalvan-2.png"><h2><a id="node2">Ejercicio 2</a></h2>
+<img src="ASySPrac02JoseRodolfoLopezGalvan-2.png" alt="ASySPrac02JoseRodolfoLopezGalvan-2.png"><h2><a id="node4">Ejercicio 2</a></h2>
 <p>For the signal shown in Fig. P3.1-1b, sketch the following signals:</p>
 
 <p><b>a)</b> x[-n]</p>
@@ -374,7 +395,7 @@ ax.XAxisLocation = <span class="string">'origin'</span>;
 ax.YAxisLocation = <span class="string">'origin'</span>;
 ax.Box = <span class="string">'off'</span>;
 axis([-4 4, -1 4])</pre>
-<img src="ASySPrac02JoseRodolfoLopezGalvan-9.png" alt="ASySPrac02JoseRodolfoLopezGalvan-9.png"><h2><a id="node3">Ejercicio 3</a></h2>
+<img src="ASySPrac02JoseRodolfoLopezGalvan-9.png" alt="ASySPrac02JoseRodolfoLopezGalvan-9.png"><h2><a id="node5">Ejercicio 3</a></h2>
 <p>3.11-6 Suppose a vector x exists in the MATLAB
 workspace, corresponding to a finite-duration
 DT signal x[n]
@@ -408,7 +429,7 @@ sum=(1/N)*y(n)^2;
 P=P+sum;
 <span class="keyword">end</span>
 fprintf(<span class="string">'La Potencia es:%d'</span>,P);</pre>
-<h2><a id="node4">Ejercicio 4</a></h2>
+<h2><a id="node6">Ejercicio 4</a></h2>
 <p>3.1-1 Find the energy of the signals depicted in
 Fig. A.1)</p>
 
@@ -446,6 +467,8 @@ ylabel(<span class="string">'x[n]'</span>)</pre>
   fprintf(<span class="string">'La Potencia es:%d'</span>,P);</pre>
 
 <pre class="oct-code-output">La Potencia es:1.16667</pre>
+<h2><a id="node7">App para graficar señales discretas</a></h2>
+<p>A continuación se muestra una captura de pantalla de la aplicación diseñada.</p>
 
 <footer>
 <hr>
@@ -453,7 +476,24 @@ ylabel(<span class="string">'x[n]'</span>)</pre>
 </footer>
 <!--
 ##### SOURCE BEGIN #####
-%% Práctica 2
+%% Práctica 2: Señales en tiempo discreto.
+%
+% *Integrantes:*
+%
+% * Arellano Paz Angel Ulises
+% * Cardoso Arias Javier
+% * Gachuz Hernández Karla Denisse
+% * García Arteaga Alejandro
+% * López Galván José Rodolfo
+%
+%% Objetivos
+% * Manipulación básica de MATLAB.
+% * Gráficas de señales reales y complejas discretas.
+% * Transformación de señales discretas (escalamientos y traslaciones).
+
+%% Introducción
+%
+% La solución del problema 1 usando Python puede ser consultada desde el siguiente <https://colab.research.google.com/drive/13KC50b29OvmNI86Jk5ALlBP_lCHp1jNU?usp=sharing *enlace*>
 
 %% Ejercicio 1
 % 3.11-2 Consider the discrete-time function
@@ -834,7 +874,9 @@ ylabel('x[n]')
   end
   fprintf('La Potencia es:%d',P);
 
-
+%% App para graficar señales discretas
+%
+% A continuación se muestra una captura de pantalla de la aplicación diseñada.
 ##### SOURCE END #####
 -->
 </body>
