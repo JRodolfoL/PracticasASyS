@@ -74,7 +74,7 @@ $$f[n] = e-n/5 cos(\pi*n/5)u[n]$$</p>
 <p>Section 3.11 uses anonymous
 functions in describing DT signals.</p>
 
-<p>f = @(n) exp(-n/5).*cos(\pi<b>n/5).</b>(n&gt;=0);</p>
+<pre class="pre-code">f = @(n) exp(-n/5).*cos(pi*n/5).*(n&gt;=0);</pre>
 
 <p>While this anonymous function operates correctly
 for a downsampling operation such as
@@ -375,59 +375,40 @@ ax.YAxisLocation = <span class="string">'origin'</span>;
 ax.Box = <span class="string">'off'</span>;
 axis([-4 4, -1 4])</pre>
 <img src="ASySPrac02JoseRodolfoLopezGalvan-9.png" alt="ASySPrac02JoseRodolfoLopezGalvan-9.png"><h2><a id="node3">Ejercicio 3</a></h2>
-<p>3.11-2 Consider the discrete-time function</p>
+<p>3.11-6 Suppose a vector x exists in the MATLAB
+workspace, corresponding to a finite-duration
+DT signal x[n]
+(a) Write a MATLAB function that, when
+passed vector x, computes and returns Ex,
+the energy of x[n].
+(b) Write a MATLAB function that, when
+passed vector x, computes and returns Px,
+the power of x[n]. Assume that x[n] is
+periodic and that vector x contains data for
+an integer number of periods of x[n].</p>
 
-<p>$$f[n] = e-n/5 cos(\pi*n/5)u[n]$$</p>
+<p><b>Procedimiento</b></p>
 
-<p>Section 3.11 uses anonymous
-functions in describing DT signals.</p>
+<p><b>A)</b> Energia</p>
 
-<p>f = @(n) exp(-n/5).*cos(\pi<b>n/5).</b>(n&gt;=0);</p>
+<pre class="pre-code"><span class="keyword">function</span> [ E ] = Energia(x,n)
+E=0;
+<span class="keyword">for</span> n=n
+sum=x(n)^2;
+E=E+sum;
+<span class="keyword">end</span>
+fprintf(<span class="string">'La energia es:%d'</span>,E);</pre>
 
-<p>While this anonymous function operates correctly
-for a downsampling operation such as
-f[2n], it does not operate correctly for an
-upsampling operation, such as f[n/2]. Modify
-the anonymous function f so that it also
-correctly accommodates upsampling operations.
-Test your code by computing and plotting
-f(n/2) over (?10 ? n ? 10).</p>
+<p><b>B)</b> Potencia
+  function [ P ] = Potencia(y,N)</p>
 
-<p>Procedimiento</p>
-
-<p>Creamos la función y vector de n</p>
-
-<pre class="oct-code">f = @(n) exp(-n/5).*cos(pi*n/5).*(n&gt;=0);
-n=-10:10;
-<span class="comment">%Modificamos el escalón y la función</span>
-heaviside = @(n) 1.*(n&gt;=0);
-subplot(1,2,1)
-f = @(n) exp(-n/5).*cos(pi*n/5).*heaviside(n);
-stem(n,f(n))
-grid on
-ax = gca;
-ax.XAxisLocation = <span class="string">'origin'</span>;
-ax.YAxisLocation = <span class="string">'origin'</span>;
-ax.Box = <span class="string">'off'</span>;
-axis([-11 11 -0.5 1.2])
-title(<span class="string">'Gráfica de la señal f[n]=e-n/5 cos(pin/5)u[n]'</span>)
-xlabel(<span class="string">'n'</span>)
-ylabel(<span class="string">'f[n]'</span>)
-<span class="comment">%</span>
-<span class="comment">% Escalando f[n]</span>
-subplot(1,2,2)
-h= @(n) f(n/2);
-stem(n,h(n))
-grid on
-ax = gca;
-ax.XAxisLocation = <span class="string">'origin'</span>;
-ax.YAxisLocation = <span class="string">'origin'</span>;
-ax.Box = <span class="string">'off'</span>;
-axis([-11 11 -0.5 1.2])
-title(<span class="string">'Gráfica de la señal h[n]=f[n/2]'</span>)
-xlabel(<span class="string">'n'</span>)
-ylabel(<span class="string">'f[n]'</span>)</pre>
-<img src="ASySPrac02JoseRodolfoLopezGalvan-10.png" alt="ASySPrac02JoseRodolfoLopezGalvan-10.png"><h2><a id="node4">Ejercicio 4</a></h2>
+<pre class="pre-code">P=0;
+<span class="keyword">for</span> n=0:N-1
+sum=(1/N)*y(n)^2;
+P=P+sum;
+<span class="keyword">end</span>
+fprintf(<span class="string">'La Potencia es:%d'</span>,P);</pre>
+<h2><a id="node4">Ejercicio 4</a></h2>
 <p>3.1-1 Find the energy of the signals depicted in
 Fig. A.1)</p>
 
@@ -441,7 +422,7 @@ axis([-5 5 -5 5])
 title(<span class="string">'A.1),A.2) (periodica,N=12)'</span>)
 xlabel(<span class="string">'n'</span>)
 ylabel(<span class="string">'x[n]'</span>)</pre>
-<img src="ASySPrac02JoseRodolfoLopezGalvan-11.png" alt="ASySPrac02JoseRodolfoLopezGalvan-11.png">
+<img src="ASySPrac02JoseRodolfoLopezGalvan-10.png" alt="ASySPrac02JoseRodolfoLopezGalvan-10.png">
 <p><b>Procedimiento</b>
 3.1-1 Energia</p>
 
@@ -481,7 +462,8 @@ ylabel(<span class="string">'x[n]'</span>)</pre>
 % Section 3.11 uses anonymous
 % functions in describing DT signals.
 %
-% f = @(n) exp(-n/5).*cos(\pi*n/5).*(n>=0);
+%%
+%   f = @(n) exp(-n/5).*cos(pi*n/5).*(n>=0);
 %
 % While this anonymous function operates correctly
 % for a downsampling operation such as
@@ -780,58 +762,41 @@ ax.Box = 'off';
 axis([-4 4, -1 4])
 
 %% Ejercicio 3
-% 3.11-2 Consider the discrete-time function
 %
-% $$f[n] = e-n/5 cos(\pi*n/5)u[n]$$
+% 3.11-6 Suppose a vector x exists in the MATLAB
+% workspace, corresponding to a finite-duration
+% DT signal x[n]
+% (a) Write a MATLAB function that, when
+% passed vector x, computes and returns Ex,
+% the energy of x[n].
+% (b) Write a MATLAB function that, when
+% passed vector x, computes and returns Px,
+% the power of x[n]. Assume that x[n] is
+% periodic and that vector x contains data for
+% an integer number of periods of x[n].
 %
-% Section 3.11 uses anonymous
-% functions in describing DT signals.
+% *Procedimiento*
 %
-% f = @(n) exp(-n/5).*cos(\pi*n/5).*(n>=0);
+% *A)* Energia
 %
-% While this anonymous function operates correctly
-% for a downsampling operation such as
-% f[2n], it does not operate correctly for an
-% upsampling operation, such as f[n/2]. Modify
-% the anonymous function f so that it also
-% correctly accommodates upsampling operations.
-% Test your code by computing and plotting
-% f(n/2) over (?10 ? n ? 10).
-%%
-% Procedimiento
+%   function [ E ] = Energia(x,n)
+%   E=0;
+%   for n=n
+%   sum=x(n)^2;
+%   E=E+sum;
+%   end
+%   fprintf('La energia es:%d',E);
 %
+% *B)* Potencia
+%   function [ P ] = Potencia(y,N)
 %
-% Creamos la función y vector de n
-f = @(n) exp(-n/5).*cos(pi*n/5).*(n>=0);
-n=-10:10;
-%Modificamos el escalón y la función
-heaviside = @(n) 1.*(n>=0);
-subplot(1,2,1)
-f = @(n) exp(-n/5).*cos(pi*n/5).*heaviside(n);
-stem(n,f(n))
-grid on
-ax = gca;
-ax.XAxisLocation = 'origin';
-ax.YAxisLocation = 'origin';
-ax.Box = 'off';
-axis([-11 11 -0.5 1.2])
-title('Gráfica de la señal f[n]=e-n/5 cos(pin/5)u[n]')
-xlabel('n')
-ylabel('f[n]')
-%
-% Escalando f[n]
-subplot(1,2,2)
-h= @(n) f(n/2);
-stem(n,h(n))
-grid on
-ax = gca;
-ax.XAxisLocation = 'origin';
-ax.YAxisLocation = 'origin';
-ax.Box = 'off';
-axis([-11 11 -0.5 1.2])
-title('Gráfica de la señal h[n]=f[n/2]')
-xlabel('n')
-ylabel('f[n]')
+%   P=0;
+%   for n=0:N-1
+%   sum=(1/N)*y(n)^2;
+%   P=P+sum;
+%   end
+%   fprintf('La Potencia es:%d',P);
+
 
 
 %% Ejercicio 4
