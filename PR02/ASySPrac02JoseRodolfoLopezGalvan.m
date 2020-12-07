@@ -55,7 +55,7 @@ f1 = @(n) exp(-n/5).*cos(pi*n/5).*(n>=0).*(1./(mod(n,1)==0));
 
 stem(n,f1(n));
 
-title('Gráfica de la señal f[n]=e^(-n/5)*cos(pin/5)u[n]');
+title('Gráfica de la señal f[n]=e^ (-n/5)*cos(pin/5)u[n]');
 
 xlabel('n');
 
