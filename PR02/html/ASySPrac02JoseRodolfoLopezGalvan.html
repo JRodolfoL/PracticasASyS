@@ -2,7 +2,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Pr√°ctica 2: Se√±ales en tiempo discreto.</title>
+<title>Pr·ctica 2: SeÒales en tiempo discreto.</title>
 <script type="text/x-mathjax-config">
 MathJax.Hub.Config({
   tex2jax: { inlineMath: [['$','$'], ['\\(','\\)']] },
@@ -58,36 +58,36 @@ h2 a, h2 a:visited {
 
 </head>
 <body>
-<h1>Pr√°ctica 2: Se√±ales en tiempo discreto.</h1>
+<h1>Pr·ctica 2: SeÒales en tiempo discreto.</h1>
 
 <p><b>Integrantes:</b></p>
 
 <ul>
 <li>Arellano Paz Angel Ulises</li>
 <li>Cardoso Arias Javier</li>
-<li>Gachuz Hern√°ndez Karla Denisse</li>
-<li>Garc√≠a Arteaga Alejandro</li>
-<li>L√≥pez Galv√°n Jos√© Rodolfo</li>
+<li>Gachuz Hern·ndez Karla Denisse</li>
+<li>GarcÌa Arteaga Alejandro</li>
+<li>LÛpez Galv·n JosÈ Rodolfo</li>
 </ul>
 
 <h2>Contents</h2>
 <ul>
 <li><a href="#node1">Objetivos</a></li>
-<li><a href="#node2">Introducci√≥n</a></li>
+<li><a href="#node2">IntroducciÛn</a></li>
 <li><a href="#node3">Ejercicio 1</a></li>
 <li><a href="#node4">Ejercicio 2</a></li>
 <li><a href="#node5">Ejercicio 3</a></li>
 <li><a href="#node6">Ejercicio 4</a></li>
-<li><a href="#node7">App para graficar se√±ales discretas</a></li>
+<li><a href="#node7">App para graficar seÒales discretas</a></li>
 </ul>
 <h2><a id="node1">Objetivos</a></h2>
 <ul>
-<li>Manipulaci√≥n b√°sica de MATLAB.</li>
-<li>Gr√°ficas de se√±ales reales y complejas discretas.</li>
-<li>Transformaci√≥n de se√±ales discretas (escalamientos y traslaciones).</li>
+<li>ManipulaciÛn b·sica de MATLAB.</li>
+<li>Gr·ficas de seÒales reales y complejas discretas.</li>
+<li>TransformaciÛn de seÒales discretas (escalamientos y traslaciones).</li>
 </ul>
-<h2><a id="node2">Introducci√≥n</a></h2>
-<p>La soluci√≥n del problema 1 usando Python puede ser consultada desde el siguiente <a href="https://colab.research.google.com/drive/13KC50b29OvmNI86Jk5ALlBP_lCHp1jNU?usp=sharing"><b>enlace</b></a></p>
+<h2><a id="node2">IntroducciÛn</a></h2>
+<p>La soluciÛn del problema 1 usando Python puede ser consultada desde el siguiente <a href="https://colab.research.google.com/drive/13KC50b29OvmNI86Jk5ALlBP_lCHp1jNU?usp=sharing"><b>enlace</b></a></p>
 <h2><a id="node3">Ejercicio 1</a></h2>
 <p>3.11-2 Consider the discrete-time function
 $$f[n] = e-n/5 cos(\pi*n/5)u[n]$$</p>
@@ -108,19 +108,19 @@ f(n/2) over (?10 ? n ? 10).</p>
 
 <p><b>Procedimiento</b></p>
 
-<p>Creamos la funci√≥n y vector de n</p>
+<p>Creamos la funciÛn y vector de n</p>
 
 <pre class="oct-code">f = @(n) exp(-n/5).*cos(pi*n/5).*(n&gt;=0);
 
 n=-10:1:10;</pre>
 
-<p>Modificamos la funci√≥n</p>
+<p>Modificamos la funciÛn</p>
 
 <pre class="oct-code">f1 = @(n) exp(-n/5).*cos(pi*n/5).*(n&gt;=0).*(1./(mod(n,1)==0));
 
 stem(n,f1(n));
 
-title(<span class="string">'Gr√°fica de la se√±al f[n]=e^(-n/5)*cos(pin/5)u[n]'</span>);
+title(<span class="string">'Gr·fica de la seÒal f[n]=e^(-n/5)*cos(pin/5)u[n]'</span>);
 
 xlabel(<span class="string">'n'</span>);
 
@@ -138,7 +138,7 @@ gca.Box = <span class="string">'off'</span>;</pre>
 
 <pre class="oct-code">stem(n,f1(n/2));
 
-title(<span class="string">'Gr√°fica de la se√±al f[n/2]'</span>);
+title(<span class="string">'Gr·fica de la seÒal f[n/2]'</span>);
 
 xlabel(<span class="string">'n'</span>);
 ylabel(<span class="string">'f[n/2]'</span>);
@@ -167,9 +167,9 @@ gca.Box = <span class="string">'off'</span>;</pre>
 
 <p><b>f)</b> x[3-n]</p>
 
-<p><b>Soluci√≥n:</b></p>
+<p><b>SoluciÛn:</b></p>
 
-<p>Primero creamos e indicamos a la Se√±al x[n], para eso escribimos a la se√±al
+<p>Primero creamos e indicamos a la SeÒal x[n], para eso escribimos a la seÒal
 usando 3 secciones:</p>
 
 <p>x1[n] = n, 0&lt;=n&lt;=3;</p>
@@ -194,7 +194,7 @@ R(i)=0;
 stem(n,R);
 ylabel(<span class="string">'x[n]'</span>)
 xlabel(<span class="string">'n'</span>)
-title(<span class="string">'Se√±al x[n] original'</span>)
+title(<span class="string">'SeÒal x[n] original'</span>)
 grid on
 gca.XAxisLocation = <span class="string">'origin'</span>;
 gca.YAxisLocation = <span class="string">'origin'</span>;
@@ -203,19 +203,23 @@ axis([-2 7, -1, 4])</pre>
 
 <pre class="oct-code-output">n =
  
- Columns 1 through 26:
+ Columns 1 through 18:
  
-  -20  -19  -18  -17  -16  -15  -14  -13  -12  -11  -10   -9   -8   -7   -6   -5   -4   -3   -2   -1    0    1    2    3    4    5
+  -20  -19  -18  -17  -16  -15  -14  -13  -12  -11  -10   -9   -8   -7   -6   -5   -4   -3
  
- Columns 27 through 41:
+ Columns 19 through 36:
  
-    6    7    8    9   10   11   12   13   14   15   16   17   18   19   20
+   -2   -1    0    1    2    3    4    5    6    7    8    9   10   11   12   13   14   15
+ 
+ Columns 37 through 41:
+ 
+   16   17   18   19   20
  
 </pre>
 <img src="ASySPrac02JoseRodolfoLopezGalvan-3.png" alt="ASySPrac02JoseRodolfoLopezGalvan-3.png">
 <p>Ahora ya podemos realizar las operaciones</p>
 
-<p><b>a)</b> Se trata de una inversi√≥n horizontal:</p>
+<p><b>a)</b> Se trata de una inversiÛn horizontal:</p>
 
 <p>x1a[n] = x1[-n] = -n, 0&lt;=n&lt;=-3</p>
 
@@ -245,7 +249,7 @@ gca.YAxisLocation = <span class="string">'origin'</span>;
 gca.Box = <span class="string">'off'</span>;
 axis([-7 2, -1, 4])</pre>
 <img src="ASySPrac02JoseRodolfoLopezGalvan-4.png" alt="ASySPrac02JoseRodolfoLopezGalvan-4.png">
-<p><b>b)</b> La operaci√≥n es una traslaci√≥n 6 unidades a la izquierda</p>
+<p><b>b)</b> La operaciÛn es una traslaciÛn 6 unidades a la izquierda</p>
 
 <p>x1b[n] = x1[n+6] = n+6, -6&lt;=n&lt;=-3</p>
 
@@ -305,7 +309,7 @@ gca.YAxisLocation = <span class="string">'origin'</span>;
 gca.Box = <span class="string">'off'</span>;
 axis([-1 13, -1 4])</pre>
 <img src="ASySPrac02JoseRodolfoLopezGalvan-6.png" alt="ASySPrac02JoseRodolfoLopezGalvan-6.png">
-<p><b>d)</b> Compresi√≥n de un tercio en el eje horizontal</p>
+<p><b>d)</b> CompresiÛn de un tercio en el eje horizontal</p>
 
 <p>x1d[n] = x1[3n] = 3n, 0&lt;=n&lt;=1</p>
 
@@ -334,7 +338,7 @@ gca.YAxisLocation = <span class="string">'origin'</span>;
 gca.Box = <span class="string">'off'</span>;
 axis([-3 3, -1 4])</pre>
 <img src="ASySPrac02JoseRodolfoLopezGalvan-7.png" alt="ASySPrac02JoseRodolfoLopezGalvan-7.png">
-<p><b>e)</b> Expanci√≥n vertical en una escala de 3</p>
+<p><b>e)</b> ExpanciÛn vertical en una escala de 3</p>
 
 <p>x1e[n] = x1[n/3] = n/3, 0&lt;=n/3&lt;=3</p>
 
@@ -342,8 +346,8 @@ axis([-3 3, -1 4])</pre>
 
 <p>x3e[n] = x3[n/3] = 0, otro caso</p>
 
-<p>Debemos tomar en cuenta que solo vamos a evaluar a la funci√≥n en valores enteros.
-Notese la renombraci√≥n de la funcion heaviside(n).</p>
+<p>Debemos tomar en cuenta que solo vamos a evaluar a la funciÛn en valores enteros.
+Notese la renombraciÛn de la funcion heaviside(n).</p>
 
 <p>Graficamos.</p>
 
@@ -361,7 +365,7 @@ gca.YAxisLocation = <span class="string">'origin'</span>;
 gca.Box = <span class="string">'off'</span>;
 axis([-1 19, -1 4])</pre>
 <img src="ASySPrac02JoseRodolfoLopezGalvan-8.png" alt="ASySPrac02JoseRodolfoLopezGalvan-8.png">
-<p><b>f)</b> Hacemos una traslaci√≥n de 6 unidades a la izquierda y luego invertimos,
+<p><b>f)</b> Hacemos una traslaciÛn de 6 unidades a la izquierda y luego invertimos,
 ambas operaciones respecto al eje horizontal</p>
 
 <p>x1e[n] = x1[3-n] = 3-n, 3&gt;=n&gt;=0</p>
@@ -462,33 +466,33 @@ ylabel(<span class="string">'x[n]'</span>)</pre>
   fprintf(<span class="string">'La Potencia es:%d'</span>,P);</pre>
 
 <pre class="oct-code-output">La Potencia es:1.16667</pre>
-<h2><a id="node7">App para graficar se√±ales discretas</a></h2>
-<p>A continuaci√≥n se muestra una captura de pantalla de la aplicaci√≥n dise√±ada.</p>
+<h2><a id="node7">App para graficar seÒales discretas</a></h2>
+<p>A continuaciÛn se muestra una captura de pantalla de la aplicaciÛn diseÒada.</p>
 
 <footer>
 <hr>
-<a href="https://www.octave.org">Published with GNU Octave 6.1.0</a>
+<a href="https://www.octave.org">Published with GNU Octave 5.2.0</a>
 </footer>
 <!--
 ##### SOURCE BEGIN #####
-%% Pr√°ctica 2: Se√±ales en tiempo discreto.
+%% Pr·ctica 2: SeÒales en tiempo discreto.
 %
 % *Integrantes:*
 %
 % * Arellano Paz Angel Ulises
 % * Cardoso Arias Javier
-% * Gachuz Hern√°ndez Karla Denisse
-% * Garc√≠a Arteaga Alejandro
-% * L√≥pez Galv√°n Jos√© Rodolfo
+% * Gachuz Hern·ndez Karla Denisse
+% * GarcÌa Arteaga Alejandro
+% * LÛpez Galv·n JosÈ Rodolfo
 %
 %% Objetivos
-% * Manipulaci√≥n b√°sica de MATLAB.
-% * Gr√°ficas de se√±ales reales y complejas discretas.
-% * Transformaci√≥n de se√±ales discretas (escalamientos y traslaciones).
+% * ManipulaciÛn b·sica de MATLAB.
+% * Gr·ficas de seÒales reales y complejas discretas.
+% * TransformaciÛn de seÒales discretas (escalamientos y traslaciones).
 
-%% Introducci√≥n
+%% IntroducciÛn
 %
-% La soluci√≥n del problema 1 usando Python puede ser consultada desde el siguiente <https://colab.research.google.com/drive/13KC50b29OvmNI86Jk5ALlBP_lCHp1jNU?usp=sharing *enlace*>
+% La soluciÛn del problema 1 usando Python puede ser consultada desde el siguiente <https://colab.research.google.com/drive/13KC50b29OvmNI86Jk5ALlBP_lCHp1jNU?usp=sharing *enlace*>
 
 %% Ejercicio 1
 % 3.11-2 Consider the discrete-time function
@@ -512,7 +516,7 @@ ylabel(<span class="string">'x[n]'</span>)</pre>
 % *Procedimiento*
 %
 %
-% Creamos la funci√≥n y vector de n
+% Creamos la funciÛn y vector de n
 %
 %%
 
@@ -521,14 +525,14 @@ f = @(n) exp(-n/5).*cos(pi*n/5).*(n>=0);
 n=-10:1:10;
 
 %%
-% Modificamos la funci√≥n
+% Modificamos la funciÛn
 
 
 f1 = @(n) exp(-n/5).*cos(pi*n/5).*(n>=0).*(1./(mod(n,1)==0));
 
 stem(n,f1(n));
 
-title('Gr√°fica de la se√±al f[n]=e^(-n/5)*cos(pin/5)u[n]');
+title('Gr·fica de la seÒal f[n]=e^(-n/5)*cos(pin/5)u[n]');
 
 xlabel('n');
 
@@ -547,7 +551,7 @@ gca.Box = 'off';
 
 stem(n,f1(n/2));
 
-title('Gr√°fica de la se√±al f[n/2]');
+title('Gr·fica de la seÒal f[n/2]');
 
 xlabel('n');
 ylabel('f[n/2]');
@@ -579,9 +583,9 @@ gca.Box = 'off';
 %
 %
 %
-% *Soluci√≥n:*
+% *SoluciÛn:*
 %
-% Primero creamos e indicamos a la Se√±al x[n], para eso escribimos a la se√±al
+% Primero creamos e indicamos a la SeÒal x[n], para eso escribimos a la seÒal
 % usando 3 secciones:
 %
 % x1[n] = n, 0<=n<=3;
@@ -606,7 +610,7 @@ end
 stem(n,R);
 ylabel('x[n]')
 xlabel('n')
-title('Se√±al x[n] original')
+title('SeÒal x[n] original')
 grid on
 gca.XAxisLocation = 'origin';
 gca.YAxisLocation = 'origin';
@@ -615,7 +619,7 @@ axis([-2 7, -1, 4])
 %%
 % Ahora ya podemos realizar las operaciones
 %
-% *a)* Se trata de una inversi√≥n horizontal:
+% *a)* Se trata de una inversiÛn horizontal:
 %
 % x1a[n] = x1[-n] = -n, 0<=n<=-3
 %
@@ -645,7 +649,7 @@ gca.YAxisLocation = 'origin';
 gca.Box = 'off';
 axis([-7 2, -1, 4])
 %%
-% *b)* La operaci√≥n es una traslaci√≥n 6 unidades a la izquierda
+% *b)* La operaciÛn es una traslaciÛn 6 unidades a la izquierda
 %
 % x1b[n] = x1[n+6] = n+6, -6<=n<=-3
 %
@@ -705,7 +709,7 @@ gca.YAxisLocation = 'origin';
 gca.Box = 'off';
 axis([-1 13, -1 4])
 %%
-% *d)* Compresi√≥n de un tercio en el eje horizontal
+% *d)* CompresiÛn de un tercio en el eje horizontal
 %
 % x1d[n] = x1[3n] = 3n, 0<=n<=1
 %
@@ -734,7 +738,7 @@ gca.YAxisLocation = 'origin';
 gca.Box = 'off';
 axis([-3 3, -1 4])
 %%
-% *e)* Expanci√≥n vertical en una escala de 3
+% *e)* ExpanciÛn vertical en una escala de 3
 %
 % x1e[n] = x1[n/3] = n/3, 0<=n/3<=3
 %
@@ -742,8 +746,8 @@ axis([-3 3, -1 4])
 %
 % x3e[n] = x3[n/3] = 0, otro caso
 %
-% Debemos tomar en cuenta que solo vamos a evaluar a la funci√≥n en valores enteros.
-% Notese la renombraci√≥n de la funcion heaviside(n).
+% Debemos tomar en cuenta que solo vamos a evaluar a la funciÛn en valores enteros.
+% Notese la renombraciÛn de la funcion heaviside(n).
 %
 % Graficamos.
 
@@ -761,7 +765,7 @@ gca.YAxisLocation = 'origin';
 gca.Box = 'off';
 axis([-1 19, -1 4])
 %%
-% *f)* Hacemos una traslaci√≥n de 6 unidades a la izquierda y luego invertimos,
+% *f)* Hacemos una traslaciÛn de 6 unidades a la izquierda y luego invertimos,
 % ambas operaciones respecto al eje horizontal
 %
 % x1e[n] = x1[3-n] = 3-n, 3>=n>=0
@@ -864,9 +868,9 @@ ylabel('x[n]')
   end
   fprintf('La Potencia es:%d',P);
 
-%% App para graficar se√±ales discretas
+%% App para graficar seÒales discretas
 %
-% A continuaci√≥n se muestra una captura de pantalla de la aplicaci√≥n dise√±ada.
+% A continuaciÛn se muestra una captura de pantalla de la aplicaciÛn diseÒada.
 ##### SOURCE END #####
 -->
 </body>
