@@ -196,10 +196,9 @@ ylabel(<span class="string">'x[n]'</span>)
 xlabel(<span class="string">'n'</span>)
 title(<span class="string">'Señal x[n] original'</span>)
 grid on
-ax = gca;
-ax.XAxisLocation = <span class="string">'origin'</span>;
-ax.YAxisLocation = <span class="string">'origin'</span>;
-ax.Box = <span class="string">'off'</span>;
+gca.XAxisLocation = <span class="string">'origin'</span>;
+gca.YAxisLocation = <span class="string">'origin'</span>;
+gca.Box = <span class="string">'off'</span>;
 axis([-2 7, -1, 4])</pre>
 
 <pre class="oct-code-output">n =
@@ -241,10 +240,9 @@ ylabel(<span class="string">'x[-n]'</span>)
 xlabel(<span class="string">'n'</span>)
 title(<span class="string">'Inciso a)'</span>)
 grid on
-ax = gca;
-ax.XAxisLocation = <span class="string">'origin'</span>;
-ax.YAxisLocation = <span class="string">'origin'</span>;
-ax.Box = <span class="string">'off'</span>;
+gca.XAxisLocation = <span class="string">'origin'</span>;
+gca.YAxisLocation = <span class="string">'origin'</span>;
+gca.Box = <span class="string">'off'</span>;
 axis([-7 2, -1, 4])</pre>
 <img src="ASySPrac02JoseRodolfoLopezGalvan-4.png" alt="ASySPrac02JoseRodolfoLopezGalvan-4.png">
 <p><b>b)</b> La operación es una traslación 6 unidades a la izquierda</p>
@@ -272,10 +270,9 @@ ylabel(<span class="string">'x[n+6]'</span>)
 xlabel(<span class="string">'n'</span>)
 title(<span class="string">'Inciso b)'</span>)
 grid on
-ax = gca;
-ax.XAxisLocation = <span class="string">'origin'</span>;
-ax.YAxisLocation = <span class="string">'Origin'</span>;
-ax.Box = <span class="string">'off'</span>;
+gca.XAxisLocation = <span class="string">'origin'</span>;
+gca.YAxisLocation = <span class="string">'Origin'</span>;
+gca.Box = <span class="string">'off'</span>;
 axis([-7 1, -1 4])</pre>
 <img src="ASySPrac02JoseRodolfoLopezGalvan-5.png" alt="ASySPrac02JoseRodolfoLopezGalvan-5.png">
 <p><b>c)</b> Trasladas horizontalmente 6 unidades a la derecha</p>
@@ -303,10 +300,9 @@ ylabel(<span class="string">'x[n-6]'</span>)
 xlabel(<span class="string">'n'</span>)
 title(<span class="string">'Iniciso c)'</span>)
 grid on;
-ax=gca;
-ax.XAxisLocation = <span class="string">'origin'</span>;
-ax.YAxisLocation = <span class="string">'origin'</span>;
-ax.Box = <span class="string">'off'</span>;
+gca.XAxisLocation = <span class="string">'origin'</span>;
+gca.YAxisLocation = <span class="string">'origin'</span>;
+gca.Box = <span class="string">'off'</span>;
 axis([-1 13, -1 4])</pre>
 <img src="ASySPrac02JoseRodolfoLopezGalvan-6.png" alt="ASySPrac02JoseRodolfoLopezGalvan-6.png">
 <p><b>d)</b> Compresión de un tercio en el eje horizontal</p>
@@ -333,10 +329,9 @@ ylabel(<span class="string">'x[3n]'</span>)
 xlabel(<span class="string">'n'</span>)
 title(<span class="string">'Inciso d)'</span>)
 grid on;
-ax=gca;
-ax.XAxisLocation = <span class="string">'origin'</span>;
-ax.YAxisLocation = <span class="string">'origin'</span>;
-ax.Box = <span class="string">'off'</span>;
+gca.XAxisLocation = <span class="string">'origin'</span>;
+gca.YAxisLocation = <span class="string">'origin'</span>;
+gca.Box = <span class="string">'off'</span>;
 axis([-3 3, -1 4])</pre>
 <img src="ASySPrac02JoseRodolfoLopezGalvan-7.png" alt="ASySPrac02JoseRodolfoLopezGalvan-7.png">
 <p><b>e)</b> Expanción vertical en una escala de 3</p>
@@ -360,10 +355,10 @@ ylabel(<span class="string">'x[n/3]'</span>)
 xlabel(<span class="string">'n'</span>)
 grid on;
 title(<span class="string">'Inciso e)'</span>)
-ax=gca;
-ax.XAxisLocation = <span class="string">'origin'</span>;
-ax.YAxisLocation = <span class="string">'origin'</span>;
-ax.Box = <span class="string">'off'</span>;
+
+gca.XAxisLocation = <span class="string">'origin'</span>;
+gca.YAxisLocation = <span class="string">'origin'</span>;
+gca.Box = <span class="string">'off'</span>;
 axis([-1 19, -1 4])</pre>
 <img src="ASySPrac02JoseRodolfoLopezGalvan-8.png" alt="ASySPrac02JoseRodolfoLopezGalvan-8.png">
 <p><b>f)</b> Hacemos una traslación de 6 unidades a la izquierda y luego invertimos,
@@ -390,10 +385,10 @@ ylabel(<span class="string">'x[3-n]'</span>)
 xlabel(<span class="string">'n'</span>)
 title(<span class="string">'Inciso f)'</span>)
 grid on;
-ax=gca;
-ax.XAxisLocation = <span class="string">'origin'</span>;
-ax.YAxisLocation = <span class="string">'origin'</span>;
-ax.Box = <span class="string">'off'</span>;
+
+gca.XAxisLocation = <span class="string">'origin'</span>;
+gca.YAxisLocation = <span class="string">'origin'</span>;
+gca.Box = <span class="string">'off'</span>;
 axis([-4 4, -1 4])</pre>
 <img src="ASySPrac02JoseRodolfoLopezGalvan-9.png" alt="ASySPrac02JoseRodolfoLopezGalvan-9.png"><h2><a id="node5">Ejercicio 3</a></h2>
 <p>3.11-6 Suppose a vector x exists in the MATLAB
@@ -613,10 +608,9 @@ ylabel('x[n]')
 xlabel('n')
 title('Señal x[n] original')
 grid on
-ax = gca;
-ax.XAxisLocation = 'origin';
-ax.YAxisLocation = 'origin';
-ax.Box = 'off';
+gca.XAxisLocation = 'origin';
+gca.YAxisLocation = 'origin';
+gca.Box = 'off';
 axis([-2 7, -1, 4])
 %%
 % Ahora ya podemos realizar las operaciones
@@ -646,10 +640,9 @@ ylabel('x[-n]')
 xlabel('n')
 title('Inciso a)')
 grid on
-ax = gca;
-ax.XAxisLocation = 'origin';
-ax.YAxisLocation = 'origin';
-ax.Box = 'off';
+gca.XAxisLocation = 'origin';
+gca.YAxisLocation = 'origin';
+gca.Box = 'off';
 axis([-7 2, -1, 4])
 %%
 % *b)* La operación es una traslación 6 unidades a la izquierda
@@ -677,10 +670,9 @@ ylabel('x[n+6]')
 xlabel('n')
 title('Inciso b)')
 grid on
-ax = gca;
-ax.XAxisLocation = 'origin';
-ax.YAxisLocation = 'Origin';
-ax.Box = 'off';
+gca.XAxisLocation = 'origin';
+gca.YAxisLocation = 'Origin';
+gca.Box = 'off';
 axis([-7 1, -1 4])
 %%
 % *c)* Trasladas horizontalmente 6 unidades a la derecha
@@ -708,10 +700,9 @@ ylabel('x[n-6]')
 xlabel('n')
 title('Iniciso c)')
 grid on;
-ax=gca;
-ax.XAxisLocation = 'origin';
-ax.YAxisLocation = 'origin';
-ax.Box = 'off';
+gca.XAxisLocation = 'origin';
+gca.YAxisLocation = 'origin';
+gca.Box = 'off';
 axis([-1 13, -1 4])
 %%
 % *d)* Compresión de un tercio en el eje horizontal
@@ -738,10 +729,9 @@ ylabel('x[3n]')
 xlabel('n')
 title('Inciso d)')
 grid on;
-ax=gca;
-ax.XAxisLocation = 'origin';
-ax.YAxisLocation = 'origin';
-ax.Box = 'off';
+gca.XAxisLocation = 'origin';
+gca.YAxisLocation = 'origin';
+gca.Box = 'off';
 axis([-3 3, -1 4])
 %%
 % *e)* Expanción vertical en una escala de 3
@@ -765,10 +755,10 @@ ylabel('x[n/3]')
 xlabel('n')
 grid on;
 title('Inciso e)')
-ax=gca;
-ax.XAxisLocation = 'origin';
-ax.YAxisLocation = 'origin';
-ax.Box = 'off';
+
+gca.XAxisLocation = 'origin';
+gca.YAxisLocation = 'origin';
+gca.Box = 'off';
 axis([-1 19, -1 4])
 %%
 % *f)* Hacemos una traslación de 6 unidades a la izquierda y luego invertimos,
@@ -795,10 +785,10 @@ ylabel('x[3-n]')
 xlabel('n')
 title('Inciso f)')
 grid on;
-ax=gca;
-ax.XAxisLocation = 'origin';
-ax.YAxisLocation = 'origin';
-ax.Box = 'off';
+
+gca.XAxisLocation = 'origin';
+gca.YAxisLocation = 'origin';
+gca.Box = 'off';
 axis([-4 4, -1 4])
 
 %% Ejercicio 3

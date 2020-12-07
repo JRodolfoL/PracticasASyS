@@ -135,10 +135,9 @@ ylabel('x[n]')
 xlabel('n')
 title('Señal x[n] original')
 grid on
-ax = gca;
-ax.XAxisLocation = 'origin';
-ax.YAxisLocation = 'origin';
-ax.Box = 'off';
+gca.XAxisLocation = 'origin';
+gca.YAxisLocation = 'origin';
+gca.Box = 'off';
 axis([-2 7, -1, 4])
 %% 
 % Ahora ya podemos realizar las operaciones
@@ -168,10 +167,9 @@ ylabel('x[-n]')
 xlabel('n')
 title('Inciso a)')
 grid on
-ax = gca;
-ax.XAxisLocation = 'origin';
-ax.YAxisLocation = 'origin';
-ax.Box = 'off';
+gca.XAxisLocation = 'origin';
+gca.YAxisLocation = 'origin';
+gca.Box = 'off';
 axis([-7 2, -1, 4])
 %% 
 % *b)* La operación es una traslación 6 unidades a la izquierda
@@ -199,10 +197,9 @@ ylabel('x[n+6]')
 xlabel('n')
 title('Inciso b)')
 grid on
-ax = gca;
-ax.XAxisLocation = 'origin';
-ax.YAxisLocation = 'Origin';
-ax.Box = 'off';
+gca.XAxisLocation = 'origin';
+gca.YAxisLocation = 'Origin';
+gca.Box = 'off';
 axis([-7 1, -1 4])
 %% 
 % *c)* Trasladas horizontalmente 6 unidades a la derecha
@@ -230,10 +227,9 @@ ylabel('x[n-6]')
 xlabel('n')
 title('Iniciso c)')
 grid on;
-ax=gca;
-ax.XAxisLocation = 'origin';
-ax.YAxisLocation = 'origin';
-ax.Box = 'off';
+gca.XAxisLocation = 'origin';
+gca.YAxisLocation = 'origin';
+gca.Box = 'off';
 axis([-1 13, -1 4])
 %% 
 % *d)* Compresión de un tercio en el eje horizontal
@@ -260,10 +256,9 @@ ylabel('x[3n]')
 xlabel('n')
 title('Inciso d)')
 grid on;
-ax=gca;
-ax.XAxisLocation = 'origin';
-ax.YAxisLocation = 'origin';
-ax.Box = 'off';
+gca.XAxisLocation = 'origin';
+gca.YAxisLocation = 'origin';
+gca.Box = 'off';
 axis([-3 3, -1 4])
 %% 
 % *e)* Expanción vertical en una escala de 3
@@ -287,10 +282,10 @@ ylabel('x[n/3]')
 xlabel('n')
 grid on;
 title('Inciso e)')
-ax=gca;
-ax.XAxisLocation = 'origin';
-ax.YAxisLocation = 'origin';
-ax.Box = 'off';
+
+gca.XAxisLocation = 'origin';
+gca.YAxisLocation = 'origin';
+gca.Box = 'off';
 axis([-1 19, -1 4])
 %% 
 % *f)* Hacemos una traslación de 6 unidades a la izquierda y luego invertimos, 
@@ -317,10 +312,10 @@ ylabel('x[3-n]')
 xlabel('n')
 title('Inciso f)')
 grid on;
-ax=gca;
-ax.XAxisLocation = 'origin';
-ax.YAxisLocation = 'origin';
-ax.Box = 'off';
+
+gca.XAxisLocation = 'origin';
+gca.YAxisLocation = 'origin';
+gca.Box = 'off';
 axis([-4 4, -1 4])
 
 %% Ejercicio 3
