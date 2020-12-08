@@ -426,3 +426,10 @@ set(gca, "box", "off")
 
 imgapp=imread('html/app.jpg');
 imshow(imgapp)
+
+%% Referencias
+%
+%%
+% Hwei, P. (2020). Signals and Systems. Estados Unidos. Mc Graw Hill.
+%%
+% Lathi, B. & Green, R. (2018). Linear systems and signals. Estados Unidos. Oxford University Press.
