@@ -110,7 +110,7 @@ upsampling operation, such as f[n/2]. Modify
 the anonymous function f so that it also
 correctly accommodates upsampling operations.
 Test your code by computing and plotting
-f(n/2) over (?10 ? n ? 10).</p>
+f(n/2) over $10\leq n\leq 10$.</p>
 
 <p><b>Procedimiento</b></p>
 
@@ -455,20 +455,12 @@ set(gca, <span class="string">"box"</span>, <span class="string">"off"</span>)</
 
 <pre class="oct-code">E=0;
   <span class="keyword">for</span> h=-3:8
-  sum=x(h)^2;
+  sum=x1(h)^2;
   E=E+sum;
   <span class="keyword">end</span>
-  fprintf(<span class="string">'La energia es:%d'</span>,E);</pre>
+  fprintf(<span class="string">'La energia es:%d\n'</span>,E);</pre>
 
-<pre class="oct-code-output">error: 'x' undefined near line 2 column 7
-	in:
-
-  E=0;
-  for h=-3:8
-  sum=x(h)^2;
-  E=E+sum;
-  end
-  fprintf('La energia es:%d',E);
+<pre class="oct-code-output">La energia es:252
 </pre>
 
 <p>3.1-2 Potencia</p>
@@ -479,9 +471,12 @@ set(gca, <span class="string">"box"</span>, <span class="string">"off"</span>)</
   sum=(1/N)*x2(h).^2;
   P=P+sum;
   <span class="keyword">end</span>
-  fprintf(<span class="string">'La Potencia es:%d'</span>,P);</pre>
 
-<pre class="oct-code-output">La Potencia es:2.33333La Potencia es:2.33333</pre>
+ fprintf(<span class="string">'La Potencia es:%d\n'</span>,P);</pre>
+
+<pre class="oct-code-output">La Potencia es:2.33333
+La Potencia es:2.33333
+</pre>
 <h2><a id="node7">App para graficar señales discretas</a></h2>
 <p>A continuaciòn se muestra una captura de pantalla de la aplicaciòn diseñada.</p>
 
@@ -538,7 +533,7 @@ imshow(imgpy2)
 % the anonymous function f so that it also
 % correctly accommodates upsampling operations.
 % Test your code by computing and plotting
-% f(n/2) over (?10 ? n ? 10).
+% f(n/2) over $10\leq n\leq 10$.
 %%
 % *Procedimiento*
 %
@@ -899,10 +894,10 @@ set(gca, "box", "off")
 % 3.1-1 Energia
   E=0;
   for h=-3:8
-  sum=x(h)^2;
+  sum=x1(h)^2;
   E=E+sum;
   end
-  fprintf('La energia es:%d',E);
+  fprintf('La energia es:%d\n',E);
 
 %%
 % 3.1-2 Potencia
@@ -913,7 +908,8 @@ set(gca, "box", "off")
   sum=(1/N)*x2(h).^2;
   P=P+sum;
   end
-  fprintf('La Potencia es:%d',P);
+
+ fprintf('La Potencia es:%d\n',P);
 
 %% App para graficar señales discretas
 %

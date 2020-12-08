@@ -42,7 +42,7 @@ imshow(imgpy2)
 % the anonymous function f so that it also
 % correctly accommodates upsampling operations.
 % Test your code by computing and plotting
-% f(n/2) over (?10 ? n ? 10).
+% f(n/2) over $10\leq n\leq 10$.
 %%
 % *Procedimiento*
 %
@@ -403,10 +403,10 @@ set(gca, "box", "off")
 % 3.1-1 Energia
   E=0;
   for h=-3:8
-  sum=x(h)^2;
+  sum=x1(h)^2;
   E=E+sum;
   end
-  fprintf('La energia es:%d',E);
+  fprintf('La energia es:%d\n',E);
   
 %%
 % 3.1-2 Potencia
@@ -417,7 +417,8 @@ set(gca, "box", "off")
   sum=(1/N)*x2(h).^2;
   P=P+sum;
   end
-  fprintf('La Potencia es:%d',P);
+
+ fprintf('La Potencia es:%d\n',P);
  
 %% App para graficar señales discretas
 %
