@@ -373,8 +373,8 @@ axis([-4 4, -1 4])
 x1=@(n) 3*n.*(heaviside(n+3)-heaviside(n-4));
 n=-3:8;
 stem(n,x1(n))
-axis([-5 5 -5 5])
-title('A.1),A.2) (periodica,N=12)')
+axis([-4 9 -10 10])
+title('Figura A.1)')
 xlabel('n')
 ylabel('x[n]')
 grid on;
@@ -386,11 +386,11 @@ set(gca, "box", "off")
 % 3.1-2 Find the power of the signals illustrated in
 % Fig. A.2)
 
-x2=@(n) n.*(heaviside(n+3)-heaviside(n-4));
-y = mod(x2(n),12);
-stem(n,y)
-axis([-5 5 -5 5])
-title('A.1),A.2) (periodica,N=12)')
+x2=@(n) repmat(n.*(heaviside(n+3)-heaviside(n-4)),1,2);
+n0=[-3:20];
+stem(n0,x2(n));
+axis([-3 21 -5 5])
+title('Figura A.2) con periodo N=12')
 xlabel('n')
 ylabel('x[n]')
 grid on;
@@ -402,8 +402,8 @@ set(gca, "box", "off")
 % *Procedimiento*
 % 3.1-1 Energia
   E=0;
-  for n=n
-  sum=x(n)^2;
+  for h=-3:8
+  sum=x(h)^2;
   E=E+sum;
   end
   fprintf('La energia es:%d',E);
