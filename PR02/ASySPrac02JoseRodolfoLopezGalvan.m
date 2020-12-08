@@ -271,7 +271,7 @@ set (gca, "yaxislocation", "origin")
 set(gca, "box", "off")
 axis([-3 3, -1 4])
 %% 
-% *e)* Expansión vertical en una escala de 3
+% *e)* Expansión horizontal en una escala de 3
 % 
 % x1e[n] = x1[n/3] = n/3, 0<=n/3<=3
 % 
@@ -279,7 +279,7 @@ axis([-3 3, -1 4])
 % 
 % x3e[n] = x3[n/3] = 0, otro caso
 % 
-% Debemos tomar en cuenta que solo vamos a evaluar a la funciòn en valores enteros.  
+% Debemos tomar en cuenta que solo vamos a evaluar a la funciòn en valores enteros, aunque en la gràfica se colocaron los puntos no evaluados en 0.  
 % 
 % Graficamos. 
 
@@ -297,7 +297,7 @@ set (gca, "yaxislocation", "origin")
 set(gca, "box", "off")
 axis([-1 19, -1 4])
 %% 
-% *f)* Hacemos una traslaciò de 6 unidades a la izquierda y luego invertimos, 
+% *f)* Invertimos la funciòn, luego trasladamos a la derecha 3 unidades, 
 % ambas operaciones respecto al eje horizontal
 % 
 % x1e[n] = x1[3-n] = 3-n, 3>=n>=0
@@ -369,21 +369,35 @@ axis([-4 4, -1 4])
 %
 % 3.1-1 Find the energy of the signals depicted in
 % Fig. A.1)
-% 
-% 3.1-2 Find the power of the signals illustrated in
-% Fig. A.2)
-x=@(n) n.*(heaviside(n+3)-heaviside(n-4));
-n=-3:3;
-stem(n,x(n))
+
+x1=@(n) 3*n.*(heaviside(n+3)-heaviside(n-4));
+n=-3:8;
+stem(n,x1(n))
 axis([-5 5 -5 5])
 title('A.1),A.2) (periodica,N=12)')
 xlabel('n')
 ylabel('x[n]')
 grid on;
-
 set (gca, "xaxislocation", "origin")
 set (gca, "yaxislocation", "origin")
 set(gca, "box", "off")
+
+%%
+% 3.1-2 Find the power of the signals illustrated in
+% Fig. A.2)
+
+x2=@(n) n.*(heaviside(n+3)-heaviside(n-4));
+y = mod(x2(n),12);
+stem(n,y)
+axis([-5 5 -5 5])
+title('A.1),A.2) (periodica,N=12)')
+xlabel('n')
+ylabel('x[n]')
+grid on;
+set (gca, "xaxislocation", "origin")
+set (gca, "yaxislocation", "origin")
+set(gca, "box", "off")
+
 %% 
 % *Procedimiento*
 % 3.1-1 Energia
@@ -396,10 +410,11 @@ set(gca, "box", "off")
   
 %%
 % 3.1-2 Potencia
+
   P=0;
   N=12;
-  for n=0:N-1
-  sum=(1/N)*x(n)^2;
+  for h=-3:8
+  sum=(1/N)*x2(h).^2;
   P=P+sum;
   end
   fprintf('La Potencia es:%d',P);
