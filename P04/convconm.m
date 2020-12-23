@@ -31,9 +31,9 @@ Tam1 = size(x(1,:));
     T3 = T1+T2-1;
   figure (1) % Se crea una figura para hacer las graficas
   dtau = 0.005; % Base de los rectangulos para realizar la integral 
-  tau = -1:dtau:4; % Intervalo de visualizacion del resultado
+  tau = -2.2:dtau:3; % Intervalo de visualizacion del resultado
   ti = 0; % Indice para el vector de resultados
-  tvec = -.25:.1:3.75; % traslaciones de t, cuantas integrales se calulan  
+  tvec = -2:.1:2; % traslaciones de t, cuantas integrales se calulan  
   y = NaN*zeros(1, length (tvec)); % Resultados de acuerdo a cuantos t
   hFig = figure();
   set(hFig, 'Position', [0 0 1000 1000])
