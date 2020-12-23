@@ -288,3 +288,9 @@ u = @(t) 1*(t >=0);
 f = @(t) exp(-t).*(u(t-1)-u(t));
 g = @(t) t.*(u(t-1) - u(t+1));
 convconm(f,g)
+
+%%
+% El gif de la convolucíón:
+
+conv1=imread('html/conv1.gif'); 
+imshow(conv1);

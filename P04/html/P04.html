@@ -343,6 +343,11 @@ f = @(t) exp(-t).*(u(t-1)-u(t));
 g = @(t) t.*(u(t-1) - u(t+1));
 convconm(f,g)</pre>
 <img src="P04-3.png" alt="P04-3.png">
+<p>El gif de la convolucíón:</p>
+
+<pre class="oct-code">conv1=imread(<span class="string">'html/conv1.gif'</span>);
+imshow(conv1);</pre>
+
 <footer>
 <hr>
 <a href="https://www.octave.org">Published with GNU Octave 5.2.0</a>
@@ -639,6 +644,12 @@ u = @(t) 1*(t >=0);
 f = @(t) exp(-t).*(u(t-1)-u(t));
 g = @(t) t.*(u(t-1) - u(t+1));
 convconm(f,g)
+
+%%
+% El gif de la convolucíón:
+
+conv1=imread('html/conv1.gif');
+imshow(conv1);
 ##### SOURCE END #####
 -->
 </body>
